@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import './CategoryGrid.css';
 
 import one from '../../assets/card_images/barbell.png';
-import sled from '../../assets/card_images/sled3.png';
+import sled from '../../assets/card_images/sled333.jpg';
 import bench from '../../assets/card_images/bench.png';
 import accessories from '../../assets/card_images/accessories2.png';
-import benchh from '../../assets/card_images/finall.png';
+import benchh from '../../assets/card_images/finalll.jpg';
 import plates from '../../assets/card_images/plates.png';
 
 const CategoryGrid = () => {
@@ -25,7 +25,7 @@ const CategoryGrid = () => {
     },
     {
       name: "ACCESSORIES",
-      image: accessories,
+      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901811/barbell_plates_03_qmvcgc.jpg",
       discount:"Mini Accessories for your mini PR trackers"
     },
     {

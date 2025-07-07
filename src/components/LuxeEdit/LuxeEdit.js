@@ -6,9 +6,13 @@ import tees from '../../assets/luxe_edit/two.png';
 import fcargo from '../../assets/sample.jpg';
 
 
-import bench from '../../assets/images/benchpress.png'
+import luxeEdit1 from '../../assets/images/LuxeEdit.jpg'
+import luxeEdit2 from '../../assets/images/LuxeEdit1.jpg'
+import luxeEdit from '../../assets/images/newtry.jpg'
 
 import coasters from '../../assets/card_images/sledco.png'
+
+import LuxeEdit4 from '../../assets/images/LuxeEdit4.jpg'
 
 import barbell from '../../assets/card_images/barbell.png'
 
@@ -16,19 +20,19 @@ const LuxeEdit = () => {
   const luxeItems = [
     {
       title: "What you lifted is history. What it meant? That’s what we frame.",
-      image: "https://minibarbell.com/cdn/shop/files/Barbell-Board---Color-Bumper---1.jpg?v=1749420317"
+      image: luxeEdit1
+    },{
+      title: "Miss the gym? Keep its mindset on your desk.",
+      image: luxeEdit
     },
     {
       title: "That one lift changed you. We just make sure it stays close.",
-      image: barbell
+      image: luxeEdit2
     },
-    {
-      title: "Miss the gym? Keep its mindset on your desk.",
-      image: coasters
-    },
+    
     {
       title: "Our products aren’t just miniatures — they’re moments frozen in time.",
-      image: bench
+      image: LuxeEdit4
     }
   ];
 

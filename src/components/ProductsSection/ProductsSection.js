@@ -14,40 +14,40 @@ const CategoryGrid = () => {
 
   const brands = [
     {
-      name: "Mini Power Rack",
-      badge: "Best Seller",
-      price: "₹1499",
-      currentprice:"₹899",
-      image: benchh
-    },
-    {
-      name: "Sled Coasters",
-      badge: "Popular",
-      price: "₹1299",
-      currentprice:"₹999",
-      image: sled
-    },
-    {
-      name: "Bench Keychain",
-      badge: "New",
-      price: "₹89",
-      currentprice:"₹59",
-      image: bench
-    },
-    {
-      name: "Accessory Set",
-      badge: "Combo",
-      price: "₹899",
-      currentprice:"₹399",
-      image: accessories
-    },
-    {
-      name: "Barbell Board",
-      badge: "Limited",
-      price: "₹700",
-      currentprice:"₹459",
-      image: one
-    },
+    name: "Deadlift Platform",
+    badge: "Popular", // Using 'Popular' as a suitable badge
+    price: "₹899", // Original price from allProducts
+    currentprice: "₹499", // Current price from allProducts
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893420/01_shxcaz.jpg"
+  },
+  {
+    name: "Barbell Display Plaque",
+    badge: "New", // Using 'New' as a suitable badge
+    price: "₹899", // Original price from allProducts
+    currentprice: "₹499", // Current price from allProducts
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902432/05_ke9p3j.jpg"
+  },
+  {
+    name: "Mini Bench Press Setup",
+    badge: "Best Seller", // Using 'Best Seller' as a suitable badge
+    price: "₹1199", // Original price from allProducts
+    currentprice: "₹899", // Current price from allProducts
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899415/01_os8ftd.jpg"
+  },
+  {
+    name: "Barbell Holders",
+    badge: "Accessory", // Custom badge for clarity
+    price: "₹250", // Original price from allProducts
+    currentprice: "₹160", // Current price from allProducts
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899814/01_bcmm19.jpg"
+  },
+  {
+    name: "Sled Coasters",
+    badge: "Popular", // Using 'Popular' as a suitable badge
+    price: "₹1300", // Original price from allProducts
+    currentprice: "₹899", // Current price from allProducts
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg"
+  },
     {
       name: "All Products",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrlBR2ORcQ2jtN8UflyNc8TibIxMm9MZz6ShJn8Pp8o8uNHwcyLO66ooW0EIYEBElivNI&usqp=CAU"

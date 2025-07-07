@@ -6,130 +6,130 @@ import "./ProductDetail.css";
 
 // Import images
 
-import bench01 from "../../assets/product_images/bench/01.jpg";
-import bench02 from "../../assets/product_images/bench/02.jpg";
-import bench03 from "../../assets/product_images/bench/03.jpg";
-import bench04 from "../../assets/product_images/bench/04.jpg";
-import bench05 from "../../assets/product_images/bench/05.jpg";
-import bench06 from "../../assets/product_images/bench/06.jpg";
-import bench07 from "../../assets/product_images/bench/07.jpg";
-import bench08 from "../../assets/product_images/bench/08.jpg";
-import bench09 from "../../assets/product_images/bench/09.jpg";
-import bench10 from "../../assets/product_images/bench/10.jpg";
-import bench11 from "../../assets/product_images/bench/11.jpg";
-import bench12 from "../../assets/product_images/bench/12.jpg";
-import bench13 from "../../assets/product_images/bench/13_barbell.jpg";
-import bench14 from "../../assets/product_images/bench/14.jpg";
-import bench15 from "../../assets/product_images/bench/15.jpg";
-import bench16 from "../../assets/product_images/bench/16_plates.jpg";
-import bench17 from "../../assets/product_images/bench/17.jpg";
-import bench18 from "../../assets/product_images/bench/18.jpg";
+// import "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899415/01_os8ftd.jpg" from "../../assets/product_images/bench/01.jpg";
+// import "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899417/02_ttniug.jpg" from "../../assets/product_images/bench/02.jpg";
+// import "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899418/03_ikhedw.jpg" from "../../assets/product_images/bench/03.jpg";
+// import bench04 from "../../assets/product_images/bench/04.jpg";
+// import bench05 from "../../assets/product_images/bench/05.jpg";
+// import bench06 from "../../assets/product_images/bench/06.jpg";
+// import bench07 from "../../assets/product_images/bench/07.jpg";
+// import bench08 from "../../assets/product_images/bench/08.jpg";
+// import bench09 from "../../assets/product_images/bench/09.jpg";
+// import bench10 from "../../assets/product_images/bench/10.jpg";
+// import bench11 from "../../assets/product_images/bench/11.jpg";
+// import bench12 from "../../assets/product_images/bench/12.jpg";
+// import bench13 from "../../assets/product_images/bench/13_barbell.jpg";
+// import bench14 from "../../assets/product_images/bench/14.jpg";
+// import bench15 from "../../assets/product_images/bench/15.jpg";
+// import bench16 from "../../assets/product_images/bench/16_plates.jpg";
+// import bench17 from "../../assets/product_images/bench/17.jpg";
+// import bench18 from "../../assets/product_images/bench/18.jpg";
 
-import benchvideo from "../../assets/product_images/bench/vid_01.mp4";
-import benchvideo2 from "../../assets/product_images/bench/vid_02.mp4";
+// import benchvideo from "../../assets/product_images/bench/vid_01.mp4";
+// import "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg" from "../../assets/product_images/bench/vid_02.mp4";
 
-import coaster01 from "../../assets/product_images/coasters/01.jpg";
-import coaster02 from "../../assets/product_images/coasters/02.jpg";
-import coaster03 from "../../assets/product_images/coasters/03.jpg";
-import coaster04 from "../../assets/product_images/coasters/04.jpg";
-import coaster05 from "../../assets/product_images/coasters/05.jpg";
-import coaster06 from "../../assets/product_images/coasters/06.jpg";
+// import coaster01 from "../../assets/product_images/coasters/01.jpg";
+// import coaster02 from "../../assets/product_images/coasters/02.jpg";
+// import coaster03 from "../../assets/product_images/coasters/03.jpg";
+// import coaster04 from "../../assets/product_images/coasters/04.jpg";
+// import coaster05 from "../../assets/product_images/coasters/05.jpg";
+// import coaster06 from "../../assets/product_images/coasters/06.jpg";
 
-import deadlift01 from "../../assets/product_images/deadlift/01.jpg";
-import deadlift02 from "../../assets/product_images/deadlift/02.jpg";
-import deadlift03 from "../../assets/product_images/deadlift/03.jpg";
-import deadlift04 from "../../assets/product_images/deadlift/04.jpg";
-import deadlift05 from "../../assets/product_images/deadlift/05.jpg";
-import deadlift06 from "../../assets/product_images/deadlift/06.jpg";
-import deadlift07 from "../../assets/product_images/deadlift/07.jpg";
-import deadlift08 from "../../assets/product_images/deadlift/08.jpg";
-import deadlift10 from "../../assets/product_images/deadlift/10.jpg";
-import deadlift11 from "../../assets/product_images/deadlift/11.jpg";
-import deadlift12 from "../../assets/product_images/deadlift/12.jpg";
-import deadlift13 from "../../assets/product_images/deadlift/13.jpg";
-import deadlift14 from "../../assets/product_images/deadlift/14.jpg";
-import deadlift15 from "../../assets/product_images/deadlift/15.jpg";
-import deadlift16 from "../../assets/product_images/deadlift/16.jpg";
-import deadlift17 from "../../assets/product_images/deadlift/17.jpg";
-import deadlift18 from "../../assets/product_images/deadlift/18.jpg";
-import deadlift19 from "../../assets/product_images/deadlift/19.jpg";
+// import deadlift01 from "../../assets/product_images/deadlift/01.jpg";
+// import deadlift02 from "../../assets/product_images/deadlift/02.jpg";
+// import deadlift03 from "../../assets/product_images/deadlift/03.jpg";
+// import deadlift04 from "../../assets/product_images/deadlift/04.jpg";
+// import deadlift05 from "../../assets/product_images/deadlift/05.jpg";
+// import deadlift06 from "../../assets/product_images/deadlift/06.jpg";
+// import deadlift07 from "../../assets/product_images/deadlift/07.jpg";
+// import deadlift08 from "../../assets/product_images/deadlift/08.jpg";
+// import deadlift10 from "../../assets/product_images/deadlift/10.jpg";
+// import deadlift11 from "../../assets/product_images/deadlift/11.jpg";
+// import deadlift12 from "../../assets/product_images/deadlift/12.jpg";
+// import deadlift13 from "../../assets/product_images/deadlift/13.jpg";
+// import deadlift14 from "../../assets/product_images/deadlift/14.jpg";
+// import deadlift15 from "../../assets/product_images/deadlift/15.jpg";
+// import deadlift16 from "../../assets/product_images/deadlift/16.jpg";
+// import deadlift17 from "../../assets/product_images/deadlift/17.jpg";
+// import deadlift18 from "../../assets/product_images/deadlift/18.jpg";
+// import deadlift19 from "../../assets/product_images/deadlift/19.jpg";
 
-import singlePlaque01 from "../../assets/product_images/single plaque/01.jpg";
-import singlePlaque02 from "../../assets/product_images/single plaque/02.jpg";
-import singlePlaque03 from "../../assets/product_images/single plaque/03.jpg";
-import singlePlaque04 from "../../assets/product_images/single plaque/04.jpg";
-import singlePlaque05 from "../../assets/product_images/single plaque/05.jpg";
-import singlePlaque06 from "../../assets/product_images/single plaque/06.jpg";
-import singlePlaque07 from "../../assets/product_images/single plaque/07.jpg";
-import singlePlaque08 from "../../assets/product_images/single plaque/08.jpg";
-import singlePlaque09 from "../../assets/product_images/single plaque/09.jpg";
-import singlePlaque10 from "../../assets/product_images/single plaque/10.jpg";
+// import singlePlaque01 from "../../assets/product_images/single plaque/01.jpg";
+// import singlePlaque02 from "../../assets/product_images/single plaque/02.jpg";
+// import singlePlaque03 from "../../assets/product_images/single plaque/03.jpg";
+// import singlePlaque04 from "../../assets/product_images/single plaque/04.jpg";
+// import singlePlaque05 from "../../assets/product_images/single plaque/05.jpg";
+// import singlePlaque06 from "../../assets/product_images/single plaque/06.jpg";
+// import singlePlaque07 from "../../assets/product_images/single plaque/07.jpg";
+// import singlePlaque08 from "../../assets/product_images/single plaque/08.jpg";
+// import singlePlaque09 from "../../assets/product_images/single plaque/09.jpg";
+// import singlePlaque10 from "../../assets/product_images/single plaque/10.jpg";
 
-import barbellholder01 from "../../assets/product_images/barbell holder/01.jpg";
-import barbellholder02 from "../../assets/product_images/barbell holder/02.jpg";
-import barbellholder03 from "../../assets/product_images/barbell holder/03.jpg";
-import barbellholder04 from "../../assets/product_images/barbell holder/04.jpg";
-import barbellholder05 from "../../assets/product_images/barbell holder/05.jpg";
+// import barbellholder01 from "../../assets/product_images/barbell holder/01.jpg";
+// import barbellholder02 from "../../assets/product_images/barbell holder/02.jpg";
+// import barbellholder03 from "../../assets/product_images/barbell holder/03.jpg";
+// import barbellholder04 from "../../assets/product_images/barbell holder/04.jpg";
+// import barbellholder05 from "../../assets/product_images/barbell holder/05.jpg";
 
-import plates01 from "../../assets/product_images/plates/01.jpg";
-import plates02 from "../../assets/product_images/plates/02.jpg";
-import plates03 from "../../assets/product_images/plates/03.jpg";
-import plates04 from "../../assets/product_images/plates/04.jpg";
-import plates05 from "../../assets/product_images/plates/05.jpg";
-import plates06 from "../../assets/product_images/plates/06.jpg";
-import plates07 from "../../assets/product_images/plates/07.jpg";
-import plates08 from "../../assets/product_images/plates/08.jpg";
-import plates09 from "../../assets/product_images/plates/09.jpg";
+// import plates01 from "../../assets/product_images/plates/01.jpg";
+// import plates02 from "../../assets/product_images/plates/02.jpg";
+// import plates03 from "../../assets/product_images/plates/03.jpg";
+// import plates04 from "../../assets/product_images/plates/04.jpg";
+// import plates05 from "../../assets/product_images/plates/05.jpg";
+// import plates06 from "../../assets/product_images/plates/06.jpg";
+// import plates07 from "../../assets/product_images/plates/07.jpg";
+// import plates08 from "../../assets/product_images/plates/08.jpg";
+// import plates09 from "../../assets/product_images/plates/09.jpg";
 
-import boxStand01 from "../../assets/product_images/box_stand/01.jpg";
-import boxStand02 from "../../assets/product_images/box_stand/02.jpg";
-import boxStand03 from "../../assets/product_images/box_stand/03.jpg";
-import boxStand04 from "../../assets/product_images/box_stand/04.jpg";
-import boxStand05 from "../../assets/product_images/box_stand/05.jpg";
-import boxStand06 from "../../assets/product_images/box_stand/06.jpg";
-import boxStand07 from "../../assets/product_images/box_stand/07.jpg";
-import boxStand08 from "../../assets/product_images/box_stand/08.jpg";
-import boxStand09 from "../../assets/product_images/box_stand/09.jpg";
-import boxStand10 from "../../assets/product_images/box_stand/10.jpg";
-import boxStand11 from "../../assets/product_images/box_stand/11.jpg";
-import boxStand12 from "../../assets/product_images/box_stand/12.jpg";
+// import boxStand01 from "../../assets/product_images/box_stand/01.jpg";
+// import boxStand02 from "../../assets/product_images/box_stand/02.jpg";
+// import boxStand03 from "../../assets/product_images/box_stand/03.jpg";
+// import boxStand04 from "../../assets/product_images/box_stand/04.jpg";
+// import boxStand05 from "../../assets/product_images/box_stand/05.jpg";
+// import boxStand06 from "../../assets/product_images/box_stand/06.jpg";
+// import boxStand07 from "../../assets/product_images/box_stand/07.jpg";
+// import boxStand08 from "../../assets/product_images/box_stand/08.jpg";
+// import boxStand09 from "../../assets/product_images/box_stand/09.jpg";
+// import boxStand10 from "../../assets/product_images/box_stand/10.jpg";
+// import boxStand11 from "../../assets/product_images/box_stand/11.jpg";
+// import boxStand12 from "../../assets/product_images/box_stand/12.jpg";
 
-import doubleTripleStandPlaque01 from "../../assets/product_images/double  triple stand plaque/01.jpg";
-import doubleTripleStandPlaque03 from "../../assets/product_images/double  triple stand plaque/03.jpg";
-import doubleTripleStandPlaque04 from "../../assets/product_images/double  triple stand plaque/04.jpg";
-import doubleTripleStandPlaque05 from "../../assets/product_images/double  triple stand plaque/05.jpg";
-// import doubleTripleStandPlaque06 from '../../assets/product_images/double  triple stand plaque/06.jpg'; // Omitted as per screenshot
-import doubleTripleStandPlaque07 from "../../assets/product_images/double  triple stand plaque/07.jpg";
-import doubleTripleStandPlaque08 from "../../assets/product_images/double  triple stand plaque/08.jpg";
-import doubleTripleStandPlaque09 from "../../assets/product_images/double  triple stand plaque/09.jpg";
-import doubleTripleStandPlaque10 from "../../assets/product_images/double  triple stand plaque/10.jpg";
-import doubleTripleStandPlaque11 from "../../assets/product_images/double  triple stand plaque/11.jpg";
+// import doubleTripleStandPlaque01 from "../../assets/product_images/double  triple stand plaque/01.jpg";
+// import doubleTripleStandPlaque03 from "../../assets/product_images/double  triple stand plaque/03.jpg";
+// import doubleTripleStandPlaque04 from "../../assets/product_images/double  triple stand plaque/04.jpg";
+// import doubleTripleStandPlaque05 from "../../assets/product_images/double  triple stand plaque/05.jpg";
+// // import doubleTripleStandPlaque06 from '../../assets/product_images/double  triple stand plaque/06.jpg'; // Omitted as per screenshot
+// import doubleTripleStandPlaque07 from "../../assets/product_images/double  triple stand plaque/07.jpg";
+// import doubleTripleStandPlaque08 from "../../assets/product_images/double  triple stand plaque/08.jpg";
+// import doubleTripleStandPlaque09 from "../../assets/product_images/double  triple stand plaque/09.jpg";
+// import doubleTripleStandPlaque10 from "../../assets/product_images/double  triple stand plaque/10.jpg";
+// import doubleTripleStandPlaque11 from "../../assets/product_images/double  triple stand plaque/11.jpg";
 
-import oldbench01 from "../../assets/product_images/bench old/01.jpg";
-import oldbench02 from "../../assets/product_images/bench old/02.jpg";
-import oldbench04 from "../../assets/product_images/bench old/04.jpg";
-import oldbench05 from "../../assets/product_images/bench old/05.jpg";
-import oldbench06 from "../../assets/product_images/bench old/06.jpg";
-import oldbench07 from "../../assets/product_images/bench old/07.jpg";
-import oldbench08 from "../../assets/product_images/bench old/08.jpg";
-import oldbench10 from "../../assets/product_images/bench old/10.jpg";
-import oldbench11 from "../../assets/product_images/bench old/11.jpg";
-import oldbench12 from "../../assets/product_images/bench old/12.jpg";
-import oldbench13 from "../../assets/product_images/bench old/13.jpg";
+// import old"https://res.cloudinary.com/dkybkcox5/image/upload/v1751899415/01_os8ftd.jpg" from "../../assets/product_images/bench old/01.jpg";
+// import old"https://res.cloudinary.com/dkybkcox5/image/upload/v1751899417/02_ttniug.jpg" from "../../assets/product_images/bench old/02.jpg";
+// import oldbench04 from "../../assets/product_images/bench old/04.jpg";
+// import oldbench05 from "../../assets/product_images/bench old/05.jpg";
+// import oldbench06 from "../../assets/product_images/bench old/06.jpg";
+// import oldbench07 from "../../assets/product_images/bench old/07.jpg";
+// import oldbench08 from "../../assets/product_images/bench old/08.jpg";
+// import oldbench10 from "../../assets/product_images/bench old/10.jpg";
+// import oldbench11 from "../../assets/product_images/bench old/11.jpg";
+// import oldbench12 from "../../assets/product_images/bench old/12.jpg";
+// import oldbench13 from "../../assets/product_images/bench old/13.jpg";
 
-import barbell_plates_01 from "../../assets/product_images/barbell, plates and clips/barbell_plates_01.jpg";
-import barbell_plates_02 from "../../assets/product_images/barbell, plates and clips/barbell_plates_02.jpg";
-import barbell_plates_03 from "../../assets/product_images/barbell, plates and clips/barbell_plates_03.jpg";
-import barbell_plates_04 from "../../assets/product_images/barbell, plates and clips/barbell_plates_04.jpg";
-import barbell_plates_05 from "../../assets/product_images/barbell, plates and clips/barbell_plates_05.jpg";
-import barbell_plates_06 from "../../assets/product_images/barbell, plates and clips/barbell_plates_06.jpg";
-import barbell_plates_07 from "../../assets/product_images/barbell, plates and clips/barbell_plates_07.jpg";
-import barbell_plates_08 from "../../assets/product_images/barbell, plates and clips/barbell_plates_08.jpg";
-import barbell_plates_09 from "../../assets/product_images/barbell, plates and clips/barbell_plates_09.jpg";
-import barbell_plates_10 from "../../assets/product_images/barbell, plates and clips/barbell_plates_10.jpg";
-import barbell_plates_11 from "../../assets/product_images/barbell, plates and clips/barbell_plates_11.jpg";
+// import barbell_plates_01 from "../../assets/product_images/barbell, plates and clips/barbell_plates_01.jpg";
+// import barbell_plates_02 from "../../assets/product_images/barbell, plates and clips/barbell_plates_02.jpg";
+// import barbell_plates_03 from "../../assets/product_images/barbell, plates and clips/barbell_plates_03.jpg";
+// import barbell_plates_04 from "../../assets/product_images/barbell, plates and clips/barbell_plates_04.jpg";
+// import barbell_plates_05 from "../../assets/product_images/barbell, plates and clips/barbell_plates_05.jpg";
+// import barbell_plates_06 from "../../assets/product_images/barbell, plates and clips/barbell_plates_06.jpg";
+// import barbell_plates_07 from "../../assets/product_images/barbell, plates and clips/barbell_plates_07.jpg";
+// import barbell_plates_08 from "../../assets/product_images/barbell, plates and clips/barbell_plates_08.jpg";
+// import barbell_plates_09 from "../../assets/product_images/barbell, plates and clips/barbell_plates_09.jpg";
+// import barbell_plates_10 from "../../assets/product_images/barbell, plates and clips/barbell_plates_10.jpg";
+// import barbell_plates_11 from "../../assets/product_images/barbell, plates and clips/barbell_plates_11.jpg";
 
-import deadliftvideo from "../../assets/product_images/deadlift/vid_01.mp4";
+// import deadliftvideo from "../../assets/product_images/deadlift/vid_01.mp4";
 
 const allProducts = [
   {
@@ -140,16 +140,16 @@ const allProducts = [
     originalPrice: 1300,
     discount: "31%",
     stock: "Limited Stock",
-    image: coaster01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg",
     ratingCount: 8,
     description: "Functional art for lifters who appreciate the grind",
     additionalImages: [
-      coaster01,
-      coaster02,
-      coaster03,
-      coaster04,
-      coaster05,
-      coaster06,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894338/02_d8ja8h.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894337/03_ncsr72.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894339/04_z2fvwb.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894337/05_khfilo.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894338/06_dhubl1.jpg",
     ],
     longDescription: `Give your space that hardcore gym vibe without sacrificing function. These 3D-printed coasters capture every detail of real sleds - from textured surfaces to weighted proportions. They're conversation starters that protect surfaces while reminding you of the burn.`,
     specs: {
@@ -159,7 +159,7 @@ const allProducts = [
       weight: "35g each",
       finish: "Matte texture with rubberized base",
     },
-    videos: [benchvideo2],
+    videos: [],
   },
   {
     id: 114,
@@ -169,16 +169,16 @@ const allProducts = [
     originalPrice: 999,
     discount: "25%",
     stock: "In Stock",
-    image: coaster01,
+    image:  "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg",
     ratingCount: 8,
     description: "Functional art for lifters who appreciate the grind",
     additionalImages: [
-      coaster01,
-      coaster02,
-      coaster03,
-      coaster04,
-      coaster05,
-      coaster06,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894338/02_d8ja8h.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894337/03_ncsr72.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894339/04_z2fvwb.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894337/05_khfilo.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894338/06_dhubl1.jpg",
     ],
     longDescription: `Give your space that hardcore gym vibe without sacrificing function. These 3D-printed coasters capture every detail of real sleds - from textured surfaces to weighted proportions. They're conversation starters that protect surfaces while reminding you of the burn.`,
     specs: {
@@ -187,8 +187,7 @@ const allProducts = [
       dimensions: "mini sled : 11cm x 7.5cm , coasters diameter : 8.5cm",
       weight: "35g each",
       finish: "Matte plastic base",
-    },
-    videos: [benchvideo2],
+    }
   },
   {
     id: 103,
@@ -198,10 +197,10 @@ const allProducts = [
     originalPrice: 99,
     discount: "30%",
     stock: "In Stock",
-    image: plates02,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898821/barbell_plates_02_n3z4up.jpg",
     ratingCount: 12,
     description: "Your lifting spirit in pocket-sized form",
-    additionalImages: [plates02],
+    additionalImages: ["https://res.cloudinary.com/dkybkcox5/image/upload/v1751898821/barbell_plates_02_n3z4up.jpg"],
     longDescription: `Never leave your gym mindset behind. This precision-printed miniature gym plate keychain. Tough enough for daily use, meaningful enough to remind you of your next PR. Attach to keys, bags, or gym tags.`,
     specs: {
       quantity: "1 keychain",
@@ -210,7 +209,7 @@ const allProducts = [
       weight: "18g",
       finish: "Textured mini plastic plates",
     },
-    videos: [benchvideo2],
+    videos: [""],
   },
   {
     id: 104,
@@ -220,10 +219,10 @@ const allProducts = [
     originalPrice: 2999,
     discount: "17%",
     stock: "Limited Stock",
-    image: bench01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899415/01_os8ftd.jpg",
     ratingCount: 10,
     description: "More gear, less cash - the smart lifter's bundle",
-    additionalImages: [bench01],
+    additionalImages: ["https://res.cloudinary.com/dkybkcox5/image/upload/v1751899415/01_os8ftd.jpg"],
     longDescription: `Why buy single pieces when you can own the complete set? This bundle combines our top-selling mini gear at 15% off. Perfect for gifting or treating yourself. Display together for an instant gym vibe on your desk or shelf.`,
     specs: {
       quantity: "Keychain + coasters + display stand",
@@ -231,7 +230,7 @@ const allProducts = [
       dimensions: "Varies by item",
       weight: "Approx. 150g total",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 105,
@@ -241,22 +240,22 @@ const allProducts = [
     originalPrice: 430,
     discount: "30%",
     stock: "Few Left",
-    image: boxStand01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898418/01_egwjv0.jpg",
     ratingCount: 3,
     description: "Elevate your mini gear in style",
     additionalImages: [
-      boxStand01,
-      boxStand02,
-      boxStand03,
-      boxStand04,
-      boxStand05,
-      boxStand06,
-      boxStand07,
-      boxStand08,
-      boxStand09,
-      boxStand10,
-      boxStand11,
-      boxStand12,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898418/01_egwjv0.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898418/01_egwjv0.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898419/03_pmn8k2.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898420/04_xbrmye.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898421/05_sl0pdf.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898421/06_yqe6mh.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898421/06_yqe6mh.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898420/08_k7d0sd.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898421/09_dwbm2w.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898425/10_ecqcwe.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898425/10_ecqcwe.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898427/12_gjoc6u.jpg",
     ],
     longDescription: `The foundation every mini gym needs. This versatile stand gives your mini barbell with mini plates the presentation they deserve. Sized for stability with to present your mini barbell set like a trophy`,
     specs: {
@@ -266,7 +265,7 @@ const allProducts = [
       weight: "50g",
       finish: "Matte texture",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 106,
@@ -276,21 +275,21 @@ const allProducts = [
     originalPrice: 1299,
     discount: "23%",
     stock: "In Stock",
-    image: barbell_plates_01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898820/barbell_plates_01_zjejfu.jpg",
     ratingCount: 4,
     description: "The centerpiece of any mini gym setup",
     additionalImages: [
-      barbell_plates_01,
-      barbell_plates_02,
-      barbell_plates_03,
-      barbell_plates_04,
-      barbell_plates_05,
-      barbell_plates_06,
-      barbell_plates_07,
-      barbell_plates_08,
-      barbell_plates_09,
-      barbell_plates_10,
-      barbell_plates_11,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898820/barbell_plates_01_zjejfu.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898821/barbell_plates_02_n3z4up.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898823/barbell_plates_03_loxzk9.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898825/barbell_plates_04_y9zugz.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898827/barbell_plates_05_qgsgus.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898828/barbell_plates_06_y8falf.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898829/barbell_plates_07_lftqi8.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898832/barbell_plates_08_uzcszo.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898832/barbell_plates_08_uzcszo.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898832/barbell_plates_08_uzcszo.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg",
     ],
     longDescription: `Crafted to exacting standards at 1:12 scale. Features proper sleeve detailing and balanced weight distribution. Pairs perfectly with our racks and stands - ready for your PR display.`,
     specs: {
@@ -300,7 +299,7 @@ const allProducts = [
       weight: "40g",
       finish: "Smooth shaft with textured sleeves",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 107,
@@ -310,19 +309,19 @@ const allProducts = [
     originalPrice: 599,
     discount: "35%",
     stock: "In Stock",
-    image: plates01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899219/01_pvllnw.jpg",
     ratingCount: 4,
     description: "Load your bar with realistic detail",
     additionalImages: [
-      plates01,
-      plates02,
-      plates03,
-      plates04,
-      plates05,
-      plates06,
-      plates07,
-      plates08,
-      plates09,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899219/01_pvllnw.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899220/02_r1bza9.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899220/03_tfexig.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899220/04_rkveuy.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899223/05_uc7viw.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899220/06_gn0lsa.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899223/07_xlscjg.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899223/07_xlscjg.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899223/09_rbkgmj.jpg",
     ],
     longDescription: `Authentic miniature weight plates scaled to perfection. Mix and match colors to recreate your real-life PRs. Fits all our barbells snugly. Includes plate stand for organized display.`,
     specs: {
@@ -330,7 +329,7 @@ const allProducts = [
       dimensions: "2.1 cm to 4.5 cm diameter for",
       weight: "10g per plate",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 108,
@@ -340,28 +339,28 @@ const allProducts = [
     originalPrice: 1199,
     discount: "25%",
     stock: "Few Left",
-    image: bench01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899415/01_os8ftd.jpg",
     ratingCount: 7,
     description: "Your complete home gym in miniature",
     additionalImages: [
-      bench01,
-      bench02,
-      bench03,
-      bench04,
-      bench05,
-      bench06,
-      bench07,
-      bench08,
-      bench09,
-      bench10,
-      bench11,
-      bench12,
-      bench13,
-      bench14,
-      bench15,
-      bench16,
-      bench17,
-      bench18,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899415/01_os8ftd.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899417/02_ttniug.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899418/03_ikhedw.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899420/04_d2hdic.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899418/05_d4vqv5.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899419/06_us2eqv.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899419/07_kxguct.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899421/08_xqy2mx.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899421/09_lwjdw2.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899420/10_repulh.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899421/11_ija3ro.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899422/12_z5bnf3.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899421/13_barbell_txdfji.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899421/13_barbell_txdfji.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899422/15_wlfjfs.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899422/15_wlfjfs.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899424/17_ibl7ah.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899424/17_ibl7ah.jpg",
     ],
     longDescription: `The ultimate starter kit - miniature bench, miniature barbell, miniature plate stand AND 4 miniature plates included. Assembles in seconds, impresses forever. Display your lifting passion without taking up real gym space.`,
     specs: {
@@ -371,7 +370,7 @@ const allProducts = [
       dimensions: "16.6 cm length x 10.1 cm height",
       weight: "140g",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4,","https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 109,
@@ -381,15 +380,15 @@ const allProducts = [
     originalPrice: 250,
     discount: "36%",
     stock: "In Stock",
-    image: barbellholder01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899814/01_bcmm19.jpg",
     ratingCount: 5,
     description: "Showcase your bar between PRs",
     additionalImages: [
-      barbellholder01,
-      barbellholder02,
-      barbellholder03,
-      barbellholder04,
-      barbellholder05,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899814/01_bcmm19.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899814/01_bcmm19.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899814/03_mezyxc.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899815/04_hphmd7.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899816/05_pgrxjc.jpg",
     ],
     longDescription: `Designed with the same attention as the real gear. Grips your barbell securely at perfect display height. Clean lines complement any setup. A must-have for serious collectors.`,
     specs: {
@@ -399,7 +398,7 @@ const allProducts = [
       weight: "25g",
       finish: "Matte gray",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 118,
@@ -409,21 +408,21 @@ const allProducts = [
     originalPrice: 1199,
     discount: "25%",
     stock: "Few Left",
-    image: oldbench01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899928/01_jd8yp7.jpg",
     ratingCount: 7,
     description: "Your complete home gym in miniature",
     additionalImages: [
-      oldbench01,
-      oldbench02,
-      oldbench04,
-      oldbench05,
-      oldbench06,
-      oldbench07,
-      oldbench08,
-      oldbench10,
-      oldbench11,
-      oldbench12,
-      oldbench13,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899928/01_jd8yp7.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899928/01_jd8yp7.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899931/04_r487zi.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899931/05_ait6bn.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899930/06_xfgaga.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899930/06_xfgaga.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899931/08_k9eomo.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899932/10_x8pe8m.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899933/11_loqnwv.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899933/11_loqnwv.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899933/13_i9w5zg.jpg",
     ],
     longDescription: `The ultimate starter kit - miniature bench, miniature barbell, miniature plate stand AND 4 miniature plates included. Assembles in seconds, impresses forever. Display your lifting passion without taking up real gym space.`,
     specs: {
@@ -433,7 +432,7 @@ const allProducts = [
       dimensions: "16.6 cm length x 10.1 cm height",
       weight: "140g",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 110,
@@ -443,21 +442,21 @@ const allProducts = [
     originalPrice: 689,
     discount: "38%",
     stock: "Few Left",
-    image: barbell_plates_01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901785/barbell_plates_01_iylp7d.jpg",
     ratingCount: 7,
     description: "The dream team for rack owners",
     additionalImages: [
-      barbell_plates_01,
-      barbell_plates_02,
-      barbell_plates_03,
-      barbell_plates_04,
-      barbell_plates_05,
-      barbell_plates_06,
-      barbell_plates_07,
-      barbell_plates_08,
-      barbell_plates_09,
-      barbell_plates_10,
-      barbell_plates_11,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901785/barbell_plates_01_iylp7d.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901826/barbell_plates_02_kyupm6.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901824/barbell_plates_03_rzzx35.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901824/barbell_plates_03_rzzx35.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901797/barbell_plates_05_irepvd.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901798/barbell_plates_06_m6bs14.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901817/barbell_plates_07_owmcqr.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901797/barbell_plates_08_upqvqo.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901798/barbell_plates_09_lgdwjy.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901822/barbell_plates_10_kzgrgv.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901824/barbell_plates_11_momf5c.jpg",
     ],
     longDescription: `Complete your setup with our most popular combo. mini barbell features realistic size while mini plates slides on smoothly. Display together or mix with other gear. Includes complimentary mini plate stand.`,
     specs: {
@@ -467,7 +466,7 @@ const allProducts = [
       dimensions: "Barbell: 21.8 cm | Plates: 2.1-4.5 cm",
       weight: "130g",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 111,
@@ -477,20 +476,20 @@ const allProducts = [
     originalPrice: 899,
     discount: "44%",
     stock: "In Stock",
-    image: singlePlaque01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902121/01_evqhq9.jpg",
     ratingCount: 5,
     description: "Your PR immortalized in 3D",
     additionalImages: [
-      singlePlaque01,
-      singlePlaque02,
-      singlePlaque03,
-      singlePlaque04,
-      singlePlaque05,
-      singlePlaque06,
-      singlePlaque07,
-      singlePlaque08,
-      singlePlaque09,
-      singlePlaque10,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902121/01_evqhq9.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902129/02_p7cip1.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902123/03_nzmjh0.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902123/03_nzmjh0.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902117/05_aoswr8.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902119/06_llsjav.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902118/07_ajyoeo.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902120/08_rp67j0.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902122/09_z2qyxz.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902122/10_txd2mm.jpg",
     ],
     longDescription: `Celebrate your achievements in style. Features fixed miniature barbell with your choice of lift name and weight. Stands upright with included holder. The perfect reminder of what you're capable of.`,
     specs: {
@@ -500,7 +499,7 @@ const allProducts = [
       dimensions: "acrylic plaque : 22.8 cm x 14 cm",
       weight: "120g",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 112,
@@ -510,19 +509,19 @@ const allProducts = [
     originalPrice: 1200,
     discount: "33%",
     stock: "Limited Stock",
-    image: doubleTripleStandPlaque01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902455/01_xt9w3i.jpg",
     ratingCount: 6,
     description: "The holy trinity of strength",
     additionalImages: [
-      doubleTripleStandPlaque01,
-      doubleTripleStandPlaque03,
-      doubleTripleStandPlaque04,
-      doubleTripleStandPlaque05,
-      doubleTripleStandPlaque07,
-      doubleTripleStandPlaque08,
-      doubleTripleStandPlaque09,
-      doubleTripleStandPlaque10,
-      doubleTripleStandPlaque11,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902455/01_xt9w3i.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902416/03_wbeu8f.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902416/03_wbeu8f.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902432/05_ke9p3j.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902466/07_xq8co0.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902466/07_xq8co0.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902466/07_xq8co0.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902431/10_d652nm.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902448/11_iudgpv.jpg",
     ],
     longDescription: `Squat, bench, and deadlift together at last. Three beautifully crafted miniature barbells mounted on a single acrylic plaque. Includes bonus mini barbell holder & mini plate holder - because every lifter needs a spare. Command attention wherever you display it.`,
     specs: {
@@ -532,7 +531,7 @@ const allProducts = [
       dimensions: "acrylic plaque : 25.4 cm x 22.8 cm",
       weight: "190g",
     },
-    videos: [benchvideo2],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 113,
@@ -542,28 +541,28 @@ const allProducts = [
     originalPrice: 899,
     discount: "44%",
     stock: "Few Left",
-    image: deadlift01,
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893420/01_shxcaz.jpg",
     ratingCount: 4,
     description: "Where PRs become permanent",
     additionalImages: [
-      deadlift01,
-      deadlift02,
-      deadlift03,
-      deadlift04,
-      deadlift05,
-      deadlift06,
-      deadlift07,
-      deadlift08,
-      deadlift10,
-      deadlift11,
-      deadlift12,
-      deadlift13,
-      deadlift14,
-      deadlift15,
-      deadlift16,
-      deadlift17,
-      deadlift18,
-      deadlift19,
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893420/01_shxcaz.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893424/02_x7riv6.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893420/03_m3ewbh.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893421/04_fmpjkq.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893422/05_ean8vi.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893426/06_wd7xkw.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893423/07_nlsbvz.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893424/08_zjcq9q.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893425/10_gcg3hg.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893425/11_npxuk3.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893426/12_grehlt.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893427/13_qbjdnd.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893428/14_hmqnxw.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893428/14_hmqnxw.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893433/16_xipo14.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893433/16_xipo14.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893429/18_qpugcn.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893440/19_ozu4rw.jpg",
     ],
     longDescription: `Recreate your heaviest pulls in miniature. Choose your favorite plate colors, customize the weight tag, and display with the included vertical stand. Detachable mini barbell and mini barbell holder lets you change configurations.`,
     specs: {
@@ -572,7 +571,7 @@ const allProducts = [
       dimensions: "20 cm x 10 cm",
       weight: "150g",
     },
-    videos: [deadliftvideo],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
 ];
 

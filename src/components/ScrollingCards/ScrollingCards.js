@@ -7,13 +7,6 @@ import logocoll from '../../assets/sample.jpg'
 
 
 
-import sample1 from '../../assets/testimonials/sample1.png'
-import sample2 from '../../assets/testimonials/sample2.png';
-import sample3 from '../../assets/testimonials/sample3.png';
-import sample4 from '../../assets/testimonials/sample4.png';
-
-
-import samplereel from '../../assets/reels/samplereel.mp4'
 
 const ScrollingCards = () => {
   const scrollRef = useRef(null);
@@ -21,8 +14,7 @@ const ScrollingCards = () => {
   {
     name: "Aman R.",
     feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
+    video: "https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4",
   }
 
 
@@ -54,48 +46,12 @@ const ScrollingCards = () => {
   ,{
     name: "Aman R.",
     feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
+    video: "https://res.cloudinary.com/dkybkcox5/video/upload/v1751898745/vid_01_pdxiex.mp4",
+    
   },{
     name: "Aman R.",
     feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
-  },{
-    name: "Aman R.",
-    feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
-  },{
-    name: "Aman R.",
-    feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
-  },{
-    name: "Aman R.",
-    feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
-  },{
-    name: "Aman R.",
-    feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
-  },{
-    name: "Aman R.",
-    feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
-  },{
-    name: "Aman R.",
-    feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
-  },{
-    name: "Aman R.",
-    feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-    image: sample1,
-    video:samplereel
+    video:"https://res.cloudinary.com/dkybkcox5/video/upload/v1751893470/vid_01_oal6o2.mp4"
   }
 ];
 
@@ -110,7 +66,7 @@ const ScrollingCards = () => {
   return (
     <section className="horizontal-scroll-section"> {/* Changed wrapper class */}
     <h2 className="section-title plusnew finaleditoftitle" style={{marginTop:'-6px'}}>SPOTLIGHT REELS</h2>
-      <div className="horizontal-scroll-container"> {/* Added container */}
+      <div className="horizontal-scroll-container" style={{justifyContent:'center'}}> {/* Added container */}
         <div className="scroll-cards-wrapper" ref={scrollRef}>
           {scrollItems.map((item, index) => (
             <div key={index} className="scroll-card">

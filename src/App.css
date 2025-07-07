@@ -261,3 +261,26 @@ body {
   overflow-x: hidden;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+img {
+  max-width: 100%; /* Ensures images scale down if container is smaller */
+  height: auto;    /* Maintains aspect ratio when scaling, prevents distortion */
+  display: block;  /* Removes extra space below images (common issue) */
+
+  /* Optional: Enhance visual quality for scaling, but browser default is usually good */
+  /* image-rendering: -webkit-optimize-contrast; */ /* For WebKit browsers */
+  /* image-rendering: crisp-edges; */               /* For pixel art, not general photos */
+  /* image-rendering: pixelated; */                  /* For pixel art, not general photos */
+  /* image-rendering: auto; */                      /* Default - usually best */
+}
