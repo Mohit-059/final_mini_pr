@@ -39,7 +39,7 @@ const Header = () => {
     <header className="fashion-header">
       <div className="top-bar">
         <Link to="/" className="logo-link">
-          <span className="logo"><img src={logo} alt="Dripstore Logo" /></span>
+          <span className="logo"><img src="https://res.cloudinary.com/dkybkcox5/image/upload/v1751921817/logo_avk7bw.png" alt="Dripstore Logo" /></span>
           <span className="logo-part-2">THE</span>
           <span className="logo-part-1">MINI </span>
           <span className="logo-part-2">PR</span>
