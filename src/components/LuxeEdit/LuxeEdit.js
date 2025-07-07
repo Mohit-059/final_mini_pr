@@ -10,11 +10,11 @@ import luxeEdit1 from '../../assets/images/LuxeEdit.jpg'
 import luxeEdit2 from '../../assets/images/LuxeEdit1.jpg'
 import luxeEdit from '../../assets/images/newtry.jpg'
 
-import coasters from '../../assets/card_images/sledco.png'
+// import coasters from '../../assets/card_images/sledco.png'
 
-import LuxeEdit4 from '../../assets/images/LuxeEdit4.jpg'
+// import LuxeEdit4 from '../../assets/images/LuxeEdit4.jpg'
 
-import barbell from '../../assets/card_images/barbell.png'
+// import barbell from '../../assets/card_images/barbell.png'
 
 const LuxeEdit = () => {
   const luxeItems = [
