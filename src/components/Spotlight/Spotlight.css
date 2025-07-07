@@ -1,0 +1,76 @@
+.spotlight {
+  background: #000;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.section-title.plusnew {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+/* Grid Layout */
+.spotlight-gridd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Testimonial Cards */
+.spotlight-card {
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.03), rgba(255,255,255,0.06));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.05);
+  border-radius: 18px;
+  padding: 30px 24px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: default;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.2);
+}
+
+.spotlight-card h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #f1f1f1;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.discount {
+  color: #d4af37;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .spotlight-card {
+    width: 90%;
+  }
+
+  .section-title.plusnew {
+    font-size: 2rem;
+    margin-top: -60px;
+  }
+}

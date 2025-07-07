@@ -1,0 +1,261 @@
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  max-height: 650px;
+  overflow: hidden;
+  background-color: var(--primary-black);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-image-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-black);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+  display: block;
+}
+
+.hero-banner:hover .hero-image {
+  transform: scale(1.03);
+}
+
+/* Navigation Arrows - Desktop Only */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: white;
+  background: transparent;
+  border: 1.8px solid #ccc;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.arrow:hover {
+  border-color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+  left: 2%;
+}
+
+.right-arrow {
+  right: 2%;
+}
+
+/* Dots */
+.dot-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #999;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+/* Mobile Style Fixes */
+@media (max-width: 768px) {
+  .hero-banner {
+    height: auto;
+    max-height: none;
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .hero-image-container {
+    height: auto;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    background-color: black;
+    margin: auto;
+    display: block;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .dot-container {
+    bottom: 15px;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-banner {
+    height: 70vh;
+    max-height: 600px;
+  }
+
+  .hero-image {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+
+
+
+@media (min-width: 777px) and (max-width: 1261px) {
+  .hero-banner {
+    height: 70vh;
+    max-height: 580px;
+  }
+
+  .hero-image {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 2.2rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (min-width: 777px) and (max-width: 1061px) {
+  .hero-image {
+    object-fit: contain !important;
+    height: auto !important;
+    max-height: 70vh;
+    background-color: black;
+    display: block;
+    margin: auto;
+  }
+
+  .hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-banner {
+    height: auto;
+    max-height: none;
+  }
+
+  .arrow {
+    display: none !important;
+  }
+}
+
+
+
+.hero-banner {
+  margin-top: 110px; /* match the height of your fixed header */
+}
+@media (max-width: 768px) {
+  .hero-banner {
+    margin-top: 80px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.scrolling-offer-strip {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(145deg, #a1c4fd, #c2e9fb);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+}
+
+.scrolling-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 15s linear infinite;
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Optional: Responsive tweak for smaller screens */
+@media (max-width: 768px) {
+
+  .scrolling-offer-strip{
+    height: 0px;
+  }
+
+  .scrolling-text {
+    font-size: 11px;
+  }
+}

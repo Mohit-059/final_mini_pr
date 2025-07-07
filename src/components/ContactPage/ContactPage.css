@@ -1,0 +1,136 @@
+/* ContactPage.css */
+
+.contact-page {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.contact-card {
+  background: linear-gradient(to bottom right, #111, #1a1a1a);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.07);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 0 45px rgba(212, 175, 55, 0.2);
+}
+
+.contact-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.contact-brand {
+  font-size: 1.8rem;
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.contact-tagline {
+  color: #aaa;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.contact-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-socials a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-socials a:hover {
+  color: gold;
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .contact-brand {
+    font-size: 1.5rem;
+  }
+
+  .contact-tagline {
+    font-size: 0.95rem;
+  }
+
+  .contact-socials a {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Limit max height and auto-crop on screen resize while keeping margin */
+.contact-page {
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Extra small screens fix */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 40px 16px;
+    max-height: none;
+    overflow: auto;
+  }
+}
+.contact-page {
+  height: 100vh;
+  overflow: hidden;
+  padding: 40px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000; /* ensure it's consistent */
+  box-sizing: border-box;
+}
+
+/* Optional: Shrink padding on mobile for even tighter crop */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 24px 10px;
+    height: 100dvh;
+    overflow-y: auto;
+  }
+}

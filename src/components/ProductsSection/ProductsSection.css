@@ -1,0 +1,237 @@
+.hot-products-section {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.hot-section-header {
+  margin-bottom: 40px;
+}
+
+.hot-grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.hot-card {
+  background: #111;
+  border-radius: 16px;
+  width: 240px;
+  max-width: 280px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hot-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 30px rgba(212, 175, 55, 0.2);
+}
+
+.hot-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hot-card-content {
+  padding: 16px;
+}
+
+.hot-badge {
+  background: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hot-title {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.hot-price {
+  color: #d4af37;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* All Products Card */
+.hot-view-all {
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.hot-view-all:hover {
+  background: #d4af37;
+  color: #000;
+  transform: translateY(-6px);
+}
+
+.hot-view-all .hot-title {
+  color: #ffd700;
+}
+
+.hot-view-all .hot-price {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hot-grid-wrapper {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+
+  .hot-grid-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hot-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+}
+
+
+.hot-products-section {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.hot-section-header {
+  margin-bottom: 40px;
+}
+
+.hot-grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Product Card Base */
+.hot-card {
+  background: #111;
+  border-radius: 16px;
+  width: 240px;
+  max-width: 280px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.hot-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 30px rgba(212, 175, 55, 0.2);
+}
+
+.hot-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hot-card-content {
+  padding: 16px;
+}
+
+.hot-badge {
+  background: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hot-title {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.hot-price {
+  color: #d4af37;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* All Products Card */
+.hot-view-all {
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  text-align: center;
+}
+
+.hot-view-all:hover {
+  background: #d4af37;
+  color: #000;
+  transform: translateY(-6px);
+}
+
+.hot-view-all .hot-title {
+  color: #ffd700;
+}
+
+.hot-view-all .hot-price {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* === Mobile Scroll: Only enable on smaller screens === */
+@media (max-width: 768px) {
+  .hot-grid-wrapper {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hot-grid-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hot-card {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+}

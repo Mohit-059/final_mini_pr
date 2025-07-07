@@ -1,0 +1,128 @@
+.products-page {
+  padding: 60px 20px;
+  background: #000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 50px;
+}
+
+.category-section {
+  margin-bottom: 60px;
+}
+
+.category-heading {
+  font-size: 2.2rem;
+  color: #d4af37;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+
+.category-subtitle {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  font-style: italic;
+}.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .product-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 10px 20px 10px;
+    justify-content: flex-start;
+  }
+
+  .product-row > * {
+    min-width: 260px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  .product-row::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .product-row::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 5px;
+  }
+}
+
+
+
+
+
+.products-page h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #d4af37;
+  font-weight: 800;
+  margin-bottom: 0.3em;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.products-page p {
+  text-align: center;
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 2.5rem;
+}
+
+/* === GRID WRAPS ON DESKTOP, SCROLLS ON MOBILE === */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+  }
+
+  .card {
+    min-width: 260px;
+    scroll-snap-align: start;
+  }
+
+  .products-grid::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.products-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main-product-heading {
+  font-size: 38px;
+  font-weight: 700;
+  color: #aaaaaa;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  margin-top: 40px;
+}
+
+.main-product-subheading {
+  font-size: 16px;
+  color: #aaa;
+  margin-top: 10px;
+}

@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 101,
+      "image": "/assets/images/power_sled_coasters.png",
+      "brand": "GYM INSPIRED",
+      "name": "POWER SLED COASTERS",
+      "price": 1499,
+      "originalPrice": 2000,
+      "discount": "25%",
+      "ratingCount": 8,
+      "stock": "Limited Stock",
+      "description": "Own your strength with premium mini power sled coasters.",
+      "additionalImages": [
+        "/assets/images/power_sled_coasters_1.png",
+        "/assets/images/power_sled_coasters_2.jpg"
+      ]
+    },
+    {
+      "id": 102,
+      "image": "/assets/images/mini_power_rack.jpg",
+      "brand": "PR TRACKER",
+      "name": "MINI POWER RACK",
+      "price": 1200,
+      "originalPrice": 1599,
+      "discount": "25%",
+      "ratingCount": 6,
+      "stock": "Only 5 Left",
+      "description": "Elevate with a compact mini power rack for PR tracking.",
+      "additionalImages": [
+        "/assets/images/mini_power_rack_1.jpg",
+        "/assets/images/mini_power_rack_2.jpg"
+      ]
+    },
+    {
+      "id": 103,
+      "image": "/assets/images/dumbbell_keychain.jpg",
+      "brand": "ACCESSORIES",
+      "name": "MINI DUMBBELL KEYCHAIN",
+      "price": 499,
+      "originalPrice": 699,
+      "discount": "30%",
+      "ratingCount": 12,
+      "stock": "In Stock",
+      "description": "Show strength with a premium mini dumbbell keychain.",
+      "additionalImages": [
+        "/assets/images/dumbbell_keychain_1.jpg",
+        "/assets/images/dumbbell_keychain_2.jpg"
+      ]
+    },
+    {
+      "id": 104,
+      "image": "/assets/images/pr_tracker_combo.jpg",
+      "brand": "COMBO DEALS",
+      "name": "PR TRACKER COMBO",
+      "price": 2499,
+      "originalPrice": 2999,
+      "discount": "15%",
+      "ratingCount": 10,
+      "stock": "Limited Stock",
+      "description": "Ultimate PR tracker combo for unforgettable lifts.",
+      "additionalImages": [
+        "/assets/images/pr_tracker_combo_1.jpg",
+        "/assets/images/pr_tracker_combo_2.jpg"
+      ]
+    }
+  ]
+}

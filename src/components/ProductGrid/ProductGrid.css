@@ -1,0 +1,163 @@
+/* SECTION LAYOUT */
+.product-grid-section {
+  background: #000;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #d4af37; /* LUXURY GOLD */
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+/* MAIN SCROLL AREA */
+.product-scroll-container {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.product-scroll-wrapper {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  flex: 1;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.product-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD GRID */
+.product-cards-container {
+  display: flex;
+  gap: 32px;
+  padding: 10px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+/* CARD WRAPPER */
+.product-card-wrapper {
+  min-width: 260px;
+  max-width: 280px;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+  position: relative;
+}
+
+/* CARD STYLES */
+.product-card-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top right, rgba(255, 255, 255, 0.02), rgba(212, 175, 55, 0.08));
+  border-radius: 16px;
+  z-index: -1;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.06);
+  backdrop-filter: blur(4px);
+}
+
+/* SCROLL BUTTONS */
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #d4af37;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.15);
+}
+
+.scroll-button:hover {
+  background: rgba(212, 175, 55, 0.15);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.scroll-button.left {
+  left: -20px;
+}
+
+.scroll-button.right {
+  right: -20px;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 1024px) {
+  .product-cards-container {
+    gap: 24px;
+  }
+
+  .scroll-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .product-card-wrapper {
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid-section {
+    padding: 40px 10px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-top: -60px;
+  }
+
+  .scroll-button.left {
+    left: 5px;
+  }
+
+  .scroll-button.right {
+    right: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-titlee{
+  margin-top: -16px;
+}

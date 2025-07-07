@@ -1,0 +1,149 @@
+#contact {
+  padding: 80px 20px;
+  background: #000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.section-title.finalminus {
+  text-align: center;
+  color: #d4af37;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  letter-spacing: 1px;
+}
+
+.contactSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lottieWrapper {
+  width: 100%;
+  max-width: 450px;
+  filter: brightness(1.2) saturate(1.3) contrast(1.1) hue-rotate(190deg);
+  /* Makes it cooler blue-gray tone */
+}
+
+.formBox {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  width: 100%;
+  max-width: 500px;
+  color: #fff;
+}
+
+.inputRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.inputRow input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-size: 0.95rem;
+  border: none;
+  outline: none;
+}
+
+.fullWidth {
+  width: 89%;
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-size: 0.95rem;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+}
+
+.buttonRow {
+  text-align: right;
+}
+
+.buttonRow button {
+  padding: 12px 26px;
+  background: #d4af37;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buttonRow button:hover {
+  background: #f7d774;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive: Mobile or small screen fallback */
+@media (max-width: 850px) {
+  .contactSection {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    flex: 1 1 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .buttonRow {
+    text-align: center;
+  }
+
+  .buttonRow button {
+    width: 100%;
+  }
+
+  .inputRow {
+    flex-direction: column;
+  }
+
+  .inputRow input {
+    width: 89%;
+  }
+}
