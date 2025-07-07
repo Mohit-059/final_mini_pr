@@ -21,13 +21,13 @@ const LuxeEdit = () => {
     {
       title: "What you lifted is history. What it meant? That’s what we frame.",
       image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751920727/newtry_ko5s3w.jpg"
-    },{
-      title: "Miss the gym? Keep its mindset on your desk.",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921201/newtrying_gylbae.jpg"
     },
     {
       title: "That one lift changed you. We just make sure it stays close.",
       image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751920726/LuxeEdit_zwklvr.jpg"
+    },{
+      title: "Miss the gym? Keep its mindset on your desk.",
+      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921201/newtrying_gylbae.jpg"
     },
     
     {

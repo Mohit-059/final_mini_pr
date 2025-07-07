@@ -16,12 +16,12 @@ const CategoryGrid = () => {
     {
       name: "PR-TRACKERS",
       discount: "Mini setups to track your Personal Records",
-      image: benchh
+      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921665/finalll_ai8vkt.jpg"
     },
     {
       name: "GYM-INSPIRED ESSENTIALS",
       discount: "Useful everyday items redesigned",
-      image: sled
+      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921667/sled333_rlng7b.jpg"
     },
     {
       name: "ACCESSORIES",
@@ -31,11 +31,11 @@ const CategoryGrid = () => {
     {
       name: "LIMITED TIME COMBO DEALS",
       discount: "Special Combos for you, make your money worth",
-      image: one
+      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921715/barbell_plates_08_b243s4.jpg"
     },
     {
       name:"EXTRAS",
-      image: plates
+      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921674/plates_ekrcid.png"
     },
     {
       name:"All Products",
