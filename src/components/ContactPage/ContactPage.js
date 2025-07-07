@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContactPage.css';
-import { FaInstagram, FaTwitter, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaLinkedin, FaYoutube ,FaEnvelope } from 'react-icons/fa';
 import logo from '../../assets/logo.png'; // update path to your logo
 
 const ContactPage = () => {
@@ -13,14 +13,9 @@ const ContactPage = () => {
 
         <div className="contact-socials">
           <a href="https://instagram.com/theminipr" target="_blank" rel="noreferrer">
-            <FaInstagram /> @theminipr
+            <FaInstagram /> @the.mini.pr
           </a>
-          <a href="https://twitter.com/theminipr" target="_blank" rel="noreferrer">
-            <FaTwitter /> @theminipr
-          </a>
-          <a href="https://linkedin.com/company/theminipr" target="_blank" rel="noreferrer">
-            <FaLinkedin /> The Mini PR
-          </a>
+          <a href="https://www.youtube.com/@theminipr" target="_blank"><FaYoutube /></a>
           <a href="mailto:contact@theminipr.com">
             <FaEnvelope /> contact@theminipr.com
           </a>
