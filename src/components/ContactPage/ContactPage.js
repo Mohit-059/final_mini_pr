@@ -7,7 +7,7 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       <div className="contact-card">
-        <img src={logo} alt="Brand Logo" className="contact-logo" />
+        <img src="https://res.cloudinary.com/dkybkcox5/image/upload/v1751921817/logo_avk7bw.png" alt="Brand Logo" className="contact-logo" />
         <h2 className="contact-brand">THE MINI PR</h2>
         <p className="contact-tagline">Where every rep has a story. Let’s talk.</p>
 
@@ -15,7 +15,7 @@ const ContactPage = () => {
           <a href="https://instagram.com/theminipr" target="_blank" rel="noreferrer">
             <FaInstagram /> @the.mini.pr
           </a>
-          <a href="https://www.youtube.com/@theminipr" target="_blank"><FaYoutube /></a>
+          <a href="https://www.youtube.com/@theminipr" target="_blank"><FaYoutube />@theminipr</a>
           <a href="mailto:contact@theminipr.com">
             <FaEnvelope /> contact@theminipr.com
           </a>
