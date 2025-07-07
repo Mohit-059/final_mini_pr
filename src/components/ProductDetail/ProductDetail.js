@@ -370,7 +370,7 @@ const allProducts = [
       dimensions: "16.6 cm length x 10.1 cm height",
       weight: "140g",
     },
-    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4,","https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898745/vid_01_pdxiex.mp4","https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
   },
   {
     id: 109,
