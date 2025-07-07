@@ -32,7 +32,7 @@ const LuxeEdit = () => {
     
     {
       title: "Our products aren’t just miniatures — they’re moments frozen in time.",
-      image: LuxeEdit4
+      image: luxeEdit
     }
   ];
 
