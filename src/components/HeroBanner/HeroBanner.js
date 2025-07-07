@@ -4,7 +4,7 @@ import one from '../../assets/Banners/one.png';
 import four from '../../assets/Banners/four.png';
 import five from '../../assets/Banners/five.png';
 
-const images = [one, four, five];
+const images = ["https://res.cloudinary.com/dkybkcox5/image/upload/v1751921306/one_vwkcvo.png", "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921305/four_k4vrqm.png", "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921302/five_m3ehd6.png"];
 
 const HeroBanner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
