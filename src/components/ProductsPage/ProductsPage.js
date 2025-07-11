@@ -210,9 +210,9 @@ const products = {
       id: 108,
       name: "MINI BENCH PRESS SETUP",
       brand: "PR TRACKER",
-      price: 945,
+      price: 999,
       originalPrice: 1299,
-      discount: "27%", // Corrected: (1 - (945 / 1299)) * 100 = 27.25%
+      discount: "23%", // Corrected: (1 - (999 / 1299)) * 100 = 27.25%
       stock: "Few Left",
       image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899415/01_os8ftd.jpg",
       ratingCount: 7,
