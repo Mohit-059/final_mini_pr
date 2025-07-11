@@ -768,6 +768,8 @@ const ProductDetail = () => {
                     <p className="product-brand">{product.brand}</p>
                     <p className="product-stock">{product.stock}</p>
                     <p className="product-desc">{product.description}</p>
+                    <p className="product-desc">(Fully Customizable with complementary stickers/labels)</p>
+
 
                     <div className="price-info">
                         <span className="current-price">₹{product.price}</span>

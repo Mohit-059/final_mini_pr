@@ -923,6 +923,7 @@ const allProducts = [
     originalPrice: 899,
     discount: "44%",
     stock: "Few Left",
+    permline:"Fully Customizable with complementary stickers/labels",
     image: bp1,
     ratingCount: 4,
     description: "Where PRs become permanent",
@@ -995,7 +996,7 @@ const ProductDetail = () => {
           <p className="product-brand">{product.brand}</p>
           <p className="product-stock">{product.stock}</p>
           <p className="product-desc">{product.description}</p>
-          <p className="product-desc">(Fully Customizable with complementary stickers/labels)</p>
+          <p className="product-desc producsa">{product.permline}</p>
 
           <div className="price-info">
             <span className="current-price">₹{product.price}</span>
