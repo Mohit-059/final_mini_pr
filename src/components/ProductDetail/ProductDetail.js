@@ -602,7 +602,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
         ],
         longDescription: `Recreate your heaviest pulls in miniature. Choose your favorite plate colors, customize the weight tag, and display with the included vertical stand. Detachable mini barbell and mini barbell holder lets you change configurations.`,
         specs: {
-            quantity: "Platform + barbell + 4 plates + stand + 2 tags",
+            quantity: "acrylic mini deadlift platform + barbell + 4 plates + stand + 2 tags",
             material: "Weighted plastic",
             dimensions: "20 cm x 10 cm",
             weight: "150g",
@@ -781,7 +781,7 @@ const ProductDetail = () => {
 
                     {/* Conditional rendering for the offer rectangle */}
                     {product.offer && ( // Only render if product.offer exists
-                        <div
+                        <div className="newnewclass"
                             style={{
                                 background: "rgb(219, 216, 207)",
                                 borderLeft: "5px solid rgb(219, 216, 207)",
@@ -799,7 +799,7 @@ const ProductDetail = () => {
                         </div>
                     )}
 
-                    <div
+                    <div className="newnewclass"
                         style={{
                             background: "rgb(219, 216, 207)",
                             borderLeft: "5px solid rgb(219, 216, 207)",

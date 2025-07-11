@@ -14,8 +14,8 @@ const GiftBox = () => {
 
   // Reward configurations
   const rewards = [
-    { id: 1, text: 'complementary Barbell Holder', range: [1, 350], worth: '₹199 Value' },
-    { id: 2, text: 'complementary 2 Extra Plates', range: [351, 700], worth: '₹299 Value' },
+    { id: 1, text: 'Complementary barbell Holder', range: [1, 350], worth: '₹199 Value' },
+    { id: 2, text: 'Complementary 3 Extra Plates', range: [351, 700], worth: '₹120 Value' },
     { id: 3, text: '₹50 FLAT OFF', range: [701, 999], worth: 'Instant Savings' },
   ];
 
