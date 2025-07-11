@@ -100,11 +100,11 @@ const ScrollingCards = () => {
             </div>
           ))}
         </div>
-        <button className="scroll-button left" onClick={scrollLeft} style={{ left: '30px', height: '52px', width: '51px' }}>
+        <button className="scroll-button left" onClick={scrollLeft} style={{  height: '52px', width: '51px' }}>
           {/* <FiChevronLeft size={24} /> */}
           &lt;
         </button>
-        <button className="scroll-button right" onClick={scrollRight} style={{ right: '30px', height: '52px', width: '51px' }}>
+        <button className="scroll-button right" onClick={scrollRight} style={{ height: '52px', width: '51px' }}>
           {/* <FiChevronRight size={24} /> */}
           &gt;
         </button>

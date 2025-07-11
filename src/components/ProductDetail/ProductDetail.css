@@ -1450,3 +1450,65 @@ html {
     transform: translateX(-18px);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add-on CSS: To make the modal float above literally everything */
+
+.modal {
+    /* Ensure it has a positioning context for z-index to work. It already has 'fixed'. */
+    /* position: fixed;  <-- This is already in your CSS, just a reminder it's needed. */
+
+    /* Set the z-index to the highest possible value to guarantee it's on top. */
+    z-index: 2147483647 !important;
+}
+
+/* Add-on CSS for Modal Thumbnails on Smaller Screens */
+
+@media (max-width: 500px) {
+    .modal-thumbnails {
+        /* Ensure thumbnails start from the left edge for better visibility on scroll */
+        justify-content: flex-start;
+
+        /* Adjust padding to provide a small buffer without hiding content.
+           You can fine-tune this value if needed. For example, try 5px or 8px. */
+        padding-left: 10px;
+        padding-right: 10px; /* Keep padding on both sides for consistent look */
+
+        /* Ensure smooth scrolling on touch devices (iOS specific) */
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* You might also want to slightly reduce the gap between thumbnails on very small screens */
+@media (max-width: 400px) { /* Adjust this breakpoint if needed */
+    .modal-thumbnails {
+        gap: 8px; /* Slightly reduce gap for tighter packing */
+    }
+}
+
+
+
+
+
+.whatsapp-button{
+    margin-top: 50px !important;
+    animation: none !important;
+    background: #ffdc50 !important; 
+}

@@ -556,7 +556,42 @@ const products = {
         finish: "Matte texture"
       },
       videos: ["https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg"],
-    }
+    },
+
+
+
+     {
+    id: 119, // This is the next available ID after 118
+    name: "FUNCTIONAL MINI STEEL COLLAR CLIPS",
+    brand: "ACCESSORIES",
+    price: 49,
+    originalPrice: 79,
+    discount: "38%", // (1 - (49 / 79)) * 100 = 37.97%
+    stock: "In Stock", // Assuming good stock for a new accessory
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg", // Using your provided video as a placeholder image as requested
+    ratingCount: 0, // New product, no ratings yet
+    description: "Secure your mini plates, amplify your focus – every detail matters.",
+    additionalImages: [
+        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg", // Placeholder images, you'll replace these
+        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg",
+        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg",
+        // Add more placeholder image URLs here if needed, or remove if only one is desired before you add real ones.
+    ],
+    longDescription: `Elevate your miniature gym setup with the ultimate detail: our Functional Mini Steel Collar Clips. Don't just display your progress; *secure* it. These precision-engineered clips aren't just for show – they literally hold your mini plates firmly in place, mirroring the dedication you put into every real-life lift.
+
+This small but mighty accessory creates a sense of completeness and permanence for your PR display, visually reinforcing your commitment. It's the subtle yet powerful touch that signals true attention to detail, transforming a collection of mini weights into a perfectly locked-down testament to your discipline.
+
+Experience the satisfying click of a secure fit and notice how this tiny element brings your entire setup to life, reminding you that even the smallest actions contribute to significant results.`,
+    specs: {
+        quantity: "1 pair of mini steel collar clips",
+        material: "Durable metal alloy",
+        dimensions: "1.5 cm diameter, 0.5 cm width", // Approximate dimensions
+        weight: "5g each",
+        finish: "Matte metallic"
+    },
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"], // Using the same video as your BOX STAND example
+}
+    
   ],
   extras: [
     {
