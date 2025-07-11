@@ -71,7 +71,8 @@ function App() {
             <Route path="/contact" element={
               <div >
                 <Header/>
-              <ContactPage />
+                <div style={{marginTop:'100px'}}>
+              <ContactPage /></div>
               <Footer/>
               </div>} />
           </Routes>

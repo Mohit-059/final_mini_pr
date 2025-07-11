@@ -354,7 +354,7 @@ const products = {
     },
     {
       id: 112,
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902455/01_xt9w3i.jpg",
+      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902466/07_xq8co0.jpg",
       brand: 'PR TRACKER',
       name: 'CUSTOM 3-IN-1 POWERLIFTING DISPLAY',
       price: 849,
@@ -364,16 +364,10 @@ const products = {
       stock: 'Limited Stock',
       description: 'The holy trinity of strength',
       additionalImages: [
-        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902455/01_xt9w3i.jpg",
-        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902416/03_wbeu8f.jpg",
-        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902416/03_wbeu8f.jpg",
-        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902432/05_ke9p3j.jpg",
-        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902466/07_xq8co0.jpg",
-        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902466/07_xq8co0.jpg",
-        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902466/07_xq8co0.jpg",
-        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902431/10_d652nm.jpg",
-        "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902448/11_iudgpv.jpg",
-      ],
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902431/10_d652nm.jpg",
+      "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902455/01_xt9w3i.jpg",
+      
+    ],
       longDescription: `Squat, bench, and deadlift together at last. Three beautifully crafted miniature barbells mounted on a single acrylic plaque. Includes bonus mini barbell holder & mini plate holder - because every lifter needs a spare. Command attention wherever you display it.`,
       specs: {
         quantity: "3 mini barbells + acrylic plaque + 3 detatchable mini barbell holders + plate holder + plaque stand",
@@ -484,10 +478,10 @@ const products = {
       originalPrice: 99,
       discount: "30%", // Corrected: (1 - (69 / 99)) * 100 = 30.30%
       stock: "In Stock",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg",
+      image: "https://s.alicdn.com/@sc04/kf/H5cc5821350614e918eae88d22ec7c8d7p.jpg",
       ratingCount: 12,
       description: "Your lifting spirit in pocket-sized form",
-      additionalImages: ["https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg"],
+      additionalImages: ["https://images-na.ssl-images-amazon.com/images/I/71sDglDpLJL._AC_UL600_SR600,600_.jpg"],
       longDescription: `Never leave your gym mindset behind. This precision-printed miniature gym plate keychain. Tough enough for daily use, meaningful enough to remind you of your next PR. Attach to keys, bags, or gym tags.`,
       specs: {
         quantity: "1 keychain",

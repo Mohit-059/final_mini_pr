@@ -14,9 +14,9 @@ const GiftBox = () => {
 
   // Reward configurations
   const rewards = [
-    { id: 1, text: 'Free Clip Stand', range: [1, 350], worth: '₹199 Value' },
-    { id: 2, text: 'Free Extra Plates', range: [351, 700], worth: '₹299 Value' },
-    { id: 3, text: '₹50 OFF', range: [701, 999], worth: 'Instant Savings' },
+    { id: 1, text: 'complementary Barbell Holder', range: [1, 350], worth: '₹199 Value' },
+    { id: 2, text: 'complementary 2 Extra Plates', range: [351, 700], worth: '₹299 Value' },
+    { id: 3, text: '₹50 FLAT OFF', range: [701, 999], worth: 'Instant Savings' },
   ];
 
   // Generate random code within range

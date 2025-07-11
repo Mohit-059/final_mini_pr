@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './LuxeEdit.css';
 import cargo from '../../assets/luxe_edit/first.png';
 import caps from '../../assets/sample.jpg';
@@ -17,6 +18,8 @@ import luxeEdit from '../../assets/images/newtry.jpg'
 // import barbell from '../../assets/card_images/barbell.png'
 
 const LuxeEdit = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
   const luxeItems = [
     {
       title: "What you lifted is history. What it meant? That’s what we frame.",
@@ -29,12 +32,18 @@ const LuxeEdit = () => {
       title: "Miss the gym? Keep its mindset on your desk.",
       image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921201/newtrying_gylbae.jpg"
     },
-    
+
     {
       title: "Our products aren’t just miniatures — they’re moments frozen in time.",
       image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751920729/LuxeEdit1_qv4kfb.jpg"
     }
   ];
+
+  // Function to handle navigation and scroll to top
+  const handleNavigateToProducts = () => {
+    navigate('/products');
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
 
   return (
     <section className="luxe-edit">
@@ -45,12 +54,17 @@ const LuxeEdit = () => {
           <p className="luxe-subtitle">MAX EMOTIONS</p>
         </div>
       </div>
-      
+
       <div className="luxe-grid">
         {luxeItems.map((item, index) => (
-          <div key={index} className={`luxe-item ${item.position}`}>
-            <img 
-              src={item.image} 
+          <div
+            key={index}
+            className={`luxe-item ${item.position}`}
+            onClick={handleNavigateToProducts} // Add onClick handler here
+            style={{ cursor: 'pointer' }} // Add cursor style to indicate clickability
+          >
+            <img
+              src={item.image}
               alt={item.title}
               className="luxe-image"
             />

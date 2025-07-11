@@ -16,8 +16,8 @@ const ContactPage = () => {
             <FaInstagram /> @the.mini.pr
           </a>
           <a href="https://www.youtube.com/@theminipr" target="_blank"><FaYoutube />@theminipr</a>
-          <a href="mailto:contact@theminipr.com">
-            <FaEnvelope /> contact@theminipr.com
+          <a href="mailto:contact@theminipr@gmail.com">
+            <FaEnvelope /> theminipr@gmail.com
           </a>
         </div>
       </div>
