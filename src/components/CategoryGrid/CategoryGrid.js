@@ -52,7 +52,10 @@ const CategoryGrid = () => {
           <div 
             key={index} 
             className="brand-card"
-            onClick={() => navigate('/products')}
+            onClick={() => {
+        navigate('/products');
+        window.scrollTo(0, 0); // This line is added to scroll to the top
+      }}
             style={{ cursor: 'pointer' }}
           >
             <img 
