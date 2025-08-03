@@ -1543,6 +1543,11 @@ html {
 
 
 
+
+
+
+
+
 /* Add-on CSS: Preventing WhatsApp icon/text wrap on mobile & confirming offer box alignment */
 
 @media (max-width: 768px) {
@@ -1607,3 +1612,169 @@ html {
     
 }
 
+
+
+
+
+/* ProductDetail.css additions for configurable options */
+
+.product-configuration {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+.product-configuration h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.config-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  /* background-color: #fff; */
+  background-color: transparent;
+}
+
+.config-section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: white;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.1);
+}
+
+.checkbox-label input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.checkbox-label .price-impact {
+    margin-left: auto; /* Pushes price to the right */
+    font-weight: 600;
+    color: #007bff; /* A color to highlight price */
+}
+
+.checkbox-label.complementary-item .price-impact {
+  color: #28a745; /* Green for complementary */
+}
+
+
+/* Radio button group for plate types */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: white;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  margin-right: 8px;
+  transform: scale(1.1);
+}
+
+/* Plate selection grid */
+.plate-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plate-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Weight | Price | Quantity */
+    gap: 10px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #eee;
+    margin-bottom: 10px;
+}
+
+.plate-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Weight label | Price display | Quantity input */
+  align-items: center;
+  gap: 10px;
+}
+
+.plate-weight-label {
+    font-weight: 500;
+    color: white;
+}
+
+.plate-price-display {
+    text-align: center;
+    color: white;
+    font-size: 0.9em;
+}
+
+.plate-quantity-input {
+  width: 70px; /* Adjust as needed */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.free-plates-info {
+    font-size: 0.85rem;
+    color: #28a745; /* Green color for complementary info */
+    margin-top: 10px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px;
+    background-color: #e6ffe6; /* Light green background */
+    border-radius: 5px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-configuration {
+    padding: 15px;
+  }
+  .config-section {
+    padding: 10px;
+  }
+  .plate-header,
+  .plate-input-row {
+    grid-template-columns: 1fr 1fr 1fr; /* Adjust as needed for smaller screens */
+  }
+  .plate-quantity-input {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+    .plate-header,
+    .plate-input-row {
+        grid-template-columns: 1fr 1fr 1fr; /* Even smaller adjustments if necessary */
+    }
+}
