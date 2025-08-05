@@ -1,31 +1,32 @@
-import React, { useState, useEffect, useMemo } from "react"; // Added useMemo
+import React, { useState, useEffect, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "./ProductDetail.css";
-import { allProducts, PLATE_PRICES } from "../../data/productData"; // Import PLATE_PRICES too
+import { allProducts, PLATE_PRICES } from "../../data/productData";
 
 const MoreLikeThese = ({ currentProduct }) => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  // Ensure allProducts is an array before filtering
   const relatedProducts = (allProducts || [])
-    .filter((product) => product.brand === currentProduct.brand && product.id !== parseInt(id))
-    .slice(0, 4); // Limit to 4 products for display
+    .filter(
+      (product) =>
+        product.brand === currentProduct.brand && product.id !== parseInt(id)
+    )
+    .slice(0, 4);
 
-  // Define the "All Products" card
   const allProductsCard = {
     name: "All Products",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrlBR2ORcQ2jtN8UflyNc8TibIxMm9MZz6ShJn8Pp8o8uNHwcyLO66ooW0EIYEBElivNI&usqp=CAU",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrlBR2ORcQ2jtN8UflyNc8TibIxMm9MZz6ShJn8Pp8o8uNHwcyLO66ooW0EIYEBElivNI&usqp=CAU",
   };
 
-  // Combine related products with the "All Products" card
   const displayProducts = [...relatedProducts, allProductsCard];
 
   const handleNavigate = (productId) => {
     navigate(productId ? `/product/${productId}` : "/products");
-    window.scrollTo(0, 0); // Scroll to the top of the page
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -42,7 +43,11 @@ const MoreLikeThese = ({ currentProduct }) => {
             onClick={() => handleNavigate(product.id)}
             style={{ cursor: "pointer" }}
           >
-            <img src={product.image} alt={product.name} className="brand-image" />
+            <img
+              src={product.image}
+              alt={product.name}
+              className="brand-image"
+            />
             <h3>{product.name}</h3>
             {product.badge && (
               <span
@@ -61,7 +66,10 @@ const MoreLikeThese = ({ currentProduct }) => {
               </span>
             )}
             {product.price && (
-              <p className="discount" style={{ fontWeight: "600", color: "#fff" }}>
+              <p
+                className="discount"
+                style={{ fontWeight: "600", color: "#fff" }}
+              >
                 <span
                   className="cross_original"
                   style={{ textDecoration: "line-through", color: "#888" }}
@@ -72,7 +80,10 @@ const MoreLikeThese = ({ currentProduct }) => {
               </p>
             )}
             {!product.price && (
-              <p className="discount" style={{ fontSize: "0.9rem", color: "#aaa" }}>
+              <p
+                className="discount"
+                style={{ fontSize: "0.9rem", color: "#aaa" }}
+              >
                 Explore the full collection →
               </p>
             )}
@@ -91,228 +102,275 @@ const ProductDetail = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("images");
 
-  // State for configurable options
   const [selectedBaseComponents, setSelectedBaseComponents] = useState({});
-  const [selectedComplementaryItems, setSelectedComplementaryItems] = useState({});
+  const [selectedComplementaryItems, setSelectedComplementaryItems] = useState(
+    {}
+  );
   const [selectedPlateType, setSelectedPlateType] = useState("");
-  const [selectedPlates, setSelectedPlates] = useState({}); // Stores selected plate weights and quantities { '25kg': 2, '10kg': 4 }
+  const [selectedPlates, setSelectedPlates] = useState({});
   const [selectedAddOns, setSelectedAddOns] = useState({});
+  const ADDON_DISCOUNT_PERCENTAGE = 15;
 
   useEffect(() => {
-    // Add a check to ensure allProducts is an array before calling .find()
     if (Array.isArray(allProducts)) {
       const found = allProducts.find((item) => item.id === parseInt(id));
       setProduct(found);
 
-      // Initialize states for configurable options when product changes
       if (found) {
-        // Initialize base components
         const initialBaseComponents = {};
-        found.baseComponents?.forEach(comp => {
+        found.baseComponents?.forEach((comp) => {
           initialBaseComponents[comp.name] = comp.checked;
         });
         setSelectedBaseComponents(initialBaseComponents);
 
-        // Initialize complementary items
         const initialComplementaryItems = {};
-        found.complementaryItems?.forEach(item => {
-            initialComplementaryItems[item.name] = item.checked;
+        found.complementaryItems?.forEach((item) => {
+          initialComplementaryItems[item.name] = item.checked;
         });
         setSelectedComplementaryItems(initialComplementaryItems);
 
-
-        // Initialize plate type
         if (found.hasPlates) {
-          setSelectedPlateType(found.defaultPlateType || Object.keys(PLATE_PRICES)[0]);
-          setSelectedPlates({}); // Reset plates when product changes
+          // --- Corrected: Set default to "mini bumper plates"
+          setSelectedPlateType(found.defaultPlateType || "mini bumper plates");
+          setSelectedPlates({});
         } else {
           setSelectedPlateType("");
           setSelectedPlates({});
         }
 
-        // Initialize add-ons
         const initialAddOns = {};
-        found.additionalAddOns?.forEach(addOn => {
+        found.additionalAddOns?.forEach((addOn) => {
           initialAddOns[addOn.name] = addOn.checked;
         });
         setSelectedAddOns(initialAddOns);
       }
     } else {
       console.error("allProducts is not an array:", allProducts);
-      setProduct(null); // Or handle this case as appropriate for your app
+      setProduct(null);
     }
   }, [id]);
 
-  // Calculate dynamic price
   const totalPrice = useMemo(() => {
     if (!product) return 0;
 
     let currentPrice = product.price;
 
-    // Add price for selected plates
-    if (product.hasPlates && selectedPlateType && PLATE_PRICES[selectedPlateType]) {
-      // Check for free plates and adjust total quantity to charge for
-      let platesToCharge = { ...selectedPlates };
-      if (product.freePlates && product.freePlates.quantity > 0) {
-        let remainingFreePlates = product.freePlates.quantity;
-        // Deduct free plates from the cheapest ones first, or based on your logic
-        // For simplicity, let's just deduct from the total count of selected plates
-        let totalSelectedPlatesCount = Object.values(selectedPlates).reduce((sum, qty) => sum + qty, 0);
-        let actualPlatesToCharge = Math.max(0, totalSelectedPlatesCount - remainingFreePlates);
-
-        // A more complex logic for free plates would involve iterating through selected plates
-        // and reducing their quantities until remainingFreePlates is 0, then summing up remaining costs.
-        // For now, we'll implement a simpler overall deduction based on the total count.
-        // If a specific price is given for 'free plates', that would be more complex.
-        // Given 'any first two plates free', we'll assume the lowest value plates are 'free' first.
-        // This current implementation just subtracts the total `priceImpact` of 2 cheapest plates.
-        // This might need refinement based on how you want "any first two plates free" to work if different weights are selected.
-        // For now, let's assume it means 2 plates of the selected type and lowest weight are free.
-        const sortedPlateWeights = Object.keys(PLATE_PRICES[selectedPlateType]).sort((a,b) => PLATE_PRICES[selectedPlateType][a] - PLATE_PRICES[selectedPlateType][b]);
-
-        let tempSelectedPlates = { ...selectedPlates };
-        let platesCost = 0;
-
-        for (const weight of sortedPlateWeights) {
-          let quantity = tempSelectedPlates[weight] || 0;
-          if (quantity > 0) {
-            if (remainingFreePlates > 0) {
-              const deducted = Math.min(quantity, remainingFreePlates);
-              quantity -= deducted;
-              remainingFreePlates -= deducted;
-            }
-            platesCost += quantity * PLATE_PRICES[selectedPlateType][weight];
+    if (
+      product.hasPlates &&
+      selectedPlateType &&
+      PLATE_PRICES[selectedPlateType]
+    ) {
+      let remainingFreePlates = product.freePlates?.quantity || 0;
+      const sortedPlateWeights = Object.keys(
+        PLATE_PRICES[selectedPlateType]
+      ).sort(
+        (a, b) =>
+          PLATE_PRICES[selectedPlateType][a] -
+          PLATE_PRICES[selectedPlateType][b]
+      );
+      let platesCost = 0;
+      const tempSelectedPlates = { ...selectedPlates };
+      for (const weight of sortedPlateWeights) {
+        let quantity = tempSelectedPlates[weight] || 0;
+        if (quantity > 0) {
+          if (remainingFreePlates > 0) {
+            const deducted = Math.min(quantity, remainingFreePlates);
+            quantity -= deducted;
+            remainingFreePlates -= deducted;
           }
+          platesCost += quantity * PLATE_PRICES[selectedPlateType][weight];
         }
-        currentPrice += platesCost;
-
-      } else {
-        Object.entries(selectedPlates).forEach(([weight, quantity]) => {
-          const pricePerPlate = PLATE_PRICES[selectedPlateType][weight];
-          if (pricePerPlate) {
-            currentPrice += pricePerPlate * quantity;
-          }
-        });
       }
+      currentPrice += platesCost;
     }
 
-    // Add price for selected add-ons
-    product.additionalAddOns?.forEach(addOn => {
+    product.additionalAddOns?.forEach((addOn) => {
       if (selectedAddOns[addOn.name]) {
-        currentPrice += addOn.priceImpact;
+        const discountedPrice =
+          addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100);
+        currentPrice += discountedPrice;
       }
     });
 
-    return currentPrice;
+    return Math.round(currentPrice);
   }, [product, selectedPlateType, selectedPlates, selectedAddOns]);
 
-
-  // Calculate dynamic discount (re-calculating based on total price)
   const dynamicDiscount = useMemo(() => {
     if (!product || !product.originalPrice || totalPrice === 0) return "0%";
-    const calculatedDiscount = ((product.originalPrice - totalPrice) / product.originalPrice) * 100;
+    const calculatedDiscount =
+      ((product.originalPrice - totalPrice) / product.originalPrice) * 100;
     return `${Math.round(calculatedDiscount)}%`;
   }, [product, totalPrice]);
 
+  const dynamicQuantity = useMemo(() => {
+    if (!product) return "N/A";
 
-  if (!product) return <div className="product-not-found">Product not found</div>;
+    let components = [];
+    product.baseComponents?.forEach((comp) => {
+      if (selectedBaseComponents[comp.name]) {
+        components.push(comp.name);
+      }
+    });
+
+    if (
+      product.hasPlates &&
+      selectedPlateType &&
+      Object.keys(selectedPlates).length > 0
+    ) {
+      const plateDescriptions = Object.entries(selectedPlates)
+        // Corrected: use the full selectedPlateType name in the description
+        .map(([weight, qty]) => `${qty}x${weight} ${selectedPlateType}`)
+        .join(", ");
+      if (plateDescriptions) {
+        components.push(plateDescriptions);
+      }
+    } else if (product.hasPlates && !Object.keys(selectedPlates).length) {
+      components.push("No plates selected");
+    }
+
+    product.additionalAddOns?.forEach((addOn) => {
+      if (selectedAddOns[addOn.name]) {
+        components.push(addOn.name);
+      }
+    });
+
+    product.complementaryItems?.forEach((item) => {
+      if (selectedComplementaryItems[item.name]) {
+        components.push(`${item.name} (Complementary)`);
+      }
+    });
+
+    if (components.length === 0) {
+      return product.specs?.quantity || "N/A";
+    }
+
+    return components.join(" + ");
+  }, [
+    product,
+    selectedBaseComponents,
+    selectedPlateType,
+    selectedPlates,
+    selectedAddOns,
+    selectedComplementaryItems,
+  ]);
+
+  if (!product)
+    return <div className="product-not-found">Product not found</div>;
 
   const images = [product.image, ...(product.additionalImages || [])];
   const videos = product.videos || [];
 
   const handlePrevImage = () => {
-    setSelectedImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setSelectedImageIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
   };
 
   const handleNextImage = () => {
-    setSelectedImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setSelectedImageIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    );
   };
 
   const handlePlateQuantityChange = (weight, value) => {
     const quantity = parseInt(value, 10);
-    setSelectedPlates(prev => {
+    setSelectedPlates((prev) => {
       const newPlates = { ...prev };
       if (quantity > 0) {
         newPlates[weight] = quantity;
       } else {
-        delete newPlates[weight]; // Remove if quantity is 0
+        delete newPlates[weight];
       }
       return newPlates;
     });
   };
 
   const handleAddOnToggle = (name) => {
-    setSelectedAddOns(prev => ({
+    setSelectedAddOns((prev) => ({
       ...prev,
-      [name]: !prev[name]
+      [name]: !prev[name],
     }));
   };
 
-  // Helper to format WhatsApp message components
   const formatWhatsappMessage = () => {
     let message = `Hi, I'm interested to buy ${product.name} with custom options.`;
     message += `\nTotal price: ₹${totalPrice}.`;
     message += `\n\nSelected items:`;
 
-    // Base Components
     if (product.baseComponents && product.baseComponents.length > 0) {
-      product.baseComponents.forEach(comp => {
+      product.baseComponents.forEach((comp) => {
         if (selectedBaseComponents[comp.name]) {
           message += `\n- ${comp.name} (Included)`;
         }
       });
     }
 
-    // Plates
     if (product.hasPlates && selectedPlateType) {
       message += `\n- Plate Type: ${selectedPlateType}`;
       if (Object.keys(selectedPlates).length > 0) {
-        Object.entries(selectedPlates).forEach(([weight, quantity]) => {
-          const pricePerPlate = PLATE_PRICES[selectedPlateType][weight];
-          // Account for free plates in the message if applicable
-          let actualQuantity = quantity;
-          let costString = `(₹${pricePerPlate} each)`;
+        let remainingFreePlates = product.freePlates?.quantity || 0;
+        const sortedPlateWeights = Object.keys(
+          PLATE_PRICES[selectedPlateType]
+        ).sort(
+          (a, b) =>
+            PLATE_PRICES[selectedPlateType][a] -
+            PLATE_PRICES[selectedPlateType][b]
+        );
+        let tempSelectedPlatesForMsg = { ...selectedPlates };
 
-          if (product.freePlates && product.freePlates.quantity > 0) {
-            // This is a simplified representation. Actual cost is in totalPrice.
-            // For a precise WhatsApp message, you might need to re-calculate individual plate costs here,
-            // considering which specific plates were "free" based on your logic in totalPrice.
-            // For now, let's just indicate if free plates were part of the deal.
-             message += `\n- ${actualQuantity}x ${weight} plates`;
-          } else {
-            message += `\n- ${actualQuantity}x ${weight} plates ${costString}`;
+        for (const weight of sortedPlateWeights) {
+          let quantity = tempSelectedPlatesForMsg[weight] || 0;
+          if (quantity > 0) {
+            let displayPrice = PLATE_PRICES[selectedPlateType][weight];
+            let displayCost = `(₹${displayPrice} each)`;
+            let status = "";
+            if (remainingFreePlates > 0) {
+              const deducted = Math.min(quantity, remainingFreePlates);
+              if (deducted > 0) {
+                status = ` (${deducted} free)`;
+                quantity -= deducted;
+                remainingFreePlates -= deducted;
+              }
+            }
+            message += `\n- ${
+              tempSelectedPlatesForMsg[weight]
+            }x ${weight} plates ${quantity > 0 ? displayCost : ""}${status}`;
           }
-        });
+        }
       } else {
         message += `\n- No additional plates selected.`;
       }
     }
 
-    // Add-ons
     if (product.additionalAddOns && product.additionalAddOns.length > 0) {
-      const selectedAddOnsList = product.additionalAddOns.filter(addOn => selectedAddOns[addOn.name]);
+      const selectedAddOnsList = product.additionalAddOns.filter(
+        (addOn) => selectedAddOns[addOn.name]
+      );
       if (selectedAddOnsList.length > 0) {
         message += `\n\nAdditional Add-ons:`;
-        selectedAddOnsList.forEach(addOn => {
-          message += `\n- ${addOn.name} (+₹${addOn.priceImpact})`;
+        selectedAddOnsList.forEach((addOn) => {
+          const discountedPrice = Math.round(
+            addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100)
+          );
+          message += `\n- ${addOn.name} (+₹${discountedPrice})`;
         });
       }
     }
 
-    // Complementary Items
     if (product.complementaryItems && product.complementaryItems.length > 0) {
-        const selectedComplementaryList = product.complementaryItems.filter(item => selectedComplementaryItems[item.name]);
-        if (selectedComplementaryList.length > 0) {
-            message += `\n\nComplementary Items:`;
-            selectedComplementaryList.forEach(item => {
-                message += `\n- ${item.name}`;
-            });
-        }
+      const selectedComplementaryList = product.complementaryItems.filter(
+        (item) => selectedComplementaryItems[item.name]
+      );
+      if (selectedComplementaryList.length > 0) {
+        message += `\n\nComplementary Items:`;
+        selectedComplementaryList.forEach((item) => {
+          message += `\n- ${item.name}`;
+        });
+      }
     }
 
     return encodeURIComponent(message);
   };
-
 
   return (
     <section className="product-detail">
@@ -322,7 +380,6 @@ const ProductDetail = () => {
 
       <div className="product-container">
         <div className="media-section">
-          {/* ... existing media section */}
           <div className="tab-container">
             <button
               className={`tab-button ${activeTab === "images" ? "active" : ""}`}
@@ -340,8 +397,15 @@ const ProductDetail = () => {
 
           {activeTab === "images" && (
             <div className="images-tab">
-              <div className="main-image-container" onClick={() => setIsModalOpen(true)}>
-                <img src={images[selectedImageIndex]} alt={product.name} className="main-image" />
+              <div
+                className="main-image-container"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <img
+                  src={images[selectedImageIndex]}
+                  alt={product.name}
+                  className="main-image"
+                />
                 {images.length > 1 && (
                   <>
                     <button
@@ -372,7 +436,9 @@ const ProductDetail = () => {
                     <img
                       key={i}
                       src={img}
-                      className={`thumbnail ${selectedImageIndex === i ? "active" : ""}`}
+                      className={`thumbnail ${
+                        selectedImageIndex === i ? "active" : ""
+                      }`}
                       onClick={() => setSelectedImageIndex(i)}
                       alt={`${product.name} thumbnail ${i + 1}`}
                     />
@@ -397,7 +463,9 @@ const ProductDetail = () => {
                   ))}
                 </div>
               ) : (
-                <div className="no-videos">No videos available for this product.</div>
+                <div className="no-videos">
+                  No videos available for this product.
+                </div>
               )}
             </div>
           )}
@@ -408,57 +476,71 @@ const ProductDetail = () => {
           <p className="product-brand">{product.brand}</p>
           <p className="product-stock">{product.stock}</p>
           <p className="product-desc">{product.description}</p>
-          <p className="product-desc">(Fully Customizable with complementary stickers/labels)</p>
 
-          {/* --- NEW CONFIGURATION UI STARTS HERE --- */}
           {product.configurable && (
             <div className="product-configuration">
-              <h3 style={{color:'white'}}>Customize Your Set</h3>
+              <h3 style={{ color: "white" }}>Customize Your Set</h3>
 
-              {/* Base Components (always ticked) */}
               {product.baseComponents && product.baseComponents.length > 0 && (
                 <div className="config-section">
                   <h4>Included Components:</h4>
-                  {product.baseComponents.map(comp => (
+                  {product.baseComponents.map((comp) => (
                     <label key={comp.name} className="checkbox-label">
                       <input
                         type="checkbox"
-                        checked={selectedBaseComponents[comp.name] || comp.checked}
+                        checked={
+                          selectedBaseComponents[comp.name] || comp.checked
+                        }
                         disabled={comp.disabled}
-                        onChange={() => { /* Do nothing, it's disabled */ }}
+                        onChange={() => {}}
                       />
                       {comp.name}
-                      {comp.priceImpact > 0 && <span className="price-impact"> (+₹{comp.priceImpact})</span>}
+                      {comp.priceImpact > 0 && (
+                        <span className="price-impact">
+                          {" "}
+                          (+₹{comp.priceImpact})
+                        </span>
+                      )}
                     </label>
                   ))}
                 </div>
               )}
 
-              {/* Complementary Items */}
-              {product.complementaryItems && product.complementaryItems.length > 0 && (
-                <div className="config-section">
-                  <h4>Complementary Items:</h4>
-                  {product.complementaryItems.map(item => (
-                    <label key={item.name} className="checkbox-label complementary-item">
-                      <input
-                        type="checkbox"
-                        checked={selectedComplementaryItems[item.name] || item.checked}
-                        disabled={item.disabled}
-                        onChange={() => { /* Do nothing, it's disabled */ }}
-                      />
-                      {item.name}
-                      {item.priceImpact > 0 && <span className="price-impact"> (+₹{item.priceImpact})</span>}
-                    </label>
-                  ))}
-                </div>
-              )}
+              {product.complementaryItems &&
+                product.complementaryItems.length > 0 && (
+                  <div className="config-section">
+                    <h4>Complementary Items:</h4>
+                    {product.complementaryItems.map((item) => (
+                      <label
+                        key={item.name}
+                        className="checkbox-label complementary-item"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={
+                            selectedComplementaryItems[item.name] ||
+                            item.checked
+                          }
+                          disabled={item.disabled}
+                          onChange={() => {}}
+                        />
+                        {item.name}
+                        {item.priceImpact > 0 && (
+                          <span className="price-impact">
+                            {" "}
+                            (+₹{item.priceImpact})
+                          </span>
+                        )}
+                      </label>
+                    ))}
+                  </div>
+                )}
 
-              {/* Plate Options (if hasPlates is true) */}
               {product.hasPlates && (
                 <div className="config-section">
                   <h4>Plates:</h4>
                   <div className="radio-group">
-                    {Object.keys(PLATE_PRICES).map(type => (
+                    {Object.keys(PLATE_PRICES).map((type) => (
                       <label key={type} className="radio-label">
                         <input
                           type="radio"
@@ -467,7 +549,7 @@ const ProductDetail = () => {
                           checked={selectedPlateType === type}
                           onChange={(e) => setSelectedPlateType(e.target.value)}
                         />
-                        {type.replace('mini ', '').replace(' plates', '')}
+                        {type.charAt(0).toUpperCase() + type.slice(1)}
                       </label>
                     ))}
                   </div>
@@ -476,53 +558,73 @@ const ProductDetail = () => {
                     <div className="plate-selection">
                       <div className="plate-header">
                         <span>Weight</span>
-                        <span>Price/Plate</span>
+                        {/* Corrected: Removed Price/Plate header */}
                         <span>Quantity</span>
                       </div>
-                      {Object.entries(PLATE_PRICES[selectedPlateType]).map(([weight, price]) => (
-                        <div key={weight} className="plate-input-row">
-                          <label className="plate-weight-label">{weight}:</label>
-                          <span className="plate-price-display">₹{price}</span>
-                          <input
-                            type="number"
-                            min="0"
-                            step="2" // Plates typically come in pairs (2, 4, 6 etc.)
-                            value={selectedPlates[weight] || ''}
-                            onChange={(e) => handlePlateQuantityChange(weight, e.target.value)}
-                            placeholder="Qty"
-                            className="plate-quantity-input"
-                          />
-                        </div>
-                      ))}
-                      {product.freePlates && product.freePlates.quantity > 0 && (
-                         <p className="free-plates-info">
-                           Includes {product.freePlates.quantity} free plates of your choice!
-                         </p>
+                      {Object.entries(PLATE_PRICES[selectedPlateType]).map(
+                        ([weight, price]) => (
+                          <div key={weight} className="plate-input-row">
+                            <label className="plate-weight-label">
+                              {weight}:
+                            </label>
+                            <input
+                              type="number"
+                              min="0"
+                              step="2"
+                              value={selectedPlates[weight] || ""}
+                              onChange={(e) =>
+                                handlePlateQuantityChange(
+                                  weight,
+                                  e.target.value
+                                )
+                              }
+                              placeholder="Qty"
+                              className="plate-quantity-input"
+                            />
+                          </div>
+                        )
                       )}
+                      {product.freePlates &&
+                        product.freePlates.quantity > 0 && (
+                          <p className="free-plates-info">
+                            Any first {product.freePlates.quantity} plates of
+                            your choice are on us!
+                          </p>
+                        )}
                     </div>
                   )}
                 </div>
               )}
 
-              {/* Additional Add-Ons */}
-              {product.additionalAddOns && product.additionalAddOns.length > 0 && (
-                <div className="config-section">
-                  <h4>Optional Add-Ons:</h4>
-                  {product.additionalAddOns.map(addOn => (
-                    <label key={addOn.name} className="checkbox-label">
-                      <input
-                        type="checkbox"
-                        checked={selectedAddOns[addOn.name]}
-                        onChange={() => handleAddOnToggle(addOn.name)}
-                      />
-                      {addOn.name} (+₹{addOn.priceImpact})
-                    </label>
-                  ))}
-                </div>
-              )}
+              {product.additionalAddOns &&
+                product.additionalAddOns.length > 0 && (
+                  <div className="config-section">
+                    <h4>Optional Add-Ons:</h4>
+                    {product.additionalAddOns.map(addOn => {
+    const discountedPrice = Math.round(addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100));
+    return (
+        <label key={addOn.name} className="checkbox-label addon-label">
+            {/* Checkbox and name are a single unit on the left */}
+            <input
+                type="checkbox"
+                checked={selectedAddOns[addOn.name]}
+                onChange={() => handleAddOnToggle(addOn.name)}
+            />
+            <span className="addon-name">{addOn.name}</span>
+            
+            {/* Price and discount badge are a single unit on the right */}
+            <span className="price-container">
+                <span className="final-addon-price">₹{discountedPrice}</span>
+                <span className="original-addon-price">₹{addOn.priceImpact}</span>
+                <span className="addon-discount-badge">-15%</span>
+            </span>
+        </label>
+    );
+})}
+                  </div>
+                )}
             </div>
           )}
-          {/* --- NEW CONFIGURATION UI ENDS HERE --- */}
 
           <div
             className="newnewclass"
@@ -538,51 +640,32 @@ const ProductDetail = () => {
               boxShadow: "0 0 10px rgba(185, 181, 165, 0.2)",
             }}
           >
-            🚨 <strong>Limited-Time Deal:</strong> Save big while it lasts — early birds always win.
+            🚨 <strong>Limited-Time Deal:</strong> Save big while it lasts —
+            early birds always win.
           </div>
 
           <div className="price-info">
-            <span className="current-price">₹{totalPrice}</span> {/* Use totalPrice here */}
+            <span className="current-price">₹{totalPrice}</span>
             {product.originalPrice && (
               <>
                 <span className="original-price">₹{product.originalPrice}</span>
-                <span className="discount">{dynamicDiscount}</span> {/* Use dynamicDiscount */}
+                <span className="discount">{dynamicDiscount}</span>
               </>
             )}
           </div>
-
-          {/* {product.offer && (
-            <div
-              className="newnewclass"
-              style={{
-                background: "rgb(219, 216, 207)",
-                borderLeft: "5px solid rgb(219, 216, 207)",
-                padding: "14px 18px",
-                margin: "20px 0",
-                borderRadius: "8px",
-                fontWeight: 500,
-                fontSize: "12px",
-                color: "black",
-                boxShadow: "0 0 10px rgba(185, 181, 165, 0.2)",
-              }}
-            >
-              <span dangerouslySetInnerHTML={{ __html: product.offer }}></span>
-            </div>
-          )} */}
-
-          
 
           <button
             style={{ background: "rgb(136, 135, 131)" }}
             className="whatsapp-button"
             onClick={() =>
               window.open(
-                `https://wa.me/+919354840793?text=${formatWhatsappMessage()}`, // Use the new formatted message
+                `https://wa.me/+911234340793?text=${formatWhatsappMessage()}`,
                 "_blank"
               )
             }
           >
-            <FaWhatsapp className="whatsapp-icon" /> DM to Order (+91 9354840793)
+            <FaWhatsapp className="whatsapp-icon" /> DM to Order (+91
+            1234340793)
           </button>
 
           {product.longDescription && (
@@ -599,9 +682,15 @@ const ProductDetail = () => {
                   {Object.entries(product.specs).map(([key, value]) => (
                     <tr key={key}>
                       <td>
-                        <strong>{key.charAt(0).toUpperCase() + key.slice(1)}</strong>
+                        <strong>
+                          {key.charAt(0).toUpperCase() + key.slice(1)}
+                        </strong>
                       </td>
-                      <td>{value}</td>
+                      <td>
+                        {key === "quantity" && product.configurable
+                          ? dynamicQuantity
+                          : value}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -614,7 +703,10 @@ const ProductDetail = () => {
       {isModalOpen && activeTab === "images" && (
         <div className="modal" onClick={() => setIsModalOpen(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-modal" onClick={() => setIsModalOpen(false)}>
+            <button
+              className="close-modal"
+              onClick={() => setIsModalOpen(false)}
+            >
               ×
             </button>
             <div className="modal-image-container">
@@ -640,7 +732,9 @@ const ProductDetail = () => {
                   key={i}
                   src={img}
                   alt={`${product.name} thumbnail ${i + 1}`}
-                  className={`modal-thumbnail ${selectedImageIndex === i ? "active" : ""}`}
+                  className={`modal-thumbnail ${
+                    selectedImageIndex === i ? "active" : ""
+                  }`}
                   onClick={() => setSelectedImageIndex(i)}
                 />
               ))}

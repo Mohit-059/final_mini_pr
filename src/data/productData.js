@@ -661,7 +661,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       { name: "Mini Barbell Stand", priceImpact: 0, checked: true, disabled: true },
     ],
     hasPlates: true, // Assuming this combo includes plate options
-    defaultPlateType: "mini powerlifting plates", // Adjust default as needed
+    defaultPlateType: "Mini bumper plates", // Adjust default as needed
     additionalAddOns: [], // The combo explicitly lists what's included, so no optional add-ons here.
     complementaryItems: [
         { name: "Mini Steel Collar Clips (Pair)", priceImpact: 0, checked: true, disabled: true, type: "complementary" },
@@ -834,7 +834,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       { name: "Mini Plate Stand", priceImpact: 0, checked: true, disabled: true },
     ],
     hasPlates: true,
-    defaultPlateType: "mini powerlifting plates", // Default to powerlifting for bench
+    defaultPlateType: "Mini bumper plates", // Default to powerlifting for bench
     freePlates: { // Two free plates (any weight/type)
       quantity: 2,
     },
@@ -922,7 +922,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       { name: "Mini Plate Stand", priceImpact: 0, checked: true, disabled: true },
     ],
     hasPlates: true,
-    defaultPlateType: "mini powerlifting plates", // Default to powerlifting for bench
+    defaultPlateType: "Mini bumper plates", // Default to powerlifting for bench
     freePlates: { // Two free plates (any weight/type)
       quantity: 2,
     },
@@ -976,7 +976,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       { name: "Mini Plate Stand", priceImpact: 0, checked: true, disabled: true },
     ],
     hasPlates: true,
-    defaultPlateType: "mini powerlifting plates", // Default plate type for this set
+    defaultPlateType: "Mini bumper plates", // Default plate type for this set
     additionalAddOns: [
       { name: "Box Stand", priceImpact: 350, checked: false },
       { name: "Mini Barbell Stand", priceImpact: 299, checked: false },
@@ -1026,7 +1026,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       { name: "Mini Barbell (locked on plaque)", priceImpact: 0, checked: true, disabled: true },
     ],
     hasPlates: true, // Ask for plates
-    defaultPlateType: "mini powerlifting plates", // Example default
+    defaultPlateType: "Mini bumper plates", // Example default
     additionalAddOns: [
       { name: "Box Stand", priceImpact: 350, checked: false },
       { name: "Mini Barbell Holder", priceImpact: 0, checked: true, disabled: true }, // Added as complementary/locked
@@ -1070,7 +1070,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       { name: "Mini Barbell (3 - locked on plaque)", priceImpact: 0, checked: true, disabled: true },
     ],
     hasPlates: true, // Ask for plates
-    defaultPlateType: "mini powerlifting plates", // Example default
+    defaultPlateType: "Mini bumper plates", // Example default
     additionalAddOns: [
       { name: "Box Stand", priceImpact: 350, checked: false }, // Assuming Box stand can be bought for this too
       { name: "Mini Barbell Holder (additional)", priceImpact: 299, checked: false }, // Placeholder for additional holder if not base

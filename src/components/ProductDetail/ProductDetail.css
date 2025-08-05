@@ -1778,3 +1778,100 @@ html {
         grid-template-columns: 1fr 1fr 1fr; /* Even smaller adjustments if necessary */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================= */
+/* === OPTIONAL ADD-ONS SECTION STYLING === */
+/* ======================================= */
+
+/*
+  The parent container for the add-ons list.
+  You might need to adjust the selector if your structure is different.
+*/
+.product-configuration .config-section:nth-of-type(4) { 
+    padding: 15px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Header for the add-ons section */
+.product-configuration .config-section h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Styling for each individual add-on checkbox label */
+.addon-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes name and price to opposite sides */
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Custom Checkbox Styling (Solid Square) */
+
+
+/* The name of the add-on */
+.addon-name {
+    flex-grow: 1; /* Allows the name to take up available space */
+}
+
+/* Container for the prices and discount badge */
+.addon-label .price-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between price elements */
+}
+
+/* Final discounted price (on the left of the price-container) */
+.addon-label .final-addon-price {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+/* Original price with a strikethrough (to the right of final price) */
+.addon-label .original-addon-price {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 0.9em;
+}
+
+/* Discount badge styling */
+.addon-label .addon-discount-badge {
+    background-color: #e53e3e; /* Red color */
+    color: white;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.7em;
+    font-weight: bold;
+}
