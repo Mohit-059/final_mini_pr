@@ -4,6 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "./ProductDetail.css";
 import { allProducts, PLATE_PRICES } from "../../data/productData";
+import FeedbackSection from "../FeedbackSection/FeedbackSection";
 
 const MoreLikeThese = ({ currentProduct }) => {
   const navigate = useNavigate();
@@ -130,7 +131,6 @@ const ProductDetail = () => {
         setSelectedComplementaryItems(initialComplementaryItems);
 
         if (found.hasPlates) {
-          // --- Corrected: Set default to "mini bumper plates"
           setSelectedPlateType(found.defaultPlateType || "mini bumper plates");
           setSelectedPlates({});
         } else {
@@ -149,6 +149,35 @@ const ProductDetail = () => {
       setProduct(null);
     }
   }, [id]);
+
+  const dynamicOriginalPrice = useMemo(() => {
+    if (!product) return 0;
+    let originalPrice = product.originalPrice;
+    if (product.configurable) {
+      product.additionalAddOns?.forEach(addOn => {
+        if (selectedAddOns[addOn.name]) {
+          originalPrice += addOn.priceImpact;
+        }
+      });
+      // --- CRITICAL FIX: Add the original price of the plates ---
+      if (product.hasPlates && selectedPlateType && PLATE_PRICES[selectedPlateType]) {
+        let remainingFreePlates = product.freePlates?.quantity || 0;
+        let platesOriginalCost = 0;
+        const sortedPlateWeights = Object.keys(PLATE_PRICES[selectedPlateType]).sort((a,b) => PLATE_PRICES[selectedPlateType][a] - PLATE_PRICES[selectedPlateType][b]);
+        
+        // Sum up the original prices of all selected plates, regardless of free status
+        Object.entries(selectedPlates).forEach(([weight, quantity]) => {
+            const pricePerPlate = PLATE_PRICES[selectedPlateType][weight];
+            if (pricePerPlate) {
+                platesOriginalCost += pricePerPlate * quantity;
+            }
+        });
+        originalPrice += platesOriginalCost;
+      }
+    }
+    return originalPrice;
+  }, [product, selectedAddOns, selectedPlates, selectedPlateType]); // Depend on all states that affect this price
+
 
   const totalPrice = useMemo(() => {
     if (!product) return 0;
@@ -193,14 +222,23 @@ const ProductDetail = () => {
     });
 
     return Math.round(currentPrice);
-  }, [product, selectedPlateType, selectedPlates, selectedAddOns]);
+  }, [
+    product,
+    selectedPlateType,
+    selectedPlates,
+    selectedAddOns,
+    ADDON_DISCOUNT_PERCENTAGE,
+  ]);
+
 
   const dynamicDiscount = useMemo(() => {
-    if (!product || !product.originalPrice || totalPrice === 0) return "0%";
+    if (!product || !dynamicOriginalPrice || totalPrice === 0) return "0%";
     const calculatedDiscount =
-      ((product.originalPrice - totalPrice) / product.originalPrice) * 100;
+      ((dynamicOriginalPrice - totalPrice) / dynamicOriginalPrice) * 100;
+    // Don't show negative discount
+    if (calculatedDiscount < 0) return "0%";
     return `${Math.round(calculatedDiscount)}%`;
-  }, [product, totalPrice]);
+  }, [product, totalPrice, dynamicOriginalPrice]);
 
   const dynamicQuantity = useMemo(() => {
     if (!product) return "N/A";
@@ -218,7 +256,6 @@ const ProductDetail = () => {
       Object.keys(selectedPlates).length > 0
     ) {
       const plateDescriptions = Object.entries(selectedPlates)
-        // Corrected: use the full selectedPlateType name in the description
         .map(([weight, qty]) => `${qty}x${weight} ${selectedPlateType}`)
         .join(", ");
       if (plateDescriptions) {
@@ -374,6 +411,27 @@ const ProductDetail = () => {
 
   return (
     <section className="product-detail">
+      <style>
+        {`
+          @media (max-width: 420px) {
+            .product-configuration {
+              width: 100% !important;
+              margin: 0 !important;
+              padding: 15px !important;
+              box-sizing: border-box !important;
+            }
+            .price-info {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 5px;
+            }
+
+            .current-price {
+              margin-bottom: 5px;
+            }
+          }
+        `}
+      </style>
       <button className="back-button" onClick={() => navigate("/products")}>
         ← Back to Products
       </button>
@@ -558,7 +616,6 @@ const ProductDetail = () => {
                     <div className="plate-selection">
                       <div className="plate-header">
                         <span>Weight</span>
-                        {/* Corrected: Removed Price/Plate header */}
                         <span>Quantity</span>
                       </div>
                       {Object.entries(PLATE_PRICES[selectedPlateType]).map(
@@ -600,27 +657,33 @@ const ProductDetail = () => {
                 product.additionalAddOns.length > 0 && (
                   <div className="config-section">
                     <h4>Optional Add-Ons:</h4>
-                    {product.additionalAddOns.map(addOn => {
-    const discountedPrice = Math.round(addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100));
-    return (
-        <label key={addOn.name} className="checkbox-label addon-label">
-            {/* Checkbox and name are a single unit on the left */}
-            <input
-                type="checkbox"
-                checked={selectedAddOns[addOn.name]}
-                onChange={() => handleAddOnToggle(addOn.name)}
-            />
-            <span className="addon-name">{addOn.name}</span>
-            
-            {/* Price and discount badge are a single unit on the right */}
-            <span className="price-container">
-                <span className="final-addon-price">₹{discountedPrice}</span>
-                <span className="original-addon-price">₹{addOn.priceImpact}</span>
-                <span className="addon-discount-badge">-15%</span>
-            </span>
-        </label>
-    );
-})}
+                    {product.additionalAddOns.map((addOn) => {
+                      const discountedPrice = Math.round(
+                        addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100)
+                      );
+                      return (
+                        <label
+                          key={addOn.name}
+                          className="checkbox-label addon-label"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={selectedAddOns[addOn.name]}
+                            onChange={() => handleAddOnToggle(addOn.name)}
+                          />
+                          <span className="addon-name">{addOn.name}</span>
+                          <span className="price-container">
+                            <span className="final-addon-price">
+                              ₹{discountedPrice}
+                            </span>
+                            <span className="original-addon-price">
+                              ₹{addOn.priceImpact}
+                            </span>
+                            <span className="addon-discount-badge">-15%</span>
+                          </span>
+                        </label>
+                      );
+                    })}
                   </div>
                 )}
             </div>
@@ -646,9 +709,10 @@ const ProductDetail = () => {
 
           <div className="price-info">
             <span className="current-price">₹{totalPrice}</span>
-            {product.originalPrice && (
+            {/* --- CRITICAL FIX 2: Use the new dynamicOriginalPrice here --- */}
+            {dynamicOriginalPrice && (
               <>
-                <span className="original-price">₹{product.originalPrice}</span>
+                <span className="original-price">₹{dynamicOriginalPrice}</span>
                 <span className="discount">{dynamicDiscount}</span>
               </>
             )}
@@ -659,13 +723,13 @@ const ProductDetail = () => {
             className="whatsapp-button"
             onClick={() =>
               window.open(
-                `https://wa.me/+911234340793?text=${formatWhatsappMessage()}`,
+                `https://wa.me/+919354840793?text=${formatWhatsappMessage()}`,
                 "_blank"
               )
             }
           >
             <FaWhatsapp className="whatsapp-icon" /> DM to Order (+91
-            1234340793)
+            9354840793)
           </button>
 
           {product.longDescription && (
@@ -744,6 +808,8 @@ const ProductDetail = () => {
       )}
 
       <MoreLikeThese currentProduct={product} />
+
+      <FeedbackSection />
     </section>
   );
 };
