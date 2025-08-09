@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoIosCart } from "react-icons/io";
 import "./ProductDetail.css";
 import { allProducts, PLATE_PRICES } from "../../data/productData";
 import FeedbackSection from "../FeedbackSection/FeedbackSection";
@@ -20,7 +20,7 @@ const MoreLikeThese = ({ currentProduct }) => {
   const allProductsCard = {
     name: "All Products",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrlBR2ORcQ2jtN8UflyNc8TibIxMm9MZz6ShJn8Pp8o8uNHwcyLO66ooW0EIYEBElivNI&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrlBR2ORcQ2jtN8UflyNc8TibIxMm9MZz6ShJn8TibIxMm9MZz6ShJn8Pp8o8uNHwcyLO66ooW0EIYEBElivNI&usqp=CAU",
   };
 
   const displayProducts = [...relatedProducts, allProductsCard];
@@ -102,6 +102,9 @@ const ProductDetail = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("images");
+
+  // State for pop-up message
+  const [message, setMessage] = useState({ show: false, text: '', type: '' });
 
   const [selectedBaseComponents, setSelectedBaseComponents] = useState({});
   const [selectedComplementaryItems, setSelectedComplementaryItems] = useState(
@@ -440,18 +443,59 @@ const ProductDetail = () => {
         plateType: selectedPlateType,
         plates: selectedPlates,
         addOns: product.additionalAddOns?.filter(addOn => selectedAddOns[addOn.name]) || [],
-      }
+      },
+      quantity: 1, // Default quantity for new items
     };
     
     const existingCart = JSON.parse(localStorage.getItem('cart') || '[]');
     existingCart.push(cartItem);
     localStorage.setItem('cart', JSON.stringify(existingCart));
+    
+    // Show the pop-up message
+    setMessage({ show: true, text: `${product.name} added to cart!`, type: 'success' });
+    setTimeout(() => {
+      setMessage({ show: false, text: '', type: '' });
+    }, 3000);
+  };
+  
+  const handleGoToCart = () => {
+    navigate('/cart');
   };
 
   return (
     <section className="product-detail">
       <style>
         {`
+          /* Pop-up message styling */
+          .added-to-cart-popup {
+            position: fixed;
+            top: 133px;
+            right: -9px;
+            transform: translateX(120%); /* Start off-screen */
+            background-color: #333;
+            color: black;
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            transition: transform 0.5s ease-in-out;
+            font-size: 1rem;
+            font-weight: 600;
+            white-space: nowrap;
+          }
+
+          .added-to-cart-popup.show {
+            transform: translateX(0); /* Slide into view */
+          }
+
+          .added-to-cart-popup.success {
+            background-color: #28a745; /* Green */
+          }
+          
+          .added-to-cart-popup.info {
+            background-color: #007bff; /* Blue */
+          }
+          
           @media (max-width: 420px) {
             .product-configuration {
               width: 100% !important;
@@ -475,7 +519,7 @@ const ProductDetail = () => {
             }
             .custom-quantity-btn {
               background-color: #333;
-              color: #fff;
+              color: #fff   ;
               border: none;
               border-radius: 4px;
               width: 30px;
@@ -495,8 +539,8 @@ const ProductDetail = () => {
               color: #fff;
               border: 1px solid #555;
               border-radius: 4px;
-              -moz-appearance: textfield; /* Hide arrows for Firefox */
-              appearance: none; /* Hide arrows for WebKit */
+              -moz-appearance: textfield;
+              appearance: none;
             }
             .custom-quantity-input::-webkit-outer-spin-button,
             .custom-quantity-input::-webkit-inner-spin-button {
@@ -509,6 +553,11 @@ const ProductDetail = () => {
       <button className="back-button" onClick={() => navigate("/products")}>
         ← Back to Products
       </button>
+
+      {/* The pop-up message */}
+      <div className={`added-to-cart-popup ${message.show ? 'show' : ''} ${message.type}`}>
+        {message.text}
+      </div>
 
       <div className="product-container">
         <div className="media-section">
@@ -791,12 +840,21 @@ const ProductDetail = () => {
           </div>
 
           <button
-            style={{ background: "#d4af37" }}
+            style={{ background: "#d4af37", marginBottom: '10px' }}
             className="whatsapp-button"
             onClick={handleAddToCart}
           >
             Add to Cart
           </button>
+          
+          <button
+            style={{ background: "#333",alignItems:'center', border: '1px solid #555' }}
+            className="whatsapp-button"
+            onClick={() => navigate('/cart')}
+          >
+            Go to Cart
+          </button>
+
 
           {product.longDescription && (
             <div className="product-long-desc">

@@ -34,6 +34,12 @@ const CartPage = () => {
         localStorage.setItem('tempCustomizations', JSON.stringify(item.selectedOptions));
         navigate(`/product/${item.id}`);
     };
+    const handleClearCart = () => {
+        if (window.confirm("Are you sure you want to clear your cart?")) { // Added a confirmation
+            localStorage.removeItem('cart');
+            setCartItems([]);
+        }
+    };
 
     const handleDmToOrder = () => {
         let message = "Hi, I would like to place an order for the following items:\n\n";
@@ -64,7 +70,7 @@ const CartPage = () => {
         message += `Total to Pay: ₹${totalToPay}\n\n`;
         message += `Please confirm my order.`;
 
-        window.open(`https://wa.me/+911234340793?text=${encodeURIComponent(message)}`, "_blank");
+        window.open(`https://wa.me/+919354840793?text=${encodeURIComponent(message)}`, "_blank");
     };
 
     const { subtotal, totalToPay, totalDiscount } = useMemo(() => {
@@ -85,6 +91,12 @@ const CartPage = () => {
       const included = selectedOptions.baseComponents?.map(comp => comp.name).join(', ');
       const complementary = selectedOptions.complementaryItems?.map(comp => comp.name).join(', ');
       const addOns = selectedOptions.addOns?.map(addOn => addOn.name).join(', ');
+      const handleClearCart = () => {
+        if (window.confirm("Are you sure you want to clear your cart?")) { // Added a confirmation
+            localStorage.removeItem('cart');
+            setCartItems([]);
+        }
+    };
       
       let platesString = null;
       if (selectedOptions.plateType && Object.keys(selectedOptions.plates).length > 0) {
@@ -118,7 +130,7 @@ const CartPage = () => {
             padding: 0 20px;
             color: #fff;
             font-family: 'Roboto', sans-serif;
-            margin-top: 120px;
+            margin-top: 150px;
         }
         .cart-page h1 {
             font-size: 2.5rem;
@@ -147,6 +159,9 @@ const CartPage = () => {
             top: 100px;
             min-width: 250px;
         }
+
+        
+
         .order-summary h2 {
             font-size: 1.5rem;
             border-bottom: 2px solid #333;
@@ -167,6 +182,26 @@ const CartPage = () => {
             margin-top: 15px;
             display: flex;
             justify-content: space-between;
+        }
+            .clear-cart-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #666; /* Grayish background */
+            color: #000; /* Black text */
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px; /* Space from DM button */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background-color 0.2s ease;
+        }
+        .clear-cart-button:hover {
+            background-color: #888; /* Slightly darker gray on hover */
         }
         .cart-card {
             display: flex;
@@ -362,6 +397,23 @@ const CartPage = () => {
                 right: 5px;
             }
         }
+        @media (width<403px) {
+            .cart-card {
+                width:92%;
+            }
+}
+
+        @media (width<380px) {
+            .cart-card {
+                width:85%;
+            }
+}
+
+@media (width<366px) {
+            .cart-card {
+                width:80%;
+            }
+}
         @media (max-width: 420px) {
             .cart-card {
                 padding: 8px 15px; /* Adjust padding for very small screens */
@@ -390,7 +442,7 @@ const CartPage = () => {
     if (cartItems.length === 0) {
         return (
             <div className="cart-page">
-                <style>{styles}></style>
+                <style>{styles}</style>
                 <h1>Your Cart</h1>
                 <div className="empty-cart">Your cart is empty.</div>
             </div>
@@ -400,7 +452,8 @@ const CartPage = () => {
     return (
         <div className="cart-page">
             <style>{styles}</style>
-            <h1>Your Cart</h1>
+            
+            <h1 style={{display:'flex',justifyContent:'space-evenly',alignItems:'center'}}>Your Cart</h1>
             <div className="cart-content">
                 <div className="cart-items">
                     {cartItems.map((item, index) => (
@@ -449,6 +502,9 @@ const CartPage = () => {
                     </div>
                     <button onClick={handleDmToOrder} className="dm-button">
                         <FaWhatsapp /> DM to Order
+                    </button>
+                    <button onClick={handleClearCart} className="clear-cart-button">
+                        Clear Cart
                     </button>
                 </div>
             </div>
