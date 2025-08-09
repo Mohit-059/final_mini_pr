@@ -16,6 +16,7 @@ import ScrollToTopButton from './components/ScrollToTopButton'
 import LegalPages from './components/LegalPages/LegalPages';
 import ProductsSection from './components/ProductsSection/ProductsSection'
 import ContactPage from './components/ContactPage/ContactPage'
+import CartPage from './components/cartPage/cartPage';
 
 
 import GiftBox from './components/GiftBox/GiftBox'
@@ -66,6 +67,7 @@ function App() {
             <Route path="/products" element={
               <><ProductsPage /><Footer/> </>} />
             <Route path="/product/:id" element={<><ProductDetail /><Footer/></>} />
+            <Route path="/cart" element={<CartPage />} />
             <Route path="/legal/:type" element={
               <><Header/><LegalPages /><Footer/></>} />
             <Route path="/contact" element={

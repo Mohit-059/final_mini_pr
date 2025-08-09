@@ -159,13 +159,8 @@ const ProductDetail = () => {
           originalPrice += addOn.priceImpact;
         }
       });
-      // --- CRITICAL FIX: Add the original price of the plates ---
       if (product.hasPlates && selectedPlateType && PLATE_PRICES[selectedPlateType]) {
-        let remainingFreePlates = product.freePlates?.quantity || 0;
         let platesOriginalCost = 0;
-        const sortedPlateWeights = Object.keys(PLATE_PRICES[selectedPlateType]).sort((a,b) => PLATE_PRICES[selectedPlateType][a] - PLATE_PRICES[selectedPlateType][b]);
-        
-        // Sum up the original prices of all selected plates, regardless of free status
         Object.entries(selectedPlates).forEach(([weight, quantity]) => {
             const pricePerPlate = PLATE_PRICES[selectedPlateType][weight];
             if (pricePerPlate) {
@@ -176,8 +171,7 @@ const ProductDetail = () => {
       }
     }
     return originalPrice;
-  }, [product, selectedAddOns, selectedPlates, selectedPlateType]); // Depend on all states that affect this price
-
+  }, [product, selectedAddOns, selectedPlates, selectedPlateType]);
 
   const totalPrice = useMemo(() => {
     if (!product) return 0;
@@ -230,12 +224,10 @@ const ProductDetail = () => {
     ADDON_DISCOUNT_PERCENTAGE,
   ]);
 
-
   const dynamicDiscount = useMemo(() => {
     if (!product || !dynamicOriginalPrice || totalPrice === 0) return "0%";
     const calculatedDiscount =
       ((dynamicOriginalPrice - totalPrice) / dynamicOriginalPrice) * 100;
-    // Don't show negative discount
     if (calculatedDiscount < 0) return "0%";
     return `${Math.round(calculatedDiscount)}%`;
   }, [product, totalPrice, dynamicOriginalPrice]);
@@ -309,17 +301,42 @@ const ProductDetail = () => {
     );
   };
 
+  const handleDecreasePlateQuantity = (weight) => {
+    setSelectedPlates(prev => {
+        const newPlates = { ...prev };
+        const currentQty = newPlates[weight] || 0;
+        if (currentQty > 0) {
+            newPlates[weight] = currentQty - 1;
+        }
+        if (newPlates[weight] === 0) {
+            delete newPlates[weight];
+        }
+        return newPlates;
+    });
+  };
+
+  const handleIncreasePlateQuantity = (weight) => {
+    setSelectedPlates(prev => {
+        const newPlates = { ...prev };
+        const currentQty = newPlates[weight] || 0;
+        newPlates[weight] = currentQty + 1;
+        return newPlates;
+    });
+  };
+
   const handlePlateQuantityChange = (weight, value) => {
     const quantity = parseInt(value, 10);
-    setSelectedPlates((prev) => {
-      const newPlates = { ...prev };
-      if (quantity > 0) {
-        newPlates[weight] = quantity;
-      } else {
-        delete newPlates[weight];
-      }
-      return newPlates;
-    });
+    if (!isNaN(quantity) && quantity >= 0) {
+      setSelectedPlates((prev) => {
+        const newPlates = { ...prev };
+        if (quantity > 0) {
+          newPlates[weight] = quantity;
+        } else {
+          delete newPlates[weight];
+        }
+        return newPlates;
+      });
+    }
   };
 
   const handleAddOnToggle = (name) => {
@@ -408,6 +425,28 @@ const ProductDetail = () => {
 
     return encodeURIComponent(message);
   };
+  
+  const handleAddToCart = () => {
+    const cartItem = {
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      totalPrice: totalPrice,
+      originalPrice: dynamicOriginalPrice,
+      discount: dynamicDiscount,
+      selectedOptions: {
+        baseComponents: product.baseComponents?.filter(comp => selectedBaseComponents[comp.name]) || [],
+        complementaryItems: product.complementaryItems?.filter(item => selectedComplementaryItems[item.name]) || [],
+        plateType: selectedPlateType,
+        plates: selectedPlates,
+        addOns: product.additionalAddOns?.filter(addOn => selectedAddOns[addOn.name]) || [],
+      }
+    };
+    
+    const existingCart = JSON.parse(localStorage.getItem('cart') || '[]');
+    existingCart.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(existingCart));
+  };
 
   return (
     <section className="product-detail">
@@ -425,9 +464,44 @@ const ProductDetail = () => {
               align-items: flex-start;
               gap: 5px;
             }
-
             .current-price {
               margin-bottom: 5px;
+            }
+            .custom-quantity-input-container {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              justify-content: flex-end;
+            }
+            .custom-quantity-btn {
+              background-color: #333;
+              color: #fff;
+              border: none;
+              border-radius: 4px;
+              width: 30px;
+              height: 30px;
+              font-size: 1.2rem;
+              cursor: pointer;
+              transition: background-color 0.2s ease;
+            }
+            .custom-quantity-btn:hover {
+                background-color: #555;
+            }
+            .custom-quantity-input {
+              width: 50px;
+              padding: 5px;
+              text-align: center;
+              background-color: #000;
+              color: #fff;
+              border: 1px solid #555;
+              border-radius: 4px;
+              -moz-appearance: textfield; /* Hide arrows for Firefox */
+              appearance: none; /* Hide arrows for WebKit */
+            }
+            .custom-quantity-input::-webkit-outer-spin-button,
+            .custom-quantity-input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
             }
           }
         `}
@@ -624,20 +698,19 @@ const ProductDetail = () => {
                             <label className="plate-weight-label">
                               {weight}:
                             </label>
-                            <input
-                              type="number"
-                              min="0"
-                              step="2"
-                              value={selectedPlates[weight] || ""}
-                              onChange={(e) =>
-                                handlePlateQuantityChange(
-                                  weight,
-                                  e.target.value
-                                )
-                              }
-                              placeholder="Qty"
-                              className="plate-quantity-input"
-                            />
+                            <div className="custom-quantity-input-container">
+                                <button className="custom-quantity-btn" onClick={() => handleDecreasePlateQuantity(weight)}>-</button>
+                                <input
+                                    type="number"
+                                    min="0"
+                                    step="1"
+                                    value={selectedPlates[weight] || ""}
+                                    onChange={(e) => handlePlateQuantityChange(weight, e.target.value)}
+                                    placeholder="Qty"
+                                    className="custom-quantity-input"
+                                />
+                                <button className="custom-quantity-btn" onClick={() => handleIncreasePlateQuantity(weight)}>+</button>
+                            </div>
                           </div>
                         )
                       )}
@@ -709,7 +782,6 @@ const ProductDetail = () => {
 
           <div className="price-info">
             <span className="current-price">₹{totalPrice}</span>
-            {/* --- CRITICAL FIX 2: Use the new dynamicOriginalPrice here --- */}
             {dynamicOriginalPrice && (
               <>
                 <span className="original-price">₹{dynamicOriginalPrice}</span>
@@ -719,17 +791,11 @@ const ProductDetail = () => {
           </div>
 
           <button
-            style={{ background: "rgb(136, 135, 131)" }}
+            style={{ background: "#d4af37" }}
             className="whatsapp-button"
-            onClick={() =>
-              window.open(
-                `https://wa.me/+919354840793?text=${formatWhatsappMessage()}`,
-                "_blank"
-              )
-            }
+            onClick={handleAddToCart}
           >
-            <FaWhatsapp className="whatsapp-icon" /> DM to Order (+91
-            9354840793)
+            Add to Cart
           </button>
 
           {product.longDescription && (
