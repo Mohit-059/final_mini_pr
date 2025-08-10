@@ -1899,3 +1899,57 @@ html {
     box-sizing: border-box !important;
   }
 }
+
+
+
+/* === Responsive Fixes for Small Screens === */
+@media (max-width: 768px) {
+  /* Ensure the customization panel fits within the screen */
+  .product-configuration {
+    width: 100% !important;
+    padding: 15px !important;
+    margin: 0 !important;
+  }
+  
+  /* Buttons at the bottom of the info section */
+  .info-section .whatsapp-button {
+    width: 100% !important;
+    padding: 15px 20px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    box-sizing: border-box;
+  }
+  
+  /* Responsive sizing for price text */
+  .price-info .current-price {
+    font-size: 24px !important; /* Medium size */
+  }
+  
+  .price-info .original-price {
+    font-size: 16px !important; /* Medium size */
+  }
+  
+  /* Ensure plate input row is responsive */
+  .plate-input-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  /* Center buttons on mobile */
+  .info-section .whatsapp-button {
+      margin-left: auto;
+      margin-right: auto;
+      display: block; /* Make sure margin auto works */
+  }
+}
+
+@media (max-width: 500px) {
+  /* Further adjustments for smaller phones */
+  .product-detail .info-section {
+    padding: 15px;
+  }
+
+  .price-info .current-price {
+      font-size: 20px !important;
+  }
+}

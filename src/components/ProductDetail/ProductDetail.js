@@ -747,7 +747,7 @@ const ProductDetail = () => {
                             <label className="plate-weight-label">
                               {weight}:
                             </label>
-                            <div className="custom-quantity-input-container">
+                            <div className="custom-quantity-input-container" style={{display:'flex',alignItems:'center',width:'25%'}}>
                                 <button className="custom-quantity-btn" onClick={() => handleDecreasePlateQuantity(weight)}>-</button>
                                 <input
                                     type="number"
@@ -757,6 +757,7 @@ const ProductDetail = () => {
                                     onChange={(e) => handlePlateQuantityChange(weight, e.target.value)}
                                     placeholder="Qty"
                                     className="custom-quantity-input"
+                                    readOnly
                                 />
                                 <button className="custom-quantity-btn" onClick={() => handleIncreasePlateQuantity(weight)}>+</button>
                             </div>

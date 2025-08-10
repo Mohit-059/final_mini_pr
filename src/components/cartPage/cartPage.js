@@ -59,7 +59,7 @@ const CartPage = () => {
                     );
                 }
                 if (customizations.length > 0) {
-                    message += `  Customizations: ${customizations.join(', ')}\n`;
+                    message += `  Specifications: ${customizations.join(', ')}\n`;
                 }
             }
             message += `\n`;
