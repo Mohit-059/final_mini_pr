@@ -73,17 +73,43 @@ const CartPage = () => {
         window.open(`https://wa.me/+919354840793?text=${encodeURIComponent(message)}`, "_blank");
     };
 
-    const { subtotal, totalToPay, totalDiscount } = useMemo(() => {
-        let sub = 0;
-        let total = 0;
-        cartItems.forEach(item => {
-            const quantity = item.quantity || 1;
-            sub += item.originalPrice * quantity;
-            total += item.totalPrice * quantity;
-        });
-        const discount = sub - total;
-        return { subtotal: sub, totalToPay: total, totalDiscount: discount };
-    }, [cartItems]);
+    const SHIPPING_FEE_THRESHOLD = 999;
+const SHIPPING_FEE_COST = 45;
+
+const { subtotal, totalToPay, totalDiscount, shippingFee, totalToPayWithShipping } = useMemo(() => {
+    let sub = 0;
+    let total = 0;
+    cartItems.forEach(item => {
+        const quantity = item.quantity || 1;
+        sub += item.originalPrice * quantity;
+        total += item.totalPrice * quantity;
+    });
+    const discount = sub - total;
+
+    // --- New Shipping Logic ---
+    const shipping = (total >= SHIPPING_FEE_THRESHOLD) ? 0 : SHIPPING_FEE_COST;
+    const finalTotal = total + shipping;
+
+    return { 
+        subtotal: sub, 
+        totalToPay: total, 
+        totalDiscount: discount, 
+        shippingFee: shipping, 
+        totalToPayWithShipping: finalTotal 
+    };
+}, [cartItems]);
+
+    // const { subtotal, totalToPay, totalDiscount } = useMemo(() => {
+    //     let sub = 0;
+    //     let total = 0;
+    //     cartItems.forEach(item => {
+    //         const quantity = item.quantity || 1;
+    //         sub += item.originalPrice * quantity;
+    //         total += item.totalPrice * quantity;
+    //     });
+    //     const discount = sub - total;
+    //     return { subtotal: sub, totalToPay: total, totalDiscount: discount };
+    // }, [cartItems]);
 
     const formatCustomizations = (selectedOptions) => {
       if (!selectedOptions) return null;
@@ -487,26 +513,30 @@ const CartPage = () => {
                 </div>
 
                 <div className="order-summary">
-                    <h2>Order Summary</h2>
-                    <div className="summary-line">
-                        <span>Subtotal ({cartItems.length} items)</span>
-                        <span>₹{subtotal}</span>
-                    </div>
-                    <div className="summary-line">
-                        <span>Discount</span>
-                        <span>-₹{Math.round(subtotal - totalToPay)}</span>
-                    </div>
-                    <div className="summary-total">
-                        <span>Total to Pay</span>
-                        <span>₹{totalToPay}</span>
-                    </div>
-                    <button onClick={handleDmToOrder} className="dm-button">
-                        <FaWhatsapp /> DM to Order
-                    </button>
-                    <button onClick={handleClearCart} className="clear-cart-button">
-                        Clear Cart
-                    </button>
-                </div>
+    <h2>Order Summary</h2>
+    <div className="summary-line">
+        <span>Subtotal ({cartItems.length} items)</span>
+        <span>₹{subtotal}</span>
+    </div>
+    <div className="summary-line">
+        <span>Discount</span>
+        <span>-₹{Math.round(subtotal - totalToPay)}</span>
+    </div>
+    <div className="summary-line">
+        <span>Shipping</span>
+        <span>₹{shippingFee}</span>
+    </div>
+    <div className="summary-total">
+        <span>Total to Pay</span>
+        <span>₹{totalToPayWithShipping}</span>
+    </div>
+    <button onClick={handleDmToOrder} className="dm-button">
+        <FaWhatsapp /> DM to Order
+    </button>
+    <button onClick={handleClearCart} className="clear-cart-button">
+        Clear Cart
+    </button>
+</div>
             </div>
         </div>
     );
