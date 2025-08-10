@@ -487,12 +487,12 @@
 // Define common plate pricing structure
 export const PLATE_PRICES = {
   "mini bumper plates": {
-    "25kg": 50,
-    "20kg": 50,
-    "15kg": 40,
+    "25kg": 45,
+    "20kg": 45,
+    "15kg": 38,
     "10kg": 30,
     "5kg": 8, // Assuming 5kg and 2.5kg are same price for both types, adjust if needed
-    "2.5kg": 5,
+    "2.5kg": 4.5,
   },
   "mini powerlifting plates": {
     "25kg": 30,
@@ -500,7 +500,7 @@ export const PLATE_PRICES = {
     "15kg": 25,
     "10kg": 30,
     "5kg": 8,
-    "2.5kg": 5,
+    "2.5kg": 4.5,
   },
 };
 

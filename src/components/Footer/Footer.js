@@ -34,7 +34,7 @@ const Footer = () => {
           <h4>Follow Us</h4>
           <div className="social-icons">
             <a href="https://www.instagram.com/the.mini.pr/" target="_blank" rel="noreferrer"><FaInstagram /></a>
-            <a href="https://www.youtube.com/@theminipr" target="_blank" rel="noreferrer"><FaYoutube /></a>
+            <a href="https://www.youtube.com/@theminipr-q5w4u" target="_blank" rel="noreferrer"><FaYoutube /></a>
             <a href="mailto:contact@theminipr@gmail.com">
               <FaEnvelope />
             </a>
