@@ -446,41 +446,41 @@ const CategoryGrid = () => {
   ];
 
   const brands = [
-    {
-      name: "Deadlift Platform",
-      badge: "Popular",
-      price: `₹${allProducts.find(p => p.id === 113)?.originalPrice || '599'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 113)?.price || '899'}`,
-      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802249/d_009_huavos.jpg"
-    },
-    {
-      name: "Barbell Display Plaque",
-      badge: "New",
-      price: `₹${allProducts.find(p => p.id === 111)?.originalPrice || '599'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 111)?.price || '699'}`,
-      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801993/p_011_f2ihnj.jpg"
-    },
-    {
-      name: "Mini Bench Press Setup",
-      badge: "Best Seller",
-      price: `₹${allProducts.find(p => p.id === 108)?.originalPrice || '599'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 108)?.price || '899'}`,
-      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800731/nb_010_en59mq.jpg"
-    },
-    {
-      name: "Mini Squat Rack",
-      badge: "Accessory",
-      price: `₹${allProducts.find(p => p.id === 138)?.originalPrice || '699'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 138)?.price || '899'}`,
-      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801605/s_001_uazncf.jpg"
-    },
-    {
-      name: "Power Sled Coasters",
-      badge: "Popular",
-      price: `₹${allProducts.find(p => p.id === 102)?.originalPrice || '1300'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 102)?.price || '945'}`,
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg"
-    },
+  {
+    name: "Deadlift Platform",
+    badge: "Popular",
+    price: "₹899",
+    currentprice: "₹549",
+    image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802249/d_009_huavos.jpg"
+  },
+  {
+    name: "Barbell Display Plaque",
+    badge: "New",
+    price: "₹699",
+    currentprice: "₹549",
+    image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801993/p_011_f2ihnj.jpg"
+  },
+  {
+    name: "Mini Bench Press Setup",
+    badge: "Best Seller",
+    price: "₹899",
+    currentprice: "₹549",
+    image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800731/nb_010_en59mq.jpg"
+  },
+  {
+    name: "Mini Squat Rack",
+    badge: "Accessory",
+    price: "₹899",
+    currentprice: "₹699",
+    image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801605/s_001_uazncf.jpg"
+  },
+  {
+    name: "Power Sled Coasters",
+    badge: "Popular",
+    price: "₹1300",
+    currentprice: "₹665",
+    image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg"
+  },
     {
       name: "All Products",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrlBR2ORcQ2jtN8UflyNc8TibIxMm9MZz6ShJn8Pp8o8uNHwcyLO66ooW0EIYEBElivNI&usqp=CAU"
