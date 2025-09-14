@@ -1286,7 +1286,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     configurable: true,
     baseComponents: [
       { name: "Acrylic Plaque", priceImpact: 0, checked: true, disabled: true },
-      { name: "Mini Barbell (locked on plaque)", priceImpact: 0, checked: true, disabled: true },
+      { name: "Mini Barbell holder (locked on plaque)", priceImpact: 0, checked: true, disabled: true },
+      { name: "Mini Barbell ", priceImpact: 0, checked: true, disabled: true },
     ],
     hasPlates: true,
     defaultPlateType: "mini bumper plates",
@@ -1328,7 +1329,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     configurable: true,
     baseComponents: [
       { name: "Acrylic Plaque", priceImpact: 0, checked: true, disabled: true },
-      { name: "Mini Barbell (3 - locked on plaque)", priceImpact: 0, checked: true, disabled: true },
+      { name: "Mini Barbell holders (3 - locked on plaque)", priceImpact: 0, checked: true, disabled: true },
+      { name: "Mini Barbells", priceImpact: 0, checked: true, disabled: true },
     ],
     hasPlates: true,
     defaultPlateType: "mini bumper plates",
@@ -1382,7 +1384,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     configurable: true,
     baseComponents: [
       { name: "Acrylic Deadlift Platform", priceImpact: 0, checked: true, disabled: true },
-      { name: "Mini Barbell (locked on platform)", priceImpact: 0, checked: true, disabled: true },
+      { name: "Mini Barbell", priceImpact: 0, checked: true, disabled: true },
       { name: "Plate Stand", priceImpact: 0, checked: true, disabled: true },
     ],
     hasPlates: true,

@@ -449,29 +449,29 @@ const CategoryGrid = () => {
     {
       name: "Deadlift Platform",
       badge: "Popular",
-      price: `₹${allProducts.find(p => p.id === 113)?.originalPrice || '899'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 113)?.price || '649'}`,
+      price: `₹${allProducts.find(p => p.id === 113)?.originalPrice || '599'}`,
+      currentprice: `₹${allProducts.find(p => p.id === 113)?.price || '899'}`,
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802249/d_009_huavos.jpg"
     },
     {
       name: "Barbell Display Plaque",
       badge: "New",
-      price: `₹${allProducts.find(p => p.id === 111)?.originalPrice || '899'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 111)?.price || '549'}`,
+      price: `₹${allProducts.find(p => p.id === 111)?.originalPrice || '599'}`,
+      currentprice: `₹${allProducts.find(p => p.id === 111)?.price || '699'}`,
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801993/p_011_f2ihnj.jpg"
     },
     {
       name: "Mini Bench Press Setup",
       badge: "Best Seller",
-      price: `₹${allProducts.find(p => p.id === 108)?.originalPrice || '1299'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 108)?.price || '999'}`,
+      price: `₹${allProducts.find(p => p.id === 108)?.originalPrice || '599'}`,
+      currentprice: `₹${allProducts.find(p => p.id === 108)?.price || '899'}`,
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800731/nb_010_en59mq.jpg"
     },
     {
       name: "Mini Squat Rack",
       badge: "Accessory",
-      price: `₹${allProducts.find(p => p.id === 138)?.originalPrice || '850'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 138)?.price || '499'}`,
+      price: `₹${allProducts.find(p => p.id === 138)?.originalPrice || '699'}`,
+      currentprice: `₹${allProducts.find(p => p.id === 138)?.price || '899'}`,
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801605/s_001_uazncf.jpg"
     },
     {
