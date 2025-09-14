@@ -7,7 +7,9 @@ import five from '../../assets/Banners/five.png';
 // const images = ["https://res.cloudinary.com/dkybkcox5/image/upload/v1751921306/one_vwkcvo.png", "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921305/four_k4vrqm.png", "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921302/five_m3ehd6.png"];
 
 
-const images = ["https://res.cloudinary.com/dkybkcox5/image/upload/v1752398036/Black_White_Bold_Fashion_Sale_Banner_2_ohaojx.png", "https://res.cloudinary.com/dkybkcox5/image/upload/v1752397431/Black_And_White_Modern_Fashion_Sale_Banner_Landscape_1_jvbfme.png", "https://res.cloudinary.com/dkybkcox5/image/upload/v1752397431/Brown_Modern_New_Brand_Fashion_Banner_3_aqqnrr.png"];
+// const images = ["https://res.cloudinary.com/dkybkcox5/image/upload/v1752398036/Black_White_Bold_Fashion_Sale_Banner_2_ohaojx.png", "https://res.cloudinary.com/dkybkcox5/image/upload/v1752397431/Black_And_White_Modern_Fashion_Sale_Banner_Landscape_1_jvbfme.png", "https://res.cloudinary.com/dkybkcox5/image/upload/v1752397431/Brown_Modern_New_Brand_Fashion_Banner_3_aqqnrr.png"];
+
+const images = ["https://res.cloudinary.com/dr55mgsnm/image/upload/v1757837553/Black_White_Bold_Fashion_Sale_Banner_3_khgby5.png","https://res.cloudinary.com/dr55mgsnm/image/upload/v1757836852/Black_And_White_Modern_Fashion_Sale_Banner_Landscape_vmdcg9.png","https://res.cloudinary.com/dr55mgsnm/image/upload/v1757836859/Brown_Modern_New_Brand_Fashion_Banner_vcwqna.png"]
 
 const HeroBanner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -15,7 +15,7 @@ const CategoryGrid = () => {
 
   // Define the allProducts array as per the latest provided data for price reference
   const allProducts = [
-    {
+    { 
       id: 102,
       name: "POWER SLED COASTERS (with rubber pad base)",
       brand: "GYM INSPIRED",
@@ -451,31 +451,31 @@ const CategoryGrid = () => {
       badge: "Popular",
       price: `₹${allProducts.find(p => p.id === 113)?.originalPrice || '899'}`,
       currentprice: `₹${allProducts.find(p => p.id === 113)?.price || '649'}`,
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893420/01_shxcaz.jpg"
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802249/d_009_huavos.jpg"
     },
     {
       name: "Barbell Display Plaque",
       badge: "New",
       price: `₹${allProducts.find(p => p.id === 111)?.originalPrice || '899'}`,
       currentprice: `₹${allProducts.find(p => p.id === 111)?.price || '549'}`,
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902432/05_ke9p3j.jpg"
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801993/p_011_f2ihnj.jpg"
     },
     {
       name: "Mini Bench Press Setup",
       badge: "Best Seller",
       price: `₹${allProducts.find(p => p.id === 108)?.originalPrice || '1299'}`,
       currentprice: `₹${allProducts.find(p => p.id === 108)?.price || '999'}`,
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899415/01_os8ftd.jpg"
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800731/nb_010_en59mq.jpg"
     },
     {
-      name: "Barbell Holders",
+      name: "Mini Squat Rack",
       badge: "Accessory",
-      price: `₹${allProducts.find(p => p.id === 109)?.originalPrice || '450'}`,
-      currentprice: `₹${allProducts.find(p => p.id === 109)?.price || '299'}`,
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899814/01_bcmm19.jpg"
+      price: `₹${allProducts.find(p => p.id === 138)?.originalPrice || '850'}`,
+      currentprice: `₹${allProducts.find(p => p.id === 138)?.price || '499'}`,
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801605/s_001_uazncf.jpg"
     },
     {
-      name: "Sled Coasters",
+      name: "Power Sled Coasters",
       badge: "Popular",
       price: `₹${allProducts.find(p => p.id === 102)?.originalPrice || '1300'}`,
       currentprice: `₹${allProducts.find(p => p.id === 102)?.price || '945'}`,

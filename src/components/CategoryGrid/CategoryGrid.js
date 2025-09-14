@@ -16,7 +16,7 @@ const CategoryGrid = () => {
     {
       name: "PR-TRACKERS",
       discount: "Mini setups to track your Personal Records",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921665/finalll_ai8vkt.jpg"
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802252/d_013_jmqy1w.jpg"
     },
     {
       name: "GYM-INSPIRED ESSENTIALS",
@@ -25,17 +25,17 @@ const CategoryGrid = () => {
     },
     {
       name: "ACCESSORIES",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901811/barbell_plates_03_qmvcgc.jpg",
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800988/h_02_bhknps.jpg",
       discount:"Mini Accessories for your mini PR trackers"
     },
-    {
-      name: "LIMITED TIME COMBO DEALS",
-      discount: "Special Combos for you, make your money worth",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921715/barbell_plates_08_b243s4.jpg"
-    },
+    // {
+    //   name: "LIMITED TIME COMBO DEALS",
+    //   discount: "Special Combos for you, make your money worth",
+    //   image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921715/barbell_plates_08_b243s4.jpg"
+    // },
     {
       name:"EXTRAS",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921674/plates_ekrcid.png"
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801774/b_001_lfcc5b.jpg"
     },
     {
       name:"All Products",

@@ -23,19 +23,19 @@ const LuxeEdit = () => {
   const luxeItems = [
     {
       title: "What you lifted is history. What it meant? That’s what we frame.",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751920727/newtry_ko5s3w.jpg"
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757832316/Gemini_Generated_Image_6v91le6v91le6v91_-_Edited_-_Edited_1_nnkngr.png"
     },
     {
       title: "That one lift changed you. We just make sure it stays close.",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751920726/LuxeEdit_zwklvr.jpg"
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801310/ob_009_xcjf9m.jpg"
     },{
       title: "Miss the gym? Keep its mindset on your desk.",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751921201/newtrying_gylbae.jpg"
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757834040/flipped_gbce4u.jpg"
     },
 
     {
       title: "Our products aren’t just miniatures — they’re moments frozen in time.",
-      image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751920729/LuxeEdit1_qv4kfb.jpg"
+      image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802237/d_001_f402l1.jpg"
     }
   ];
 
