@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://theminipr.shop",  
+  "homepage": "http://theminipr.shop",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -16,6 +16,7 @@
     "react-lottie": "^1.2.10",
     "react-router-dom": "^7.6.2",
     "react-scripts": "5.0.1",
+    "sitemap": "^8.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
