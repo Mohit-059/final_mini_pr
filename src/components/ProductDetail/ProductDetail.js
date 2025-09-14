@@ -107,12 +107,11 @@ const ProductDetail = () => {
   const [message, setMessage] = useState({ show: false, text: '', type: '' });
 
   const [selectedBaseComponents, setSelectedBaseComponents] = useState({});
-  const [selectedComplementaryItems, setSelectedComplementaryItems] = useState(
-    {}
-  );
+  const [selectedComplementaryItems, setSelectedComplementaryItems] = useState({});
   const [selectedPlateType, setSelectedPlateType] = useState("");
   const [selectedPlates, setSelectedPlates] = useState({});
   const [selectedAddOns, setSelectedAddOns] = useState({});
+  const [selectedAddOnQuantities, setSelectedAddOnQuantities] = useState({});
   const ADDON_DISCOUNT_PERCENTAGE = 15;
 
   useEffect(() => {
@@ -142,10 +141,16 @@ const ProductDetail = () => {
         }
 
         const initialAddOns = {};
+        const initialAddOnQuantities = {};
         found.additionalAddOns?.forEach((addOn) => {
-          initialAddOns[addOn.name] = addOn.checked;
+          if (addOn.isQuantitative) {
+            initialAddOnQuantities[addOn.name] = 0;
+          } else {
+            initialAddOns[addOn.name] = addOn.checked;
+          }
         });
         setSelectedAddOns(initialAddOns);
+        setSelectedAddOnQuantities(initialAddOnQuantities);
       }
     } else {
       console.error("allProducts is not an array:", allProducts);
@@ -153,67 +158,79 @@ const ProductDetail = () => {
     }
   }, [id]);
 
+  const handlePlateTypeChange = (type) => {
+    setSelectedPlateType(type);
+    setSelectedPlates({}); // Reset plate selection when type changes
+  };
+
   const dynamicOriginalPrice = useMemo(() => {
     if (!product) return 0;
     let originalPrice = product.originalPrice;
     if (product.configurable) {
       product.additionalAddOns?.forEach(addOn => {
-        if (selectedAddOns[addOn.name]) {
+        if (addOn.isQuantitative) {
+          originalPrice += (selectedAddOnQuantities[addOn.name] || 0) * addOn.priceImpact;
+        } else if (selectedAddOns[addOn.name]) {
           originalPrice += addOn.priceImpact;
         }
       });
-      if (product.hasPlates && selectedPlateType && PLATE_PRICES[selectedPlateType]) {
+      if (product.hasPlates && selectedPlateType) {
         let platesOriginalCost = 0;
-        Object.entries(selectedPlates).forEach(([weight, quantity]) => {
-            const pricePerPlate = PLATE_PRICES[selectedPlateType][weight];
-            if (pricePerPlate) {
-                platesOriginalCost += pricePerPlate * quantity;
-            }
+        const plateTypesToCalculate = selectedPlateType === "both" 
+          ? Object.keys(PLATE_PRICES) 
+          : [selectedPlateType];
+
+        plateTypesToCalculate.forEach(type => {
+            Object.entries(selectedPlates).forEach(([weight, quantity]) => {
+                if (PLATE_PRICES[type] && PLATE_PRICES[type][weight]) {
+                    platesOriginalCost += PLATE_PRICES[type][weight] * quantity;
+                }
+            });
         });
         originalPrice += platesOriginalCost;
       }
     }
     return originalPrice;
-  }, [product, selectedAddOns, selectedPlates, selectedPlateType]);
+  }, [product, selectedAddOns, selectedPlates, selectedPlateType, selectedAddOnQuantities]);
 
   const totalPrice = useMemo(() => {
     if (!product) return 0;
-
     let currentPrice = product.price;
 
-    if (
-      product.hasPlates &&
-      selectedPlateType &&
-      PLATE_PRICES[selectedPlateType]
-    ) {
+    if (product.hasPlates && selectedPlateType) {
       let remainingFreePlates = product.freePlates?.quantity || 0;
-      const sortedPlateWeights = Object.keys(
-        PLATE_PRICES[selectedPlateType]
-      ).sort(
-        (a, b) =>
-          PLATE_PRICES[selectedPlateType][a] -
-          PLATE_PRICES[selectedPlateType][b]
-      );
       let platesCost = 0;
-      const tempSelectedPlates = { ...selectedPlates };
-      for (const weight of sortedPlateWeights) {
-        let quantity = tempSelectedPlates[weight] || 0;
-        if (quantity > 0) {
-          if (remainingFreePlates > 0) {
-            const deducted = Math.min(quantity, remainingFreePlates);
-            quantity -= deducted;
-            remainingFreePlates -= deducted;
+
+      const plateTypesToCalculate = selectedPlateType === "both" 
+        ? Object.keys(PLATE_PRICES) 
+        : [selectedPlateType];
+
+      plateTypesToCalculate.forEach(type => {
+          const sortedPlateWeights = Object.keys(PLATE_PRICES[type]).sort(
+              (a, b) => PLATE_PRICES[type][a] - PLATE_PRICES[type][b]
+          );
+          for (const weight of sortedPlateWeights) {
+              let quantity = selectedPlates[weight] || 0;
+              if (quantity > 0) {
+                  if (remainingFreePlates > 0) {
+                      const deducted = Math.min(quantity, remainingFreePlates);
+                      quantity -= deducted;
+                      remainingFreePlates -= deducted;
+                  }
+                  platesCost += quantity * PLATE_PRICES[type][weight];
+              }
           }
-          platesCost += quantity * PLATE_PRICES[selectedPlateType][weight];
-        }
-      }
+      });
       currentPrice += platesCost;
     }
 
     product.additionalAddOns?.forEach((addOn) => {
-      if (selectedAddOns[addOn.name]) {
-        const discountedPrice =
-          addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100);
+      if (addOn.isQuantitative) {
+        const quantity = selectedAddOnQuantities[addOn.name] || 0;
+        const discountedPrice = addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100);
+        currentPrice += discountedPrice * quantity;
+      } else if (selectedAddOns[addOn.name]) {
+        const discountedPrice = addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100);
         currentPrice += discountedPrice;
       }
     });
@@ -224,6 +241,7 @@ const ProductDetail = () => {
     selectedPlateType,
     selectedPlates,
     selectedAddOns,
+    selectedAddOnQuantities,
     ADDON_DISCOUNT_PERCENTAGE,
   ]);
 
@@ -245,25 +263,30 @@ const ProductDetail = () => {
       }
     });
 
-    if (
-      product.hasPlates &&
-      selectedPlateType &&
-      Object.keys(selectedPlates).length > 0
-    ) {
-      const plateDescriptions = Object.entries(selectedPlates)
-        .map(([weight, qty]) => `${qty}x${weight} ${selectedPlateType}`)
-        .join(", ");
-      if (plateDescriptions) {
-        components.push(plateDescriptions);
-      }
-    } else if (product.hasPlates && !Object.keys(selectedPlates).length) {
-      components.push("No plates selected");
+    if (product.hasPlates && selectedPlateType) {
+        const plateTypesToShow = selectedPlateType === "both" ? Object.keys(PLATE_PRICES) : [selectedPlateType];
+        plateTypesToShow.forEach(type => {
+            const platesByType = Object.entries(selectedPlates).filter(([weight]) => PLATE_PRICES[type][weight] !== undefined);
+            if (platesByType.length > 0) {
+                const plateDescriptions = platesByType
+                    .map(([weight, qty]) => `${qty}x${weight} plates`)
+                    .join(", ");
+                components.push(`${type}: ${plateDescriptions}`);
+            }
+        });
+    } else if (product.hasPlates) {
+        components.push("No plates selected");
     }
 
     product.additionalAddOns?.forEach((addOn) => {
-      if (selectedAddOns[addOn.name]) {
-        components.push(addOn.name);
-      }
+        if (addOn.isQuantitative) {
+            const quantity = selectedAddOnQuantities[addOn.name] || 0;
+            if (quantity > 0) {
+                components.push(`${quantity}x ${addOn.name}`);
+            }
+        } else if (selectedAddOns[addOn.name]) {
+            components.push(addOn.name);
+        }
     });
 
     product.complementaryItems?.forEach((item) => {
@@ -284,6 +307,7 @@ const ProductDetail = () => {
     selectedPlates,
     selectedAddOns,
     selectedComplementaryItems,
+    selectedAddOnQuantities,
   ]);
 
   if (!product)
@@ -304,44 +328,68 @@ const ProductDetail = () => {
     );
   };
 
-  const handleDecreasePlateQuantity = (weight) => {
-    setSelectedPlates(prev => {
+  const handleDecreaseQuantity = (type, name) => {
+    if (type === 'plate') {
+      setSelectedPlates(prev => {
         const newPlates = { ...prev };
-        const currentQty = newPlates[weight] || 0;
+        const currentQty = newPlates[name] || 0;
         if (currentQty > 0) {
-            newPlates[weight] = currentQty - 1;
+          newPlates[name] = currentQty - 1;
         }
-        if (newPlates[weight] === 0) {
-            delete newPlates[weight];
-        }
-        return newPlates;
-    });
-  };
-
-  const handleIncreasePlateQuantity = (weight) => {
-    setSelectedPlates(prev => {
-        const newPlates = { ...prev };
-        const currentQty = newPlates[weight] || 0;
-        newPlates[weight] = currentQty + 1;
-        return newPlates;
-    });
-  };
-
-  const handlePlateQuantityChange = (weight, value) => {
-    const quantity = parseInt(value, 10);
-    if (!isNaN(quantity) && quantity >= 0) {
-      setSelectedPlates((prev) => {
-        const newPlates = { ...prev };
-        if (quantity > 0) {
-          newPlates[weight] = quantity;
-        } else {
-          delete newPlates[weight];
+        if (newPlates[name] === 0) {
+          delete newPlates[name];
         }
         return newPlates;
+      });
+    } else if (type === 'addOn') {
+      setSelectedAddOnQuantities(prev => {
+        const newQuantities = { ...prev };
+        const currentQty = newQuantities[name] || 0;
+        if (currentQty > 0) {
+          newQuantities[name] = currentQty - 1;
+        }
+        return newQuantities;
       });
     }
   };
 
+  const handleIncreaseQuantity = (type, name) => {
+    if (type === 'plate') {
+      setSelectedPlates(prev => {
+        const newPlates = { ...prev };
+        const currentQty = newPlates[name] || 0;
+        newPlates[name] = currentQty + 1;
+        return newPlates;
+      });
+    } else if (type === 'addOn') {
+      setSelectedAddOnQuantities(prev => {
+        const newQuantities = { ...prev };
+        const currentQty = newQuantities[name] || 0;
+        newQuantities[name] = currentQty + 1;
+        return newQuantities;
+      });
+    }
+  };
+
+  const handleQuantityChange = (type, name, value) => {
+    const quantity = parseInt(value, 10);
+    if (!isNaN(quantity) && quantity >= 0) {
+      if (type === 'plate') {
+        setSelectedPlates(prev => {
+          const newPlates = { ...prev };
+          if (quantity > 0) {
+            newPlates[name] = quantity;
+          } else {
+            delete newPlates[name];
+          }
+          return newPlates;
+        });
+      } else if (type === 'addOn') {
+        setSelectedAddOnQuantities(prev => ({ ...prev, [name]: quantity }));
+      }
+    }
+  };
+  
   const handleAddOnToggle = (name) => {
     setSelectedAddOns((prev) => ({
       ...prev,
@@ -363,45 +411,42 @@ const ProductDetail = () => {
     }
 
     if (product.hasPlates && selectedPlateType) {
-      message += `\n- Plate Type: ${selectedPlateType}`;
-      if (Object.keys(selectedPlates).length > 0) {
-        let remainingFreePlates = product.freePlates?.quantity || 0;
-        const sortedPlateWeights = Object.keys(
-          PLATE_PRICES[selectedPlateType]
-        ).sort(
-          (a, b) =>
-            PLATE_PRICES[selectedPlateType][a] -
-            PLATE_PRICES[selectedPlateType][b]
-        );
-        let tempSelectedPlatesForMsg = { ...selectedPlates };
+        const plateTypesToInclude = selectedPlateType === "both" ? Object.keys(PLATE_PRICES) : [selectedPlateType];
+        
+        plateTypesToInclude.forEach(type => {
+            const platesOfType = Object.entries(selectedPlates).filter(([weight]) => PLATE_PRICES[type][weight] !== undefined);
+            if (platesOfType.length > 0) {
+                message += `\n- Plate Type: ${type}`;
+                let remainingFreePlates = product.freePlates?.quantity || 0;
 
-        for (const weight of sortedPlateWeights) {
-          let quantity = tempSelectedPlatesForMsg[weight] || 0;
-          if (quantity > 0) {
-            let displayPrice = PLATE_PRICES[selectedPlateType][weight];
-            let displayCost = `(₹${displayPrice} each)`;
-            let status = "";
-            if (remainingFreePlates > 0) {
-              const deducted = Math.min(quantity, remainingFreePlates);
-              if (deducted > 0) {
-                status = ` (${deducted} free)`;
-                quantity -= deducted;
-                remainingFreePlates -= deducted;
-              }
+                const sortedPlates = platesOfType.sort(([aWeight], [bWeight]) => 
+                    PLATE_PRICES[type][aWeight] - PLATE_PRICES[type][bWeight]
+                );
+
+                sortedPlates.forEach(([weight, quantity]) => {
+                    let displayQuantity = quantity;
+                    let status = "";
+                    if (remainingFreePlates > 0) {
+                        const deducted = Math.min(displayQuantity, remainingFreePlates);
+                        if (deducted > 0) {
+                            status = ` (${deducted} free)`;
+                            displayQuantity -= deducted;
+                            remainingFreePlates -= deducted;
+                        }
+                    }
+                    const displayCost = displayQuantity > 0 ? `(₹${PLATE_PRICES[type][weight]} each)` : "";
+                    message += `\n- ${quantity}x ${weight} plates ${displayCost}${status}`;
+                });
             }
-            message += `\n- ${
-              tempSelectedPlatesForMsg[weight]
-            }x ${weight} plates ${quantity > 0 ? displayCost : ""}${status}`;
-          }
+        });
+        if (Object.keys(selectedPlates).length === 0) {
+            message += `\n- No additional plates selected.`;
         }
-      } else {
-        message += `\n- No additional plates selected.`;
-      }
     }
 
     if (product.additionalAddOns && product.additionalAddOns.length > 0) {
       const selectedAddOnsList = product.additionalAddOns.filter(
-        (addOn) => selectedAddOns[addOn.name]
+        (addOn) => (addOn.isQuantitative && selectedAddOnQuantities[addOn.name] > 0) || (!addOn.isQuantitative && selectedAddOns[addOn.name])
       );
       if (selectedAddOnsList.length > 0) {
         message += `\n\nAdditional Add-ons:`;
@@ -409,7 +454,12 @@ const ProductDetail = () => {
           const discountedPrice = Math.round(
             addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100)
           );
-          message += `\n- ${addOn.name} (+₹${discountedPrice})`;
+          if (addOn.isQuantitative) {
+            const quantity = selectedAddOnQuantities[addOn.name];
+            message += `\n- ${quantity}x ${addOn.name}`;
+          } else {
+            message += `\n- ${addOn.name} (+₹${discountedPrice})`;
+          }
         });
       }
     }
@@ -443,6 +493,7 @@ const ProductDetail = () => {
         plateType: selectedPlateType,
         plates: selectedPlates,
         addOns: product.additionalAddOns?.filter(addOn => selectedAddOns[addOn.name]) || [],
+        addOnQuantities: selectedAddOnQuantities
       },
       quantity: 1, // Default quantity for new items
     };
@@ -728,47 +779,60 @@ const ProductDetail = () => {
                           name="plateType"
                           value={type}
                           checked={selectedPlateType === type}
-                          onChange={(e) => setSelectedPlateType(e.target.value)}
+                          onChange={(e) => handlePlateTypeChange(e.target.value)}
                         />
                         {type.charAt(0).toUpperCase() + type.slice(1)}
                       </label>
                     ))}
+                    <label key="both" className="radio-label">
+                      <input
+                        type="radio"
+                        name="plateType"
+                        value="both"
+                        checked={selectedPlateType === "both"}
+                        onChange={(e) => handlePlateTypeChange(e.target.value)}
+                      />
+                      Both
+                    </label>
                   </div>
-
-                  {selectedPlateType && PLATE_PRICES[selectedPlateType] && (
+                  
+                  {selectedPlateType && (
                     <div className="plate-selection">
-                      <div className="plate-header">
-                        <span>Weight</span>
-                        <span>Quantity</span>
-                      </div>
-                      {Object.entries(PLATE_PRICES[selectedPlateType]).map(
-                        ([weight, price]) => (
-                          <div key={weight} className="plate-input-row">
-                            <label className="plate-weight-label">
-                              {weight}:
-                            </label>
-                            <div className="custom-quantity-input-container" style={{display:'flex',alignItems:'center',width:'25%'}}>
-                                <button className="custom-quantity-btn" onClick={() => handleDecreasePlateQuantity(weight)}>-</button>
-                                <input
-                                    type="number"
-                                    min="0"
-                                    step="1"
-                                    value={selectedPlates[weight] || ""}
-                                    onChange={(e) => handlePlateQuantityChange(weight, e.target.value)}
-                                    placeholder="Qty"
-                                    className="custom-quantity-input"
-                                    readOnly
-                                />
-                                <button className="custom-quantity-btn" onClick={() => handleIncreasePlateQuantity(weight)}>+</button>
-                            </div>
+                      {(selectedPlateType === "both" ? Object.keys(PLATE_PRICES) : [selectedPlateType]).map((type) => (
+                        <div key={type}>
+                          <p style={{ marginTop: '10px', fontWeight: 'bold' }}>
+                            {type.charAt(0).toUpperCase() + type.slice(1)}:
+                          </p>
+                          <div className="plate-header">
+                            <span>Weight</span>
+                            <span>Quantity</span>
                           </div>
-                        )
-                      )}
+                          {Object.entries(PLATE_PRICES[type]).map(([weight]) => (
+                            <div key={`${type}-${weight}`} className="plate-input-row">
+                              <label className="plate-weight-label">
+                                {weight}:
+                              </label>
+                              <div className="custom-quantity-input-container" style={{display:'flex',alignItems:'center',width:'25%'}}>
+                                <button className="custom-quantity-btn" onClick={() => handleDecreaseQuantity('plate', weight)}>-</button>
+                                <input
+                                  type="number"
+                                  min="0"
+                                  step="1"
+                                  value={selectedPlates[weight] || ""}
+                                  onChange={(e) => handleQuantityChange('plate', weight, e.target.value)}
+                                  placeholder="Qty"
+                                  className="custom-quantity-input"
+                                />
+                                <button className="custom-quantity-btn" onClick={() => handleIncreaseQuantity('plate', weight)}>+</button>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ))}
                       {product.freePlates &&
                         product.freePlates.quantity > 0 && (
                           <p className="free-plates-info">
-                            Any first {product.freePlates.quantity} plates of
-                            your choice are on us!
+                            Any first {product.freePlates.quantity} plates of your choice are on us!
                           </p>
                         )}
                     </div>
@@ -784,6 +848,27 @@ const ProductDetail = () => {
                       const discountedPrice = Math.round(
                         addOn.priceImpact * (1 - ADDON_DISCOUNT_PERCENTAGE / 100)
                       );
+                      
+                      if (addOn.isQuantitative) {
+                        return (
+                          <div key={addOn.name} className="addon-input-row">
+                            <label className="addon-name-label">{addOn.name}:</label>
+                            <div className="custom-quantity-input-container">
+                              <button className="custom-quantity-btn" onClick={() => handleDecreaseQuantity('addOn', addOn.name)}>-</button>
+                              <input
+                                type="number"
+                                min="0"
+                                step="1"
+                                value={selectedAddOnQuantities[addOn.name] || 0}
+                                onChange={(e) => handleQuantityChange('addOn', addOn.name, e.target.value)}
+                                className="custom-quantity-input"
+                              />
+                              <button className="custom-quantity-btn" onClick={() => handleIncreaseQuantity('addOn', addOn.name)}>+</button>
+                            </div>
+                          </div>
+                        );
+                      }
+                      
                       return (
                         <label
                           key={addOn.name}
@@ -855,7 +940,6 @@ const ProductDetail = () => {
           >
             Go to Cart
           </button>
-
 
           {product.longDescription && (
             <div className="product-long-desc">
