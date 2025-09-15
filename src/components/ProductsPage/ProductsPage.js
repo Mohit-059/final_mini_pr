@@ -245,9 +245,9 @@ const products = {
       id: 108,
       name: "MINI BENCH PRESS SETUP",
       brand: "PR TRACKER",
-      price: 549,
+      price: 599,
       originalPrice: 899,
-      discount: "38.93%",
+      discount: "33.37%",
       stock: "Few Left",
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800728/nb_008_kd1ggb.jpg",
       ratingCount: 7,
@@ -284,9 +284,9 @@ const products = {
       id: 118,
       name: "MINI OLD SCHOOL BENCH PRESS SETUP",
       brand: "PR TRACKER",
-      price: 549,
+      price: 599,
       originalPrice: 899,
-      discount: "38.93%",
+      discount: "33.37%",
       stock: "Few Left",
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801281/ob_001_mckych.jpg",
       ratingCount: 7,
@@ -383,7 +383,7 @@ const products = {
       },
       videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
     },
-
+    
     {
       id: 110,
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801774/b_001_lfcc5b.jpg",
@@ -439,6 +439,51 @@ const products = {
       },
       videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
     },
+    ,
+  {
+    id: 139,
+    name: "MINI POWER RACK",
+    brand: "PR TRACKER",
+    price: 499,
+    originalPrice: 799,
+    discount: "37.55%",
+    stock: "Coming Soon",
+    image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757944550/WhatsApp_Image_2025-09-15_at_7.22.27_PM_sncoxd.jpg",
+    ratingCount: 9,
+    description: "The ultimate symbol of power—shrunk to collectible size.",
+    additionalImages: [
+      "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757944608/IMG_20250913_211825_e7el8o.jpg",
+      "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757944605/IMG_20250913_211821_pb1x69.jpg",
+    ],
+    longDescription: `The miniature power rack captures the essence of pushing limits and staying in control. More than a display piece, it’s a personal token of resilience and ambition. Whether on your desk or in your collection, it speaks to who you are—a lifter, a hustler, someone who never skips the hard work.`,
+    specs: {
+      quantity: "mini disassembled bench + mini barbell + mini plate stand + 4 mini plates",
+      material: "Durable PLA Plastic",
+      dimensions: "Undefined",
+      weight: "23g",
+    },
+    videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
+    offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
+    configurable: true,
+    baseComponents: [
+      { name: "Mini Squat Rack", priceImpact: 0, checked: true, disabled: true },
+      { name: "Mini Barbell", priceImpact: 0, checked: true, disabled: true },
+      { name: "Mini Plate Stand", priceImpact: 0, checked: true, disabled: true },
+    ],
+    hasPlates: true,
+    defaultPlateType: "mini bumper plates",
+    freePlates: {
+      quantity: 2,
+    },
+    additionalAddOns: [
+      { name: "Box Stand", priceImpact: 250, checked: false },
+      { name: "Mini Barbell Stand", priceImpact: 299, checked: false },
+      { name: "Extra Plate Holder", priceImpact: 35, isQuantitative: true }
+    ],
+    complementaryItems: [
+      { name: "Mini Steel Collar Clips (Pair)", priceImpact: 0, checked: true, disabled: true, type: "complementary" }
+    ],
+  },
 
   ],
   coasters: [
@@ -499,7 +544,32 @@ const products = {
         finish: "Matte plastic base",
       },
       videos: [],
+    },{
+    id: 130,
+    name: "CUSTOM MINI GYM PLATE KEYCHAIN",
+    brand: "ACCESSORIES",
+    price: 129,
+    originalPrice: 199,
+    discount: "35.18%",
+    stock: "In Stock",
+    image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757943817/BACK_2_nafogf.png",
+    ratingCount: 82,
+    description: "Your personalized lifting spirit in pocket-sized form",
+    additionalImages: [
+      "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757943816/BACK_3_wckaay.png"
+    ],
+    longDescription: `Never leave your gym mindset behind. This precision-printed miniature gym plate keychain. Tough enough for daily use, meaningful enough to remind you of your next PR. Attach to keys, bags, or gym tags.`,
+    specs: {
+      quantity: "1 keychain",
+      material: "Durable PLA Plastic",
+      dimensions: "keychain diameter : 4.5cm",
+      weight: "13g",
+      finish: "Textured mini plastic plates",
     },
+    videos: [],
+    configurable: false,
+    hasPlates: false,
+  },
     {
       id: 103,
       name: "MINI GYM PLATE KEYCHAIN",

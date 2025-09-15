@@ -8,7 +8,7 @@ const faqData = [
   },
   {
     question: 'Do you offer returns or exchanges?',
-    answer: 'Yes, we offer replacements for damaged or incorrect products. Just contact us within 48 hours of delivery with unboxing proof.'
+    answer: 'Yes, we offer replacements for damaged or incorrect products. Just contact us within 24 hours of delivery with unboxing proof.'
   },
   {
     question: 'What if my product arrives broken or defective?',
@@ -16,15 +16,15 @@ const faqData = [
   },
   {
     question: 'Can I cancel my order?',
-    answer: 'Yes, if it hasn’t been shipped yet. Once shipped, cancellation isn’t possible due to the nature of handmade prep and packaging.'
+    answer: 'Yes within 24 hrs. of Order,  Once production begins - cancellations are not allowed'
   },
   {
     question: 'How long does delivery take?',
-    answer: 'Most orders ship within 2-3 business days. Delivery usually takes 4–8 days depending on your location.'
+    answer: 'Most orders ship within 3-7 business days. Delivery usually takes 4–8 days depending on your location.'
   },
   {
     question: 'Are these really made from plastic?',
-    answer: 'Yes, high-quality industrial-grade plastic for durability and finish. We don’t compromise on the feel.'
+    answer: 'Yes, high-quality PLA plastic for durability and finish. We don’t compromise on the feel.'
   },
   {
     question: 'How do I track my order?',

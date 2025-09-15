@@ -829,12 +829,6 @@ const ProductDetail = () => {
                           ))}
                         </div>
                       ))}
-                      {product.freePlates &&
-                        product.freePlates.quantity > 0 && (
-                          <p className="free-plates-info">
-                            Any first {product.freePlates.quantity} plates of your choice are on us!
-                          </p>
-                        )}
                     </div>
                   )}
                 </div>

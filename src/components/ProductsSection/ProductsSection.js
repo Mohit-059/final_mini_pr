@@ -464,7 +464,7 @@ const CategoryGrid = () => {
     name: "Mini Bench Press Setup",
     badge: "Best Seller",
     price: "₹899",
-    currentprice: "₹549",
+    currentprice: "₹599",
     image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800731/nb_010_en59mq.jpg"
   },
   {

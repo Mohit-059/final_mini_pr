@@ -6,7 +6,7 @@ import './LegalPages.css';
 const documents = {
   terms: {
     title: 'Terms & Conditions',
-    content: `Welcome to theminipr. By purchasing our custom plastic gym miniatures, you agree to these Terms.
+    content: `Welcome to THE MINI PR. By purchasing our custom plastic gym miniatures, you agree to these Terms.
 
 1. Custom Orders  
    - All miniatures are made-to-order and personalized.  
@@ -37,11 +37,11 @@ const documents = {
   },
   shipping: {
     title: 'Shipping Policy',
-    content: `1. Processing: 3-5 days (custom pieces take time!).  
+    content: `1. Processing: 3-7 days (custom/personalized pieces take time!).  
 2. Shipping:  
    - ₹99 flat fee (Free on orders ₹1599+).  
    - No COD—pay online only.  
-3. Tracking: Sent via WhatsApp/SMS.  
+3. Tracking: Sent via WhatsApp/SMS/Email.  
 4. Delivery Issues? Report within 24 hrs with video proof.`
   },
   returns: {
@@ -52,16 +52,15 @@ const documents = {
    - Video proof submitted within 48 hrs of delivery.  
 3. **No returns for:**  
    - Color differences (screen vs. actual).  
-   - "Changed my mind."  
-   - Minor imperfections (handmade items!).  
+   - "Changed my mind."   
 4. Replacement Process:  
-   - Email hello@theminipr.com with video + order ID.  
+   - Email theminipr@gmail.com with video + order ID.  
    - We’ll ship a new piece if approved.`
   },
   disclaimer: {
     title: 'Heads Up!',
     content: `- **Custom Work:** Slight variations may occur (that’s the charm!).  
-- **Unregistered Biz:** No GST/tax invoices.  
+- **Bootstrap & small scale :** No GST/tax invoices.  
 - **Testing Phase:** Policies may change—check back often!  
 - **Not Toys:** Miniatures are display pieces—keep away from kids/pets.`
   }
