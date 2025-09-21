@@ -44,9 +44,8 @@ This small but mighty accessory creates a sense of completeness and permanence f
 Experience the satisfying click of a secure fit and notice how this tiny element brings your entire setup to life, reminding you that even the smallest actions contribute to significant results.`,
     specs: {
       quantity: "1 pair of mini steel collar clips",
-      material: "Durable PLA Plastic",
+      material: "Stainless steel",
       dimensions: "approx. 1 inch height",
-      weight: "5g each",
       finish: "Matte metallic",
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
@@ -76,7 +75,6 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       quantity: "Set of 4 coasters (without rubber pad base) + mini sled stand",
       material: "Durable PLA Plastic",
       dimensions: "mini sled : 11cm x 7.5cm , coasters diameter : 8.5cm",
-      weight: "35g each",
       finish: "Matte plastic base",
     },
     videos: [],
@@ -104,8 +102,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       quantity: "1 keychain",
       material: "Durable PLA Plastic",
       dimensions: "keychain diameter : 4.5cm",
-      weight: "13g",
-      finish: "Textured mini plastic plates",
+      weight: "approx. 10-13g"
     },
     videos: ["https://res.cloudinary.com/dkybkcox5/image/upload/v1751898836/barbell_plates_11_p4sb1p.jpg"],
     configurable: false,
@@ -130,8 +127,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       quantity: "1 keychain",
       material: "Durable PLA Plastic",
       dimensions: "keychain diameter : 4.5cm",
-      weight: "13g",
-      finish: "Textured mini plastic plates",
+      weight: "approx. 10-13g",
     },
     videos: [],
     configurable: false,
@@ -233,9 +229,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     specs: {
       quantity: "1 mini barbell",
       material: "Durable PLA Plastic",
-      dimensions: "21.8 cm length (8.6 inches)",
-      weight: "40g",
-      finish: "Smooth shaft with textured sleeves",
+      dimensions: "approx. 21.9 cm length (8.6 inches)",
+      weight: "approx. 10-15g"
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
@@ -269,10 +264,10 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     ],
     longDescription: `Authentic miniature weight plates scaled to perfection. Mix and match colors to recreate your real-life PRs. Fits all our barbells snugly. Includes plate stand for organized display.`,
     specs: {
-      quantity: "Set of 6 (1 of each size/weight) mini caliberated plates + mini plate stand",
+      quantity: "Set of 6 (1 of each size/weight) mini bumper plates + mini plate stand",
       material: "Durable PLA Plastic",
       dimensions: "2.1 cm to 4.5 cm diameter for",
-      weight: "10g per plate",
+      weight: "approx. 30-50g for whole set of 6",
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
@@ -333,12 +328,11 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800767/nb_014_kdamjf.jpg",
       "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800769/nb_015_hqeayd.jpg",
     ],
-    longDescription: `The ultimate starter kit - miniature bench, miniature barbell, miniature plate stand AND 4 miniature plates included. Assembles in seconds, impresses forever. Display your lifting passion without taking up real gym space.`,
+    longDescription: `The ultimate starter kit -  Assembles in seconds, impresses forever. Display your lifting passion without taking up real gym space.`,
     specs: {
-      quantity: "mini disassembled bench + mini barbell + mini plate stand + 4 mini plates",
+      quantity: "mini disassembled bench + mini barbell + mini plate stand ",
       material: "Durable PLA Plastic",
-      dimensions: "16.6 cm length x 10.1 cm height",
-      weight: "140g",
+      dimensions: "approx. 6inch length x 5inch width x 4inch height"
     },
     videos: [
       "https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"
@@ -380,7 +374,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801001/h_03_r43k1w.jpg",
       "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800998/h_04_fad7qe.jpg",
     ],
-    longDescription: `Designed with the same attention as the real gear. Grips your barbell securely at perfect display height. Clean lines complement any setup. A must-have for serious collectors.`,
+    longDescription: `Designed with the same attention as the real gear. Grips your mini barbell securely and perfectly. Clean lines complement any setup. A must-have for serious collectors.`,
     specs: {
       quantity: "1 barbell holder",
       material: "Durable PLA Plastic",
@@ -465,10 +459,9 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     ],
     longDescription: `This miniature squat rack isn’t just décor—it’s a daily reminder of discipline and strength. Perfect for collectors and fitness lovers, it sparks motivation every time you see it. Keep it on your desk or shelf and let it silently remind you: consistency builds champions.`,
     specs: {
-      quantity: "mini disassembled squat rack + mini barbell ",
+      quantity: "mini disassembled squat rack + mini barbell + plate holder",
       material: "Durable PLA Plastic",
-      dimensions: "16.6 cm length x 10.1 cm height",
-      weight: "140g",
+      dimensions: "approx. 4.2inch length x 4.2inch width x 7inch height"
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
@@ -509,10 +502,9 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     ],
     longDescription: `The miniature power rack captures the essence of pushing limits and staying in control. More than a display piece, it’s a personal token of resilience and ambition. Whether on your desk or in your collection, it speaks to who you are—a lifter, a hustler, someone who never skips the hard work.`,
     specs: {
-      quantity: "mini disassembled bench + mini barbell + mini plate stand + 4 mini plates",
+      quantity: "mini disassembled powerrack + mini barbell + mini plate stand",
       material: "Durable PLA Plastic",
-      dimensions: "Undefined",
-      weight: "23g",
+      dimensions: "Undefined"
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
@@ -559,10 +551,9 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     ],
     longDescription: `Complete your setup with our most popular combo. mini barbell features realistic size while mini plates slides on smoothly. Display together or mix with other gear. Includes complimentary mini plate stand.`,
     specs: {
-      quantity: "1 mini barbell + 6 mini plates + 1 mini barbell holder + 1 mini plates holder",
+      quantity: "1 mini barbell + 1 mini plates holder",
       material: "Durable PLA Plastic",
-      dimensions: "Barbell: 21.8 cm | Plates: 2.1-4.5 cm",
-      weight: "130g",
+      dimensions: "Barbell: 21.9 cm | Plates: 2.1-4.5 cm"
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
@@ -610,9 +601,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     longDescription: `Celebrate your achievements in style. Features fixed miniature barbell with your choice of lift name and weight. Stands upright with included holder. The perfect reminder of what you're capable of.`,
     specs: {
       quantity: "Acrylic plaque + 1 mini barbell + 1 mini barbell holder + 1 mini plate holder + 2 custom tags +1 plaque stand",
-      material: "Color-infused premium plastic miniatures & acrylic sheet",
-      dimensions: "acrylic plaque : 22.8 cm x 14 cm",
-      weight: "120g",
+      material: "acrylic sheet & durable PLA Plastic",
+      dimensions: "acrylic plaque : 9inch x 5.5inch",
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
@@ -651,10 +641,9 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     ],
     longDescription: `Squat, bench, and deadlift together at last. Three beautifully crafted miniature barbells mounted on a single acrylic plaque. Includes bonus mini barbell holder & mini plate holder - because every lifter needs a spare. Command attention wherever you display it.`,
     specs: {
-      quantity: "3 mini barbells + acrylic plaque + 3 detatchable mini barbell holders + plate holder + plaque stand",
-      material: "Color-infused premium plastic miniatures & acrylic sheet",
-      dimensions: "acrylic plaque : 25.4 cm x 22.8 cm",
-      weight: "190g",
+      quantity: "3 mini barbells + acrylic plaque + plate holder + plaque stand",
+      material: "acrylic sheet & durable PLA Plastic",
+      dimensions: "acrylic plaque : 25.4 cm x 22.8 cm"
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
@@ -701,12 +690,11 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       "https://res.cloudinary.com/dkybkcox5/video/upload/v1751893470/vid_01_oal6o2.mp4",
       "https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4",
     ],
-    longDescription: `Recreate your heaviest pulls in miniature. Choose your favorite plate colors, customize the weight tag, and display with the included vertical stand. Detachable mini barbell and mini barbell holder lets you change configurations.`,
+    longDescription: `Recreate your heaviest pulls in miniature. Choose your favorite plate colors, customize the weight tag, and display with pride & Detachable mini barbell lets you change configurations.`,
     specs: {
-      quantity: "acrylic mini deadlift platform + barbell + 4 plates + stand + 2 tags",
-      material: "Weighted plastic",
-      dimensions: "20 cm x 10 cm",
-      weight: "150g",
+      quantity: "acrylic mini deadlift platform + barbell + stand + 2 tags",
+      material: "acrylic & durable PLA Plastic",
+      dimensions: "9inch x 4inch"
     },
     videos: [
       "https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4",
