@@ -2,29 +2,29 @@
 
 export const feedbacks = [
   {
-    userName: "John Doe",
+    userName: "Mr.Aryan",
     userImage: "https://randomuser.me/api/portraits/men/32.jpg",
     rating: 5,
-    comment: "Absolutely love the Mini Bench Press! The detail is incredible and it's a perfect addition to my desk. The quality feels premium.",
+    comment: "I’ve seen brands selling similar stuff for triple the price. For what I paid, this is honestly a steal",
     userUploadedImages: [
       "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899417/02_ttniug.jpg",
       "https://res.cloudinary.com/dkybkcox5/image/upload/v1751902431/10_d652nm.jpg",
     ],
   },
   {
-    userName: "Jane Smith",
+    userName: "Mr.Priyanshu",
     userImage: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 4,
-    comment: "The Mini Gym Plate Keychain is a great gift idea. My friend loved it! Solid build, but took a little longer to arrive than expected.",
+    comment: "Small, light, and still makes a big impact on my desk. Honestly don’t care if it’s plastic, it looks fire.",
     userUploadedImages: [
       "https://res.cloudinary.com/dkybkcox5/image/upload/v1751893425/11_npxuk3.jpg",
     ],
   },
   {
-    userName: "Alex Johnson",
+    userName: "Mr.Aditya",
     userImage: "https://randomuser.me/api/portraits/men/50.jpg",
-    rating: 5,
-    comment: "The Deadlift Platform Set is a work of art. The customization options were easy to navigate and the final product is flawless. Highly recommend!",
+    rating: 4,
+    comment: "Wanted a heavier, metal feel at first ngl… but the frame looks clean on my desk. As a daily motivator, it’s solid.",
     userUploadedImages: [
       "https://res.cloudinary.com/dkybkcox5/image/upload/v1751901826/barbell_plates_02_kyupm6.jpg",
       "https://res.cloudinary.com/dkybkcox5/image/upload/v1751899419/07_kxguct.jpg",
@@ -32,10 +32,10 @@ export const feedbacks = [
     ],
   },
   {
-    userName: "Maria Garcia",
+    userName: "Mr.Vivek",
     userImage: "https://randomuser.me/api/portraits/women/62.jpg",
     rating: 5,
-    comment: "These coasters are a game changer for my coffee table. Everyone asks where I got them. The rubber pad base is a nice touch. Top notch quality!",
+    comment: "Finally found the right fit for my desk!",
     userUploadedImages: [],
   },
 ];

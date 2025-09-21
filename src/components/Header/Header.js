@@ -40,9 +40,42 @@ const Header = () => {
           <div className="header-actions">
             <nav className={`main-nav ${menuOpen ? 'active' : ''}`}>
               <ul>
-                <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-                <li><Link to="/products" onClick={() => setMenuOpen(false)}>Products</Link></li>
-                <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+                {/* <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li> */}
+                <li>
+                  <Link
+                    to="/products"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    Products
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/contact"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    Contact
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/about"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    About
+                  </Link>
+                </li>
               </ul>
             </nav>
             <Link to="/cart" className="cart-icon">

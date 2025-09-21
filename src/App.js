@@ -17,9 +17,10 @@ import LegalPages from './components/LegalPages/LegalPages';
 import ProductsSection from './components/ProductsSection/ProductsSection'
 import ContactPage from './components/ContactPage/ContactPage'
 import CartPage from './components/cartPage/cartPage';
-
+import AboutPage from './components/AboutPage/AboutPage';
 
 import GiftBox from './components/GiftBox/GiftBox'
+import FeedbackPage from './components/FeedbackSection/FeedbackSection';
 
 function App() {
   return (
@@ -54,11 +55,12 @@ function App() {
                   <ProductsSection/>
                   
                   <HorizontalScroll />
-                  <Spotlight />
+                  {/* <Spotlight /> */}
+                  <FeedbackPage/>
                   <Faq /> 
                   <Contact />
 
-                  <GiftBox/>
+                  {/* <GiftBox/> */}
 
                   <Footer />
                 </>
@@ -70,6 +72,7 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/legal/:type" element={
               <><Header/><LegalPages /><Footer/></>} />
+            <Route path="/about" element={<><Header/><AboutPage/><Footer/></>}/>
             <Route path="/contact" element={
               <div >
                 <Header/>

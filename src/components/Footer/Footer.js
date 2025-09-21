@@ -20,6 +20,7 @@ const Footer = () => {
         <div className="footer-nav">
           <h4>Explore</h4>
           <ul>
+            <li><Link to="/about" onClick={scrollToTop}>About Us</Link></li>
             <li><Link to="/products" onClick={scrollToTop}>Shop</Link></li>
             <li><Link to="/contact" onClick={scrollToTop}>Contact</Link></li>
             <li><Link to="/legal/returns" onClick={scrollToTop}>Returns & Refunds</Link></li>

@@ -60,7 +60,7 @@ const documents = {
   disclaimer: {
     title: 'Heads Up!',
     content: `- **Custom Work:** Slight variations may occur (that’s the charm!).  
-- **Bootstrap & small scale :** No GST/tax invoices.  
+- **Bootstrap & small scale :** No GST/tax invoices as of now.  
 - **Testing Phase:** Policies may change—check back often!  
 - **Not Toys:** Miniatures are display pieces—keep away from kids/pets.`
   }
