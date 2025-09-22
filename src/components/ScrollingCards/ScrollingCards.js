@@ -28,6 +28,18 @@ const ScrollingCards = () => {
       name: "Aman R.",
       feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
       video: "https://res.cloudinary.com/dr55mgsnm/video/upload/v1758467300/Untitled_video_-_Made_with_Clipchamp_4_wuu0dg.mp4"
+    }, {
+      name: "Aman R.",
+      feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
+      video: "https://res.cloudinary.com/dr55mgsnm/video/upload/v1758565681/Untitled_video_-_Made_with_Clipchamp_5_fpcsjn.mp4"
+    }, {
+      name: "Aman R.",
+      feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
+      video: "https://res.cloudinary.com/dr55mgsnm/video/upload/v1758565693/Untitled_video_-_Made_with_Clipchamp_8_fqy2kl.mp4"
+    }, {
+      name: "Aman R.",
+      feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
+      video: "https://res.cloudinary.com/dr55mgsnm/video/upload/v1758565691/Untitled_video_-_Made_with_Clipchamp_6_toyaec.mp4"
     }
   ];
 
