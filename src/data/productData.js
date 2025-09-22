@@ -685,8 +685,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802255/d_008_uz4ye6.jpg",
       "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802249/d_009_huavos.jpg",
       "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802258/d_010_kqoh2r.jpg",
-      "https://res.cloudinary.com/dkybkcox5/video/upload/v1751893470/vid_01_oal6o2.mp4",
-      "https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4",
+      "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757797946/9_qtfcy2.png"
     ],
     longDescription: `Recreate your heaviest pulls in miniature. Choose your favorite plate colors, customize the weight tag, and display with pride & Detachable mini barbell lets you change configurations.`,
     specs: {
