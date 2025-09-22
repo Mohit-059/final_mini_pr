@@ -150,7 +150,6 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       quantity: "Mini Bench Press + mini deadlift platform + single barbell display plaque + box barbell stand + barbell holder ",
       material: "Durable PLA Plastic",
       dimensions: "Varies by item",
-      weight: "Approx. 150g total",
     },
     videos: ["https://res.cloudinary.com/dkybkcox5/video/upload/v1751898751/vid_02_gk5zfy.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
@@ -194,7 +193,6 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       quantity: "1 mini barbel box stand",
       material: "Durable PLA Plastic",
       dimensions: "5 cm x 5.5 cm x 3 cm",
-      weight: "50g",
       finish: "Matte texture",
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
@@ -229,8 +227,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     specs: {
       quantity: "1 mini barbell",
       material: "Durable PLA Plastic",
-      dimensions: "approx. 21.9 cm length (8.6 inches)",
-      weight: "approx. 10-15g"
+      dimensions: "approx. 21.9 cm length (8.6 inches)"
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
@@ -293,8 +290,7 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     specs: {
       quantity: "Set of 6 (1 of each size/weight) mini caliberated plates + mini plate stand",
       material: "Durable PLA Plastic",
-      dimensions: "2.1 cm to 4.5 cm diameter for",
-      weight: "10g per plate",
+      dimensions: "2.1 cm to 4.5 cm diameter"
     },
     videos: ["https://res.cloudinary.com/dr55mgsnm/video/upload/v1758458631/all_rcbkqz.mp4"],
     offer: "🕑<strong>Complementary :</strong> Functional pair of mini steel collar clips (Worth Rs.49) -- (Gift expiring soon!)",
