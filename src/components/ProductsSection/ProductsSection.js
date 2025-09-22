@@ -449,29 +449,29 @@ const CategoryGrid = () => {
   {
     name: "Deadlift Platform",
     badge: "Popular",
-    price: "₹899",
-    currentprice: "₹549",
+    price: "₹1200", // Updated
+    currentprice: "₹599", // Updated
     image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757802249/d_009_huavos.jpg"
   },
   {
     name: "Barbell Display Plaque",
     badge: "New",
-    price: "₹699",
-    currentprice: "₹549",
+    price: "₹1200", // Updated
+    currentprice: "₹599", // Updated
     image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801993/p_011_f2ihnj.jpg"
   },
   {
     name: "Mini Bench Press Setup",
     badge: "Best Seller",
-    price: "₹899",
-    currentprice: "₹599",
+    price: "₹1300", // Updated
+    currentprice: "₹649", // Updated
     image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800731/nb_010_en59mq.jpg"
   },
   {
     name: "Mini Squat Rack",
     badge: "Accessory",
-    price: "₹899",
-    currentprice: "₹699",
+    price: "₹1400", // Updated
+    currentprice: "₹699", // Updated
     image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801605/s_001_uazncf.jpg"
   },
   {
@@ -481,11 +481,11 @@ const CategoryGrid = () => {
     currentprice: "₹665",
     image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg"
   },
-    {
-      name: "All Products",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrlBR2ORcQ2jtN8UflyNc8TibIxMm9MZz6ShJn8Pp8o8uNHwcyLO66ooW0EIYEBElivNI&usqp=CAU"
-    }
-  ];
+  {
+    name: "All Products",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrlBR2ORcQ2jtN8UflyNc8TibIxMm9MZz6ShJn8Pp8o8uNHwcyLO66ooW0EIYEBElivNI&usqp=CAU"
+  }
+];
 
   const handleNavigate = () => {
     navigate('/products');
