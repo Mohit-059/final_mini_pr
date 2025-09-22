@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <url>
+    <loc>https://theminipr.shop/product/119</loc>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dr55mgsnm/image/upload/v1757798089/IMG_20250913_202847_bayruw.jpg</image:loc>
+      <image:title><![CDATA[Functional Mini Steel Collar Clips - Secure your mini plates, amplify your focus]]></image:title>
+    </image:image>
+    <image:image><image:loc>https://res.cloudinary.com/dr55mgsnm/image/upload/v1757797949/Add_a_subheading_rgirh2.png</image:loc><image:title><![CDATA[Functional Mini Steel Collar Clips - View 2]]></image:title></image:image>
+    <image:image><image:loc>https://res.cloudinary.com/dr55mgsnm/image/upload/v1757798085/IMG_20250913_202854_jyvnnk.jpg</image:loc><image:title><![CDATA[Functional Mini Steel Collar Clips - View 3]]></image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://theminipr.shop/product/114</loc>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg</image:loc>
+      <image:title><![CDATA[Power Sled Coasters - Functional art for lifters who appreciate the grind]]></image:title>
+    </image:image>
+    <image:image><image:loc>https://res.cloudinary.com/dkybkcox5/image/upload/v1751894338/02_d8ja8h.jpg</image:loc><image:title><![CDATA[Power Sled Coasters - View 2]]></image:title></image:image>
+    <image:image><image:loc>https://res.cloudinary.com/dkybkcox5/image/upload/v1751894337/03_ncsr72.jpg</image:loc><image:title><![CDATA[Power Sled Coasters - View 3]]></image:title></image:image>
+  </url>
+  
+  </urlset>

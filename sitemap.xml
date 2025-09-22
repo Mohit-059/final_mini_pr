@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://theminipr.shop/</loc>
+    <lastmod>2025-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://theminipr.shop/products</loc>
+    <lastmod>2025-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://theminipr.shop/about</loc>
+    <lastmod>2025-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theminipr.shop/contact</loc>
+    <lastmod>2025-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url><loc>https://theminipr.shop/product/119</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/114</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/103</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/130</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/104</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/105</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/106</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/107</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/127</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/108</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/109</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/118</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/138</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/139</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/110</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/111</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/112</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://theminipr.shop/product/113</loc><lastmod>2025-09-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://theminipr.shop/legal/terms</loc><lastmod>2025-06-30</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://theminipr.shop/legal/privacy</loc><lastmod>2025-06-30</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://theminipr.shop/legal/shipping</loc><lastmod>2025-06-30</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://theminipr.shop/legal/returns</loc><lastmod>2025-06-30</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://theminipr.shop/legal/disclaimer</loc><lastmod>2025-06-30</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
