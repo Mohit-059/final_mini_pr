@@ -371,9 +371,9 @@ const products = {
       id: 130,
       name: "CUSTOM MINI GYM PLATE KEYCHAIN",
       brand: "ACCESSORIES",
-      price: 139,
-      originalPrice: 210,
-      discount: "33.81%", // Updated
+      price: 89,
+      originalPrice: 180,
+      discount: "50%", // Updated
       stock: "In Stock",
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757943817/BACK_2_nafogf.png",
       ratingCount: 82,
