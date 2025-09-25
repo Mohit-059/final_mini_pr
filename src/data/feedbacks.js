@@ -25,7 +25,7 @@ export const feedbacks = [
     rating: 4,
     comment: "Wanted a heavier, metal feel at first ngl… but the frame looks clean on my desk. As a daily motivator, it’s solid.",
     userUploadedImages: [
-      "https://res.cloudinary.com/dr55mgsnm/image/upload/v1758476989/Screenshot_2025-09-21_231838_mhujjt.png"
+      ""
     ],
   },
   {
