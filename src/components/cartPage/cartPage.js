@@ -81,7 +81,7 @@ const CartPage = () => {
         message += `Total to Pay: ₹${totalToPayWithShipping}\n\n`;
         message += `Please confirm my order.`;
 
-        window.open(`https://wa.me/+919625959409?text=${encodeURIComponent(message)}`, "_blank");
+        window.open(`https://wa.me/+919354840793?text=${encodeURIComponent(message)}`, "_blank");
     };
 
     const SHIPPING_FEE_THRESHOLD = 1599;
