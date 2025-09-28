@@ -38,8 +38,11 @@ function App() {
                   
                   
                   <HeroBanner />
-                  <div className="scrolling-offer-s ip fixed-strip">
-    <div className="scrolling-text">
+                  <div className="scrolling-offer-s ip fixed-strip "style={{
+    background: 'linear-gradient(135deg, #48D1CC, #20B2AA)'
+  }}
+>
+    <div className="scrolling-text" >
       🚨 EARLY BIRD OFFERS LIVE | LIMITED TIME DEALS | FREE SHIPPING OVER ₹1599 | PLACE YOUR ORDER NOW 🚀
     </div>
   </div>
