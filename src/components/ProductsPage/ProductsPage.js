@@ -213,7 +213,7 @@ const products = {
       name: 'CUSTOM MINIATURE BARBELL DISPLAY PLAQUE',
       price: 599,
       originalPrice: 1200,
-      discount: "50.08%", // Updated
+      discount: "50%", // Updated
       ratingCount: 5,
       stock: 'In Stock',
       description: 'Your PR immortalized in 3D',
@@ -232,7 +232,7 @@ const products = {
       brand: "PR TRACKER",
       price: 649,
       originalPrice: 1300,
-      discount: "50.08%", // Updated
+      discount: "50%", // Updated
       stock: "Few Left",
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800728/nb_008_kd1ggb.jpg",
       ratingCount: 7,
@@ -268,7 +268,7 @@ const products = {
       name: 'MINI DEADLIFT PLATFORM SET',
       price: 599,
       originalPrice: 1200,
-      discount: '50.08%', // Updated
+      discount: '50%', // Updated
       ratingCount: 4,
       stock: 'Few Left',
       description: 'Where PRs become permanent',
@@ -283,7 +283,7 @@ const products = {
       brand: "PR TRACKER",
       price: 699,
       originalPrice: 1400,
-      discount: "50.07%", // Updated
+      discount: "50%", // Updated
       stock: "Few Left",
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801605/s_001_uazncf.jpg",
       ratingCount: 7,
@@ -300,7 +300,7 @@ const products = {
       name: 'MINI BARBELL & PLATE SET',
       price: 145,
       originalPrice: 299,
-      discount: '51.51%', // Updated
+      discount: '51%', // Updated
       ratingCount: 7,
       stock: 'Few Left',
       description: 'The dream team for rack owners',
@@ -316,7 +316,7 @@ const products = {
       name: 'CUSTOM 3-IN-1 POWERLIFTING DISPLAY',
       price: 999,
       originalPrice: 1200,
-      discount: '16.75%', // Correct
+      discount: '16%', // Correct
       ratingCount: 6,
       stock: 'Limited Stock',
       description: 'The holy trinity of strength',
@@ -331,7 +331,7 @@ const products = {
       brand: "PR TRACKER",
       price: 499,
       originalPrice: 799,
-      discount: "37.55%", // Correct
+      discount: "37%", // Correct
       stock: "Coming Soon",
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757944550/WhatsApp_Image_2025-09-15_at_7.22.27_PM_sncoxd.jpg",
       ratingCount: 9,
@@ -357,7 +357,7 @@ const products = {
       brand: "GYM INSPIRED",
       price: 665,
       originalPrice: 1300,
-      discount: "48.85%", // Updated
+      discount: "48%", // Updated
       stock: "In Stock",
       image: "https://res.cloudinary.com/dkybkcox5/image/upload/v1751894336/01_lx4vfw.jpg",
       ratingCount: 8,
@@ -410,7 +410,7 @@ const products = {
       name: 'MINIATURE BARBELL HOLDER',
       price: 170,
       originalPrice: 450,
-      discount: '62.22%', // Correct
+      discount: '62%', // Correct
       ratingCount: 5,
       stock: 'In Stock',
       description: 'Showcase your bar between PRs',
@@ -459,7 +459,7 @@ const products = {
       brand: "EXTRAS",
       price: 149,
       originalPrice: 299,
-      discount: "50.17%", // Correct
+      discount: "50%", // Correct
       stock: "In Stock",
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757808969/Gemini_Generated_Image_6v91le6v91le6v91_wgv3wk.png",
       ratingCount: 4,
@@ -475,7 +475,7 @@ const products = {
       brand: "EXTRAS",
       price: 199,
       originalPrice: 210,
-      discount: '5.24%', // Updated
+      discount: '5%', // Updated
       ratingCount: 4,
       stock: 'In Stock',
       description: 'Load your bar with realistic detail',
@@ -491,7 +491,7 @@ const products = {
       brand: "EXTRAS",
       price: 65,
       originalPrice: 79,
-      discount: "17.72%", // Updated
+      discount: "17%", // Updated
       stock: "In Stock",
       image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757800641/IMG_20250913_205105_dskfqj.jpg",
       ratingCount: 4,
