@@ -38,7 +38,7 @@ function App() {
                   
                   
                   <HeroBanner />
-                  <div className="scrolling-offer-strip fixed-strip">
+                  <div className="scrolling-offer-s ip fixed-strip">
     <div className="scrolling-text">
       🚨 EARLY BIRD OFFERS LIVE | LIMITED TIME DEALS | FREE SHIPPING OVER ₹1599 | PLACE YOUR ORDER NOW 🚀
     </div>

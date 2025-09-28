@@ -455,7 +455,7 @@ const CategoryGrid = () => {
   },
   {
     name: "Barbell Display Plaque",
-    badge: "New",
+    badge: "Popular",
     price: "₹1200", // Updated
     currentprice: "₹599", // Updated
     image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801993/p_011_f2ihnj.jpg"
@@ -469,7 +469,7 @@ const CategoryGrid = () => {
   },
   {
     name: "Mini Squat Rack",
-    badge: "Accessory",
+    badge: "New",
     price: "₹1400", // Updated
     currentprice: "₹699", // Updated
     image: "https://res.cloudinary.com/dr55mgsnm/image/upload/v1757801605/s_001_uazncf.jpg"

@@ -150,12 +150,16 @@ const ScrollingCards = () => {
     {
       name: "Aman R.",
       feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
-      video: "https://res.cloudinary.com/dr55mgsnm/video/upload/v1758467290/main_version_final_-_Made_with_Clipchamp_og8lbe.mp4",
+      video: "https://res.cloudinary.com/dr55mgsnm/video/upload/v1759053944/SaveClip.App_AQOdHvjwGe0sImfi7GgVmbxs_fJpq0P2T4LDHznxuiILFE6d2oPGCRPspgEB1iprWHsx9pcmDM_px8ead41fKuAfkcg_K8TdK_oELjg_1_ni5dv3.mp4",
     }, {
       name: "Aman R.",
       feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
       video: "https://res.cloudinary.com/dr55mgsnm/video/upload/v1758467300/Untitled_video_-_Made_with_Clipchamp_4_wuu0dg.mp4"
     }, {
+      name: "Aman RR.",
+      feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
+      video: "https://res.cloudinary.com/dr55mgsnm/video/upload/v1759053803/deadlift_final_-_Made_with_Clipchamp_1_k4f16y.mp4"
+    },{
       name: "Aman R.",
       feedback: "Didn’t know I needed this until I got it. Now it’s on my desk 24/7.",
       video: "https://res.cloudinary.com/dr55mgsnm/video/upload/v1758565681/Untitled_video_-_Made_with_Clipchamp_5_fpcsjn.mp4"
