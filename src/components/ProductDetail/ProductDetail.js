@@ -113,7 +113,7 @@ const ProductDetail = () => {
   const [selectedPlates, setSelectedPlates] = useState({});
   const [selectedAddOns, setSelectedAddOns] = useState({});
   const [selectedAddOnQuantities, setSelectedAddOnQuantities] = useState({});
-  const ADDON_DISCOUNT_PERCENTAGE = 15;
+  const ADDON_DISCOUNT_PERCENTAGE = 5;
 
   useEffect(() => {
     if (Array.isArray(allProducts)) {
@@ -991,7 +991,7 @@ const ProductDetail = () => {
                             <span className="original-addon-price">
                               ₹{addOn.priceImpact}
                             </span>
-                            <span className="addon-discount-badge">-15%</span>
+                            <span className="addon-discount-badge">-5%</span>
                           </span>
                         </label>
                       );

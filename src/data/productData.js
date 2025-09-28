@@ -346,8 +346,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       quantity: 2,
     },
     additionalAddOns: [
-      { name: "Box Stand", priceImpact: 250, checked: false },
-      { name: "Mini Barbell Stand", priceImpact: 299, checked: false },
+      { name: "Box Stand", priceImpact: 260, checked: false },
+      { name: "Mini Barbell Stand", priceImpact: 170, checked: false },
       { name: "Extra Plate Holder", priceImpact: 35, isQuantitative: true }
     ],
     complementaryItems: [
@@ -424,8 +424,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       quantity: 2,
     },
     additionalAddOns: [
-      { name: "Box Stand", priceImpact: 250, checked: false },
-      { name: "Mini Barbell Stand", priceImpact: 299, checked: false },
+      { name: "Box Stand", priceImpact: 260, checked: false },
+      { name: "Mini Barbell Stand", priceImpact: 170, checked: false },
       { name: "Extra Plate Holder", priceImpact: 35, isQuantitative: true }
     ],
     complementaryItems: [
@@ -471,8 +471,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       quantity: 2,
     },
     additionalAddOns: [
-      { name: "Box Stand", priceImpact: 250, checked: false },
-      { name: "Mini Barbell Stand", priceImpact: 299, checked: false },
+      { name: "Box Stand", priceImpact: 260, checked: false },
+      { name: "Mini Barbell Stand", priceImpact: 170, checked: false },
       { name: "Extra Plate Holder", priceImpact: 35, isQuantitative: true }
     ],
     complementaryItems: [
@@ -514,8 +514,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
       quantity: 2,
     },
     additionalAddOns: [
-      { name: "Box Stand", priceImpact: 250, checked: false },
-      { name: "Mini Barbell Stand", priceImpact: 299, checked: false },
+      { name: "Box Stand", priceImpact: 260, checked: false },
+      { name: "Mini Barbell Stand", priceImpact: 170, checked: false },
       { name: "Extra Plate Holder", priceImpact: 35, isQuantitative: true }
     ],
     complementaryItems: [
@@ -559,8 +559,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     hasPlates: true,
     defaultPlateType: "mini bumper plates",
     additionalAddOns: [
-      { name: "Box Stand", priceImpact: 250, checked: false },
-      { name: "Mini Barbell Stand", priceImpact: 299, checked: false },
+      { name: "Box Stand", priceImpact: 260, checked: false },
+      { name: "Mini Barbell Stand", priceImpact: 170, checked: false },
       { name: "Extra Plate Holder", priceImpact: 35, isQuantitative: true }
     ],
     complementaryItems: [
@@ -609,8 +609,8 @@ Experience the satisfying click of a secure fit and notice how this tiny element
     hasPlates: true,
     defaultPlateType: "mini bumper plates",
     additionalAddOns: [
-      { name: "Box Stand", priceImpact: 250, checked: false },
-      { name: "Mini Barbell Holder", priceImpact: 160, checked: false },
+      { name: "Box Stand", priceImpact: 260, checked: false },
+      { name: "Mini Barbell Holder", priceImpact: 170, checked: false },
       { name: "Extra Plate Holder", priceImpact: 35, isQuantitative: true }
     ],
     complementaryItems: [
